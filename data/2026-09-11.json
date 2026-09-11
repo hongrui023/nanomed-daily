@@ -2,9 +2,9 @@
  "date": "2026-09-11",
  "range": "2026-09-08 ~ 2026-09-11",
  "days": 3,
- "generated_at": "2026-09-11 12:42:27",
+ "generated_at": "2026-09-11 04:58:28",
  "journal_count": 46,
- "keyword_count": 8,
+ "keyword_count": 11,
  "total_found": 398,
  "matched": 50,
  "per_journal": {
@@ -58,6 +58,26 @@
  "failed_journals": [],
  "papers": [
   {
+   "pmid": "42718942",
+   "title": "Engineered hollow Prussian blue nanoparticles for synergistic anti-inflammatory therapy in sepsis.",
+   "journal": "Materials today. Bio",
+   "pubdate": "2026-10-01",
+   "doi": "10.1016/j.mtbio.2026.103619",
+   "authors": [
+    "Song",
+    "Yu",
+    "Wu",
+    "Liu"
+   ],
+   "abstract": "Sepsis is a systemic inflammatory response triggered by pathogenic infections, often accompanied by bacterial endotoxin release, accumulation of cell-free DNA (cfDNA), and excessive inflammatory reactions, leading to organ failure. Conventional antibiotic therapies are often inadequate in effectively eliminating pathogens and their toxic components, and fail to suppress the cfDNA-mediated inflammatory cascade. In this study, we developed a multifunctional nanotherapeutic platform based on hollow Prussian blue nanoparticles (HPB-NPs) loaded with polymyxin E (PME) and surface-modified with polyethylenimine (PEI). This versatile nanosystem (HPB-NPs@PME@PEI) exhibits potent antimicrobial activity against Gram-negative bacteria and specifically neutralizes lipopolysaccharides (LPS); PEI captures elevated levels of LPS and cfDNA in septic blood via electrostatic adsorption, thereby blocking its activation of the TLR4/MyD88 pathway and mitigating the cytokine storm; meanwhile, HPB scavenges reactive oxygen species (ROS), alleviating oxidative stress damage. Experimental results demonstrate that HPB-NPs@PME@PEI significantly reduces plasma cfDNA levels, suppresses the release of pro-inflammatory cytokines, and improves survival rates in a murine sepsis model. HPB-NPs@PME@PEI directly suppress LPS-induced inflammatory activation and NETosis in innate immune cells. Furthermore, by scavenging ROS and blocking the TLR4/MyD88/NF-κB pathway, HPB-NPs@PME@PEI effectively protects lung and renal epithelial cells from LPS injury. Thus, the nano-system operates via a synergistic mechanism, concurrently neutralizing LPS, clearing ROS, and inhibiting a major inflammatory signaling cascade.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42718942/",
+   "journal_display": "Materials Today Bio",
+   "matched": [
+    "nanoparticle"
+   ],
+   "ai": "【一句话】用空心普鲁士蓝纳米球装抗生素和除炎症物质，治疗败血症。\n【发现了什么】造了能杀细菌、除炎症、抗氧化的纳米球，在老鼠败血症模型里效果挺好。\n【为什么重要】解决了传统抗生素对败血症效果差的问题，能同时处理多种致病因素。\n【跟纳米医学的关系】用纳米球递送药物和清除体内有害物质，是纳米药物和递送系统在败血症治疗中的应用。"
+  },
+  {
    "pmid": "42718620",
    "title": "Elucidate the structural role of helper lipids in modulating hepatic expression following repeated intravenous administration of mRNA-LNPs.",
    "journal": "Materials today. Bio",
@@ -73,28 +93,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42718620/",
    "journal_display": "Materials Today Bio",
    "matched": [
-    "lipid nanoparticle",
-    "nanoparticle delivery"
-   ]
-  },
-  {
-   "pmid": "42718611",
-   "title": "Traditional Chinese Medicine-derived berberine-loaded herbzyme ameliorates ulcerative colitis by regulating IL10 and TMAO.",
-   "journal": "Materials today. Bio",
-   "pubdate": "2026-10-01",
-   "doi": "10.1016/j.mtbio.2026.103615",
-   "authors": [
-    "Luo",
-    "Li",
-    "Zhang",
-    "Wang"
+    "nanoparticle",
+    "gene delivery"
    ],
-   "abstract": "Ulcerative colitis (UC) is a common inflammatory bowel disease. The traditional Chinese medicine (TCM) formula Zanglian Wan has demonstrated promising therapeutic effects in clinical practice, yet the synergistic mechanisms among its active components remain to be fully elucidated. Inspired by this formula, this study successfully constructed a novel nanocomplex, BLCDs, through the self-assembly of Sanguisorba officinalis L.-derived carbon dots (LCDs) and berberine (BBR) via electrostatic interactions and hydrogen bonding. Characterization results showed that LCDs possessed a uniform size distribution and were rich in oxygen-containing functional groups (carboxyl, hydroxyl, carbonyl) on their surface. Their SOD-like activity was dependent on these groups and was retained after BBR conjugation. In LPS-stimulated NCM460 cells, RNA-seq identified IL10 as the most significantly upregulated gene upon BLCDs treatment. Mechanistically, BLCDs promoted the phosphorylation of STAT3 (p-STAT3), which transcriptionally upregulated IL10 expression, leading to inhibition of the NLRP3 inflammasome pathway and its downstream inflammatory cytokines. In DSS-induced mouse model, BLCDs significantly ameliorated intestinal inflammation, oxidative stress, and barrier dysfunction. This therapeutic advantage was attributed to enhanced intestinal retention conferred by their larger particle size and charge switching properties. 16S rDNA sequencing indicated that BLCDs increased gut microbiota abundance and diversity, suppressed the growth of harmful bacteria such as Klebsiella, and reduced the generation of trimethylamine N-oxide (TMAO). Colorectal normal organoids (CNOs) experiments further confirmed that BLCDs reversed TMAO-induced inflammatory lesions through an IL10-dependent mechanism. Both in vitro and in vivo safety evaluations demonstrated that BLCDs possess good biocompatibility. Taken together, this study successfully constructed BLCDs nanocomplexes integrating the antioxidant activity of LCDs and the anti-inflammatory properties of BBR. By modulating p-STAT3-IL10-NLRP3 pathway and the Klebsiella-TMAO axis to ameliorate UC, this work establishes a foundation for the development of nanomedicines based on active TCM components.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42718611/",
-   "journal_display": "Materials Today Bio",
-   "matched": [
-    "nanomedicine"
-   ]
+   "ai": "【一句话】研究不同辅助脂质对重复注射mRNA脂质纳米粒在肝脏表达的影响。\n【发现了什么】发现基于DSPE的脂质纳米粒在体外和体内都表现最好，因为它能更好地吸附ApoE促进细胞摄取，且其pKa值适合内体酸化。\n【为什么重要】解决了重复给药下辅助脂质功能不明的老问题，为慢性蛋白替代疗法提供了更优的脂质纳米粒配方。\n【跟纳米医学的关系】揭示了辅助脂质在mRNA脂质纳米粒递送系统中的关键作用，有助于开发更高效的重复给药纳米药物。"
   },
   {
    "pmid": "42718604",
@@ -112,8 +114,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42718604/",
    "journal_display": "Materials Today Bio",
    "matched": [
-    "drug delivery"
-   ]
+    "targeted delivery",
+    "gene delivery"
+   ],
+   "ai": "【一句话】用特殊纳米材料帮鼻子抗过敏。\n【发现了什么】造出一种能找对人鼻细胞、放药又当催化剂的纳米花。\n【为什么重要】以前抗过敏药效果不好，这个能精准放药、减少发炎，治得更准。\n【跟纳米医学的关系】用纳米材料当药物载体和催化剂，同时瞄准目标细胞。"
   },
   {
    "pmid": "42721613",
@@ -131,8 +135,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42721613/",
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "drug delivery"
-   ]
+    "targeted delivery",
+    "liposome"
+   ],
+   "ai": "【一句话】用特殊脂质体把药送到血栓和有氧应激的脑部。\n【发现了什么】发明了一种能对脑血栓和氧气应激反应的脂质体，能精准递送药物到缺血脑部。\n【为什么重要】解决了缺血再灌注损伤中氧化应激、线粒体功能障碍和血脑屏障破坏的问题，可能改善脑卒中治疗效果。\n【跟纳米医学的关系】用脂质体作为纳米载体递送药物，结合血栓识别和氧气应激响应机制，提高脑卒中靶向治疗效率。"
   },
   {
    "pmid": "42722584",
@@ -150,8 +156,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722584/",
    "journal_display": "Advanced Drug Delivery Reviews",
    "matched": [
-    "drug delivery"
-   ]
+    "targeted delivery"
+   ],
+   "ai": "【一句话】用红外光追踪药物精准治胃癌。\n【发现了什么】设计了一种能被红外光找到的药物，并可能用于临床试验。\n【为什么重要】让胃癌治疗更准，减少副作用。\n【跟纳米医学的关系】可能用纳米颗粒做药物载体，通过红外光引导。"
   },
   {
    "pmid": "42717767",
@@ -169,28 +176,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42717767/",
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "ferroptosis",
-    "drug delivery"
-   ]
-  },
-  {
-   "pmid": "42717659",
-   "title": "Light-Driven Plasma Membrane-to-Nucleus Cascade Targeting Achieves Concurrent Pyroptosis and STING Activation.",
-   "journal": "ACS applied materials & interfaces",
-   "pubdate": "2026-09-10",
-   "doi": "10.1021/acsami.6c14820",
-   "authors": [
-    "Ma",
-    "Liu",
-    "Li",
-    "Song"
+    "targeted delivery"
    ],
-   "abstract": "Sequential targeting of the plasma membrane and nucleus holds great promise for concurrent pyroptosis and STING-mediated antitumor immunity, but achieving such cascade localization with a single molecular entity remains challenging, as existing strategies rely on multi-component carriers or endogenous stimuli with limited spatiotemporal precision. Here, we report the first example of a light-driven, carrier-free, plasma membrane-to-nucleus cascade-targeting photosensitizer (PMNu-4-NI) that operates through a single small molecule. Designed with a hydrophobic, planar naphthalimide unit and a dicationic triphenylamine pyridinium core, PMNu-4-NI initially anchors in the plasma membrane. Upon light irradiation, localized ROS generation disrupts membrane integrity, triggering pyroptosis via the caspase-1/GSDMD pathway, while simultaneously releasing the molecule from the membrane. The liberated photosensitizer then translocates into the nucleus, where the naphthalimide moiety intercalates into DNA and activates the cGAS-STING pathway. This dual, time-resolved action couples membrane-initiated pyroptosis with nuclear-initiated STING activation, producing a robust immunogenic cell death response. In a murine 4T1 breast tumor model, PMNu-4-NI achieves potent antitumor efficacy with negligible systemic toxicity. Furthermore, in vivo immune profiling reveals enhanced CD8+ T cell infiltration, a significant abscopal effect, and effective suppression of lung metastasis, collectively confirming systemic antitumor immune activation. This work establishes a design paradigm for photodynamic immunotherapy and a generalizable platform for next-generation photosensitizers with programmable spatiotemporal dynamics.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42717659/",
-   "journal_display": "ACS Applied Materials & Interfaces",
-   "matched": [
-    "tumor therapy"
-   ]
+   "ai": "【一句话】用红细胞膜包裹的化疗药能双重攻击乳腺癌。\n【发现了什么】发现这种红细胞膜包裹的药能促进癌细胞铁死亡和免疫死亡。\n【为什么重要】解决了传统化疗对三阴性乳腺癌效果差的问题。\n【跟纳米医学的关系】用红细胞膜做纳米载体递送化疗药，增强治疗效果。"
   },
   {
    "pmid": "42722181",
@@ -208,9 +196,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722181/",
    "journal_display": "Acta Biomaterialia",
    "matched": [
-    "ferroptosis",
-    "drug delivery"
-   ]
+    "targeted delivery",
+    "gene delivery"
+   ],
+   "ai": "【一句话】用纳米材料同时递送药物和做磁共振成像，帮脊髓受伤的动物恢复功能。\n【发现了什么】造了一种能感知酸和过氧化氢的纳米球，能自动释放抗铁死亡药物，同时用里面的二氧化锰做磁共振成像。\n【为什么重要】解决了抗铁死亡药物递送难的问题，让脊髓损伤治疗更精准，还能实时看到药物效果。\n【跟纳米医学的关系】用纳米材料做药物载体，结合了药物递送和成像功能，属于智能纳米治疗系统。"
   },
   {
    "pmid": "42722180",
@@ -228,8 +217,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722180/",
    "journal_display": "Acta Biomaterialia",
    "matched": [
-    "drug delivery"
-   ]
+    "gene delivery"
+   ],
+   "ai": "【一句话】用纳米技术送抗生素，帮它绕过细菌的抵抗。\n【发现了什么】发现纳米送药能改变抗生素的保护、释放和作用位置，但不是所有纳米材料都有效，也不能单靠包起来就逆转抵抗。\n【为什么重要】解决了传统抗生素难进入感染部位的问题，为对抗耐药菌提供了新思路。\n【跟纳米医学的关系】属于纳米药物递送系统，通过纳米材料送药，改变药物在体内的行为，提高疗效。"
   },
   {
    "pmid": "42722218",
@@ -247,12 +237,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722218/",
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
-    "lipid nanoparticle",
-    "nanoparticle delivery",
-    "cancer treatment",
-    "drug delivery",
-    "nanomedicine"
-   ]
+    "nanoparticle",
+    "liposome"
+   ],
+   "ai": "【一句话】用脂肪类纳米技术帮早期诊断和治肠癌。\n【发现了什么】发现用脂肪做的纳米球能送药到肠癌部位，还能做早期诊断。\n【为什么重要】解决了肠癌早期难发现、晚期难治的问题，提高生存率。\n【跟纳米医学的关系】用脂肪纳米球送药治癌，还能结合成像技术早期诊断。"
   },
   {
    "pmid": "42722164",
@@ -270,9 +258,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722164/",
    "journal_display": "Journal of Controlled Release",
    "matched": [
-    "lipid nanoparticle",
-    "nanoparticle delivery"
-   ]
+    "nanoparticle",
+    "sirna delivery"
+   ],
+   "ai": "【一句话】用两种药一起送进细胞，能治好疤痕。\n【发现了什么】发现一种新方法，把两种药一起送到细胞里，能同时抑制炎症和疤痕。\n【为什么重要】解决了单独用药效果不好、副作用大的问题，为疤痕治疗提供了新思路。\n【跟纳米医学的关系】用纳米颗粒送药，提高了药效，还减少了副作用。"
   },
   {
    "pmid": "42722163",
@@ -290,8 +279,11 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722163/",
    "journal_display": "Journal of Controlled Release",
    "matched": [
-    "nanoparticle delivery"
-   ]
+    "nanoparticle",
+    "tumor microenvironment",
+    "targeted delivery"
+   ],
+   "ai": "【一句话】这篇论文研究怎么把纳米药物和改变肿瘤微环境结合起来，让药物更好地进入肿瘤。\n【发现了什么】发现不同类型的肿瘤有不同阻碍药物进入的地方，需要根据具体情况调整微环境和纳米药物的设计。\n【为什么重要】解决了以前没有统一方法来提高肿瘤药物递送效率的问题，为个性化治疗提供了思路。\n【跟纳米医学的关系】通过分析肿瘤微环境和纳米载体的特性，找到了更适合不同肿瘤的药物递送方案。"
   },
   {
    "pmid": "42722161",
@@ -309,11 +301,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722161/",
    "journal_display": "Journal of Controlled Release",
    "matched": [
-    "nanoparticle delivery",
-    "tumor therapy",
-    "drug delivery",
-    "nanomedicine"
-   ]
+    "nanoparticle",
+    "gene delivery"
+   ],
+   "ai": "【一句话】用mRNA疫苗和纳米技术对付脑瘤的时空变化。\n【发现了什么】用多种组学技术找到脑瘤变化的特定抗原，用纳米颗粒递送mRNA疫苗穿过脑部屏障。\n【为什么重要】解决了脑瘤变化快、免疫治疗难的问题，提高了治疗效果。\n【跟纳米医学的关系】用纳米颗粒递送mRNA疫苗，克服脑部生物屏障，实现精准治疗。"
   },
   {
    "pmid": "42720610",
@@ -331,12 +322,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42720610/",
    "journal_display": "Nanomedicine (UK)",
    "matched": [
-    "lipid nanoparticle",
-    "nanoparticle delivery",
-    "tumor therapy",
-    "cancer treatment",
-    "drug delivery"
-   ]
+    "nanoparticle",
+    "gene delivery"
+   ],
+   "ai": "【一句话】用脂质纳米球送CRISPR基因编辑技术治膀胱癌。\n【发现了什么】用脂质纳米球能帮CRISPR技术更好地进入膀胱癌细胞。\n【为什么重要】解决了CRISPR技术难送进细胞的老问题，可能提高膀胱癌治疗效果。\n【跟纳米医学的关系】用脂质纳米球作为递送系统，帮基因编辑技术到达目标细胞。"
   },
   {
    "pmid": "42714300",
@@ -354,8 +343,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42714300/",
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "lipid nanoparticle"
-   ]
+    "nanoparticle",
+    "liposome"
+   ],
+   "ai": "【一句话】用混合乳液更高效地制造大单层囊泡。\n【发现了什么】发现混合氟表面活性剂和氟化二氧化硅纳米粒能协同作用，更有效地形成大单层囊泡，并控制其释放。\n【为什么重要】解决了现有滴液模板法制备大单层囊泡效率低、难以规模化的问题，为制备能支持跨膜蛋白的生物相关囊泡提供了新方法。\n【跟纳米医学的关系】利用氟化二氧化硅纳米粒作为模板，结合氟表面活性剂调控界面稳定性，属于纳米材料辅助的囊泡药物递送系统制备技术。"
   },
   {
    "pmid": "42713680",
@@ -373,27 +364,29 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42713680/",
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "drug delivery"
-   ]
+    "gene delivery"
+   ],
+   "ai": "【一句话】用没毒的天然材料做了一种能按肿瘤酸碱度放药的纳米球。\n【发现了什么】做了种用没毒的没食子酸和壳聚糖做的纳米球，能按肿瘤酸碱度慢慢放药。\n【为什么重要】解决了以前放药控制不好、材料有毒的问题，对肺癌有治疗作用。\n【跟纳米医学的关系】用天然材料做纳米球，能按肿瘤环境放药，是纳米药物递送的新方法。"
   },
   {
-   "pmid": "42716413",
-   "title": "Scaffold-guided breast reconstruction: A review of current scaffold architectures, materials and fabrication methods.",
-   "journal": "Acta biomaterialia",
+   "pmid": "42711243",
+   "title": "Bioorthogonal Polymer Nanozymes for Effective Treatment of Bacterial Wound Biofilm Infections.",
+   "journal": "ACS applied materials & interfaces",
    "pubdate": "2026-09-09",
-   "doi": "10.1016/j.actbio.2026.09.001",
+   "doi": "10.1021/acsami.6c12077",
    "authors": [
-    "Laurens",
-    "Foumani",
-    "Zadpoor",
-    "Mirzaali"
+    "Hirschbiegel",
+    "Hassan",
+    "Cicek",
+    "Ndugire"
    ],
-   "abstract": "Breast cancer (BC) remains one of the most prevalent malignancies globally, with mastectomy frequently required as part of treatment. This creates a critical clinical demand for effective breast reconstruction strategies. Conventional reconstruction methods, such as silicone implants, autologous fat grafting, and free-flap surgery, have notable drawbacks. Scaffold-guided breast reconstruction (SGBR) is a promising alternative that relies on biocompatible, biodegradable scaffolds to support and direct the regeneration of vascularized soft tissue. This review summarizes the current state of SGBR approaches, emphasizing scaffold architecture, biomaterials, and fabrication techniques. Various scaffold configurations, including fibrous, porous, hydrogel-based, mesh-like, and composite architectures, are discussed, along with natural and synthetic polymeric biomaterials. The integration of advanced additive manufacturing (AM) technologies is also explored, highlighting their role in enabling patient-specific scaffold designs. The review outlines key biological and mechanical criteria for a successful reconstruction, with particular attention to challenges such as neovascularization and tumor recurrence. Although preclinical studies have yielded promising outcomes, clinical translation remains limited, highlighting the need for continued research to optimize scaffold functionality, integration, and long-term performance.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42716413/",
-   "journal_display": "Acta Biomaterialia",
+   "abstract": "Multidrug-resistant (MDR) bacterial infections are a rapidly emerging healthcare crisis. The challenge of MDR bacteria is further exacerbated through biofilm formation that limits effective drug penetration and hinders the ability of the host immune system to clear the infection. Cationic polymer nanoparticles carrying bioorthogonal transition-metal catalysts (polyzymes) can penetrate bacterial biofilms and locally catalyze the uncaging of antimicrobial drug derivatives, acting as an in situ bioorthogonal \"drug factory\". Polyzymes were designed and fabricated using an amphiphilic polymer nanoscaffold and iron(III) tetraphenyl porphyrin as the catalyst. The polyzyme bioorthogonally uncaged an azide-protected prodrug of the antimicrobial drug moxifloxacin. The efficacy of this approach was tested in vitro against an in vitro Escherichia coli (E. coli) biofilm, resulting in a ∼3.5-log10 colony-forming units (CFU/mL) reduction of bacterial load (99.99%). The polyzyme was subsequently incorporated into a thermoresponsive Poloxamer 407 hydrogel to create a wound dressing, and the localized activation of pro-moxifloxacin was tested in an in vivo E. coli wound biofilm model. The polyzyme-mediated localized activation of the prodrug was highly effective, resulting in significantly more bacterial killing compared to the free drug moxifloxacin. These results demonstrate the therapeutic potential of bioorthogonal polyzymes for treating wound biofilm infections, with enhanced local activity and improved treatment outcomes compared to standard clinical treatment methods.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42711243/",
+   "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "cancer treatment"
-   ]
+    "nanoparticle"
+   ],
+   "ai": "【一句话】用纳米颗粒在伤口里生产抗生素治细菌感染。\n【发现了什么】造了带催化剂的纳米颗粒，能在细菌群落里释放抗生素。\n【为什么重要】解决了抗生素难进细菌群落的问题，治感染效果更好。\n【跟纳米医学的关系】用纳米颗粒做药物递送系统，在局部激活抗生素。"
   },
   {
    "pmid": "42717630",
@@ -411,9 +404,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42717630/",
    "journal_display": "Advanced Healthcare Materials",
    "matched": [
-    "tumor therapy",
-    "cancer treatment"
-   ]
+    "tumor microenvironment"
+   ],
+   "ai": "【一句话】造了个芯片模型研究脑瘤、免疫细胞和血管的相互作用及药物耐药。\n【发现了什么】这个芯片能精确控制脑瘤、免疫细胞和血管的位置，发现内皮细胞会让免疫细胞变弱，还揭示了脑瘤对药物产生耐药的原因。\n【为什么重要】解决了现有模型无法模拟真实脑瘤微环境的难题，有助于理解脑瘤进展和药物耐药机制。\n【跟纳米医学的关系】可能用纳米材料构建更真实的微环境，但论文没直接提纳米药物或递送系统。"
   },
   {
    "pmid": "42717601",
@@ -431,26 +424,29 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42717601/",
    "journal_display": "Advanced Healthcare Materials",
    "matched": [
-    "drug delivery"
-   ]
+    "gene delivery"
+   ],
+   "ai": "【一句话】这种凝胶能自动收缩帮助伤口愈合。\n【发现了什么】发明了一种能收缩、变色、持续放药的凝胶，用特殊材料做骨架。\n【为什么重要】让伤口愈合更主动，不是被动等待，效果更好。\n【跟纳米医学的关系】用了特殊纳米材料和纳米小泡来控制收缩和放药。"
   },
   {
-   "pmid": "42712263",
-   "title": "Water-Soluble, Enzyme-Degradable, and Hydrolyzable STAR Particles for Enhanced Drug Delivery to Skin.",
+   "pmid": "42713721",
+   "title": "An Apoptotic Body-Mimetic Nanoagonist for Synergistic Diabetic Wound Immunotherapy.",
    "journal": "Advanced healthcare materials",
    "pubdate": "2026-09-09",
-   "doi": "10.1002/adhm.71569",
+   "doi": "10.1002/adhm.71665",
    "authors": [
-    "Sadeqi",
-    "Arslan Azizoğlu",
-    "Prausnitz"
+    "Wang",
+    "Yang",
+    "Yang",
+    "Deng"
    ],
-   "abstract": "Drug delivery via skin enables local delivery that targets the skin and systemic delivery that avoids limitations of oral and parenteral administration. However, this route is often constrained by the skin's natural barrier, the stratum corneum. STAR particles with microscopic needles can painlessly puncture the skin to increase skin permeability, but they have previously been made of non-biodegradable materials, such as ceramic and metal. To address potential environmental and safety concerns, we introduce biodegradable polymer STAR particles that are water-soluble (poly(vinyl alcohol), PVA), enzyme-degradable (cellulose acetate, CA), or hydrolyzable (polylactic acid, PLA). STAR particles were fabricated using femtosecond laser micromachining to achieve dimensional features and sharp tips. We characterized their mechanical properties, and confirmed their skin-puncturing ability through gentian violet staining. We also evaluated STAR particle-enhanced delivery of three model drugs in porcine skin ex vivo: tacrolimus with PVA STAR particles, methotrexate with CA STAR particles, and copper tripeptide-1 with PLA STAR particles. Skin treatment with polymer STAR particles increased intradermal drug delivery by up to 37-fold, depending on the drug type and the STAR particle material and application duration. We conclude that biodegradable polymer STAR particles can address environmental and safety concerns while enhancing drug delivery to skin.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42712263/",
+   "abstract": "Diabetic skin injury (DSI), which are challenging to heal, contribute to global economic losses exceeding US$ 250 billion annually. The impaired healing process is primarily driven by severe local inflammation, excessive oxidative stress, and restricted angiogenesis, with dysfunctional macrophage polarization being a central pathological factor. Inspired from mechanisms of apoptotic cell clearance and maintenance of tissue homeostasis in the body, herein we developed a sprayable apoptotic body-mimic nanotherapeutic with macrophage-targeting anti-inflammatory and antioxidant properties, which consisted of the 'eat me' signal, phosphatidylserine-exposing nanoliposome containing epigallocatechin gallate-magnesium ion nanocomplexes (EGCG-Mg@PSLs). Both in vitro and in vivo experiments demonstrated that macrophage-targeted EGCG-Mg@PSLs effectively alleviate inflammation, promote angiogenesis and collagen fiber formation, and accelerate wound closure. Network pharmacology analysis supported the therapeutic relevance of EGCG in DSI healing. Transcriptomic sequencing also revealed that EGCG-Mg@PSLs likely modulate macrophage behavior via the MAPK signaling pathway and metabolic reprogramming. The results indicated that apoptotic body-mimic nanotherapeutics with PS-exposing shell and metal-phenolic complex core represent a promising bio-inspired therapeutic strategy for macrophage immunotherapy for chronic diabetic wounds.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42713721/",
    "journal_display": "Advanced Healthcare Materials",
    "matched": [
-    "drug delivery"
-   ]
+    "liposome"
+   ],
+   "ai": "【一句话】用模仿细胞凋亡的纳米药水治疗糖尿病伤口。\n【发现了什么】发明了一种包裹着抗氧化物质的纳米药水，能精准攻击炎症细胞，促进伤口愈合。\n【为什么重要】解决了糖尿病伤口难愈合的老问题，可能通过调控免疫细胞改善伤口环境。\n【跟纳米医学的关系】利用纳米材料包裹活性成分，并设计成能靶向免疫细胞，实现精准治疗。"
   },
   {
    "pmid": "42714307",
@@ -468,9 +464,29 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42714307/",
    "journal_display": "Advanced Materials",
    "matched": [
-    "tumor therapy",
-    "cancer treatment"
-   ]
+    "tumor microenvironment"
+   ],
+   "ai": "【一句话】用一种能同时攻击两种癌症蛋白的光敏剂治疗前列腺癌。\n【发现了什么】发明了一种能同时攻击两种癌症蛋白（AR和PARP）的光敏剂QTEO，结合光动力疗法杀伤癌细胞。\n【为什么重要】解决了传统光敏剂功能单一和易产生耐药性的问题，通过激活免疫反应提高治疗效果。\n【跟纳米医学的关系】可能用纳米材料包裹这种光敏剂，提高其在肿瘤部位的富集和递送效率。"
+  },
+  {
+   "pmid": "42714339",
+   "title": "High-viscosity hydrogels in cartilage injury and osteochondral defect repair: mechanisms, design strategies, and clinical translation.",
+   "journal": "Biomaterials science",
+   "pubdate": "2026-09-09",
+   "doi": "10.1039/d6bm00992a",
+   "authors": [
+    "Li",
+    "Zhao",
+    "Zhang",
+    "Hao"
+   ],
+   "abstract": "Cartilage injury and osteochondral defects remain major clinical challenges owing to the limited intrinsic regenerative capacity of cartilage and the inability of current treatments to restore durable hyaline tissue. Conventional hydrogels often fail under joint loading because of insufficient mechanical stability, poor interfacial integration, and limited biological responsiveness. In this review, high-viscosity hydrogels (HVHs) are considered within a performance-based framework that integrates post-deployment cohesion and structural retention, viscoelastic energy dissipation, and reversible network reconfiguration to provide both mechanical support and biological regulation. Through multilevel design strategies, including double-network structures, reversible crosslinking, nanocomposite reinforcement, and stimuli-responsive modules, HVHs establish highly cohesive yet reconfigurable matrices capable of stress dissipation, self-adaptation, and sustained bioactive factor delivery. Beyond structural functions, HVHs actively regulate mechanobiological signaling by modulating matrix stiffness, stress relaxation, immune responses, and stem-cell fate, thereby promoting chondrogenic differentiation, suppressing hypertrophy, and facilitating extracellular matrix deposition. Recent advances in gradient and biphasic HVH systems further enable coordinated regeneration of cartilage and subchondral bone, supporting functional osteochondral integration through spatially controlled mechanical and biochemical cues. Emerging technologies such as 3D/4D printing, artificial intelligence-assisted material optimization, and organoid-based validation are accelerating the development of personalized and adaptive regenerative platforms. Although challenges remain regarding long-term mechanical durability, degradation-regeneration matching, and clinical standardization, HVHs represent a promising paradigm that integrates dynamic network engineering, mechanobiological regulation, osteochondral reconstruction, and translational adaptability. This review summarizes recent advances in HVH design and application, highlighting their potential to reshape future strategies for cartilage and osteochondral regeneration through intelligent, biomimetic, and clinically translatable material systems.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42714339/",
+   "journal_display": "Biomaterials Science",
+   "matched": [
+    "gene delivery"
+   ],
+   "ai": "【一句话】这种高粘稠度的凝胶能修复受损的软骨和骨头软骨损伤。\n【发现了什么】发现了一种新型高粘稠度凝胶，能更好地支撑关节并促进软骨再生，还能同时修复软骨和下方骨头。\n【为什么重要】解决了传统治疗难以恢复持久软骨组织的问题，为软骨和骨头软骨损伤修复提供了新方法。\n【跟纳米医学的关系】这种凝胶可能结合了纳米材料和智能响应机制，通过纳米级设计实现更好的力学性能和生物活性。"
   },
   {
    "pmid": "42714736",
@@ -488,28 +504,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42714736/",
    "journal_display": "Drug Delivery and Translational Research",
    "matched": [
-    "nanoparticle delivery",
-    "drug delivery"
-   ]
-  },
-  {
-   "pmid": "42714735",
-   "title": "Cooling-triggered sciatic nerve block using thermoresponsive hydrogel implants.",
-   "journal": "Drug delivery and translational research",
-   "pubdate": "2026-09-09",
-   "doi": "10.1007/s13346-026-02215-5",
-   "authors": [
-    "Lobban",
-    "Ray",
-    "Srilouangkhol",
-    "Yu"
+    "nanoparticle"
    ],
-   "abstract": "Opioids remain the standard of post-operative pain management despite their known addiction risks. Local anesthetics, like bupivacaine, offer a safer, non-systemic alternative; however, existing delivery methods are either inconvenient, painful, or require complex equipment. Herein, we describe an implantable drug delivery device that leverages the cooling-triggered, reversible gel-to-sol transition of poly-N-isopropylacrylamide [PNIPAM] (achieved by simple icepack cooling, a pain-relief strategy already familiar to patients) for on-demand release of bupivacaine hydrochloride. Conveniently, this system allows on/off drug release over multiple cycles, as the drug release rate is significantly reduced when the cooling stimulus is removed but can be restored upon subsequent reapplication of cooling. We detail device fabrication and cooling-triggered release testing of a model dye and the drug of interest both in vitro and in vivo, with thermal latency testing on Sprague-Dawley rats used to demonstrate cooling-triggered sensory nerve block. Our results establish cooling as an intuitive trigger for delivery of local anesthetics, offering a promising route to patient-controlled, repeatable pain relief that could reduce opioid dependency in post-operative care.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42714735/",
-   "journal_display": "Drug Delivery and Translational Research",
-   "matched": [
-    "drug delivery"
-   ]
+   "ai": "【一句话】这篇论文讨论了如何合作改进药物递送技术。  \n【发现了什么】专家们强调了皮下和微针递送系统的重要性，并讨论了纳米粒子递送的发展。  \n【为什么重要】合作可以加速药物从实验室到临床的转化，解决传统研发中的障碍。  \n【跟纳米医学的关系】论文提到了纳米粒子递送，并探讨了如何通过合作推动纳米药物的研发。"
   },
   {
    "pmid": "42716152",
@@ -527,26 +524,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42716152/",
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
-    "drug delivery"
-   ]
-  },
-  {
-   "pmid": "42716151",
-   "title": "Cryo-emulsion gel patches as versatile platform for dual drug delivery to wounds.",
-   "journal": "International journal of pharmaceutics",
-   "pubdate": "2026-09-09",
-   "doi": "10.1016/j.ijpharm.2026.127397",
-   "authors": [
-    "Wiedemann",
-    "Abdel-Mottaleb",
-    "Lunter"
+    "targeted delivery",
+    "liposome"
    ],
-   "abstract": "Cryo emulsion gels (C-EGs) represent a promising drug delivery approach that combines the possibility to deliver both, hydrophilic and lipophilic drugs, with the mechanical stability of hydrogel matrices for dermal application. In this study, poly(vinyl alcohol) (PVA) was used as a multifunctional polymer acting as both a polymeric emulsifier and as a gelling agent for cryogelation to minimize formulation complexity. Medium-chain triglycerides, castor oil, and rapeseed oil were identified as suitable candidates for the dispersed phase of the emulsions. The influence of oil type and oil content on the rheological and mechanical properties of the patches was investigated, allowing the definition of a maximum oil content of 30%. Within this range, C-EGs with consistent droplet distribution were obtained. The two-phase structure enabled dual drug loading using hydrophilic N-acetylcysteine and lipophilic phenytoin, which complement each other in wound healing. The system showed controlled drug release over 48 h with release rates depending on the physicochemical properties of the drugs and their location within the patch. Ex vivo penetration studies on intact and wounded skin revealed different penetration profiles according to the drug and skin condition. Cytocompatibility studies demonstrated excellent tolerability of the PVA-based vehicle. Drug incorporation resulted in a synergistic effect between the C-EGs and the drugs, increasing cell viability up to 178%. Peel adhesion testing revealed very low adhesion of the C-EG patches on both bloody and dry wound surfaces. Overall, PVA-based C-EGs provide a stable and cytocompatible platform for incorporating emulsions into cryogel patches, representing an attractive strategy for advanced wound care applications.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42716151/",
-   "journal_display": "International Journal of Pharmaceutics",
-   "matched": [
-    "drug delivery"
-   ]
+   "ai": "【一句话】用脂质体和凝胶混合物帮维生素K1精准、持久地留在皮肤里治副作用。\n【发现了什么】发明了一种脂质体-凝胶混合物，能让维生素K1在皮肤里待更久，精准作用在发炎部位。\n【为什么重要】解决了维生素K1治EGFR抑制剂副作用效果不好、容易流失的问题，提高疗效。\n【跟纳米医学的关系】用的是脂质体这种纳米载体，通过凝胶系统延长纳米药物在皮肤里的停留时间。"
   },
   {
    "pmid": "42716149",
@@ -564,48 +545,11 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42716149/",
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
-    "tumor therapy",
-    "drug delivery",
-    "nanomedicine"
-   ]
-  },
-  {
-   "pmid": "42716148",
-   "title": "Physicochemical and safety evaluation of an antioxidant ophthalmic hydrogel for corneal injuries.",
-   "journal": "International journal of pharmaceutics",
-   "pubdate": "2026-09-09",
-   "doi": "10.1016/j.ijpharm.2026.127390",
-   "authors": [
-    "Cuello-Rodríguez",
-    "Díaz-Tomé",
-    "Monte-Vidal",
-    "Martín-Pastor"
+    "tumor microenvironment",
+    "targeted delivery",
+    "gene delivery"
    ],
-   "abstract": "Corneal injuries are frequently associated with oxidative stress and standard treatment are only to prevent infection, reduce pain and inflammation. This work describes the development of antioxidant ophthalmic hydrogels containing Idebenone (IDB) and hydroxocobalamin (HCB) as a complement treatment for corneal injuries, using hydroxypropyl- β-cyclodextrin (HPβCD) to improve IDB aqueous solubility. Three hydrogels were prepared (hyaluronic acid, FAH; poloxamer 407, FP; and polyvinyl alcohol, FPVA) and characterized for physicochemical properties, mucoadhesion and safety. Phase-solubility assays supported 1:1 inclusion complex formation and achieved to solubilize a high IDB load. FP displayed thermogelling properties rheologically, showing increased viscosity between room and physiological temperatures. In vitro release in Franz cells indicated sustained delivery for both actives, best described by the Korsmeyer-Peppas model. Ex vivo bovine corneal permeation showed no detectable transcorneal diffusion of drugs, consistent with a local action on superficial corneal layers. FP exhibited suitable wettability on corneal surface and was selected for further evaluation. Antioxidant capacity assessed by FRAP demonstrated high activity for FP compared with conventional artificial tears based on HPMC or Hypromellose. Ocular safety was supported by BCOP and HET-CAM assays, showing no relevant impairment of corneal integrity or irritation, and cytotoxicity assays in human corneal epithelial cells and keratocytes showed the safety of the treatment. Additionally, C. Elegans survival assay confirmed the treatment́s safety. Overall, the developed hydrogel, composed of P407 and HPβCD, shows potential as a safe topical platform to increase ocular residence time and provide localized antioxidant support during corneal injuries management.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42716148/",
-   "journal_display": "International Journal of Pharmaceutics",
-   "matched": [
-    "drug delivery"
-   ]
-  },
-  {
-   "pmid": "42716130",
-   "title": "A coordination-assembled ferric nanoenzyme enables spatiotemporal radical storm for amplifying chemodynamic immunotherapy.",
-   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
-   "pubdate": "2026-09-09",
-   "doi": "10.1016/j.jconrel.2026.115341",
-   "authors": [
-    "Li",
-    "Lin",
-    "Zhao",
-    "Chen"
-   ],
-   "abstract": "Artificial enzymes show great promise in cancer therapy, yet inadequate in vivo catalytic selectivity and robustness restrict their therapeutic potencies. Here, we report a coordination-driven nanoassembly of ferric-indocyanine green complex in albumin nanocages as an activatable antitumor nanoenzyme for tumor-selective chemodynamic immunotherapy against aggressive cancers. The nanoenzyme undergoes the reduction of ferric ions into ferrous ions in lysosomes in response to pH and glutathione stimuli, followed by photooxidation-mediated lysosomal escape of ferrous ions into cytosol. The abundant ferrous ions catalyze cytosolic H2O2 to yield highly cytotoxic hydroxyl radicals (·OH) in cytosol via Fenton reaction, which is further amplified to elevate the yield efficiency of ·OH by increasing the Fenton reaction rate under the photoirradiated tumor hyperthermia. Meanwhile, the frequently overexpressed metabolic NAD(P)H:quinone oxidoreductase 1 (NQO1) in tumor cells catalyzes its substrate (e.g. molecularly targeted compound β-lapachone) to continuously produce excessive hydrogen peroxide (H2O2) for yielding a reactive oxygen species (ROS) storm under abundant ferrous ions. The photoamplified and metabolism-dependent ROS storm effectively disrupts the redox homeostasis, thus inhibiting aggressive triple-negative breast cancers. The ROS surge further induces immunogenic cell death and promotes dendritic cell maturation, thus synergizing with immune checkpoint inhibitors to elicit both robust innate and adaptive immunities against primary, distant, and rechallenged tumors. This study provides insights into rational design of robust and activatable nanoenzymes for precise cancer therapy.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42716130/",
-   "journal_display": "Journal of Controlled Release",
-   "matched": [
-    "tumor therapy"
-   ]
+   "ai": "【一句话】用能识别癌细胞的短肽给纳米药指路，精准治肺癌。  \n【发现了什么】把短肽和纳米药结合，能更准地送到肺癌细胞上。  \n【为什么重要】解决了纳米药容易跑到别处伤身体的问题，提高了疗效。  \n【跟纳米医学的关系】用短肽修饰纳米药，让它们像导弹一样专门攻击肺癌细胞。"
   },
   {
    "pmid": "42716129",
@@ -621,10 +565,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42716129/",
    "journal_display": "Journal of Controlled Release",
    "matched": [
-    "lipid nanoparticle",
-    "nanoparticle delivery",
-    "nanomedicine"
-   ]
+    "nanoparticle",
+    "targeted delivery"
+   ],
+   "ai": "【一句话】给脂质纳米颗粒装上“导航器”，让它精准送到目标细胞。\n【发现了什么】给脂质纳米颗粒加上特殊分子，能帮它避开肝脏和免疫细胞，直接送到需要的地方。\n【为什么重要】解决了纳米药物容易被肝脏和免疫细胞抢走的问题，提高治疗效果。\n【跟纳米医学的关系】这是用特殊分子改造脂质纳米颗粒，实现药物精准递送的一种新方法。"
   },
   {
    "pmid": "42716128",
@@ -639,8 +583,91 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42716128/",
    "journal_display": "Journal of Controlled Release",
    "matched": [
-    "drug delivery"
-   ]
+    "gene delivery"
+   ],
+   "ai": "【一句话】这篇论文研究了关节内药物递送如何影响软骨再生。\n【发现了什么】发现15-PGDH抑制剂可能促进软骨再生，但药物难以到达软骨深层，且药物清除快于渗透。\n【为什么重要】解决了传统药物难以有效作用于软骨深层的问题，为软骨再生治疗提供了新思路。\n【跟纳米医学的关系】可能通过改进纳米药物递送系统，提高药物在软骨深层的渗透和停留时间。"
+  },
+  {
+   "pmid": "42716126",
+   "title": "Nanoparticles hijack intracellular glucose for sustained boron trapping in cancer cells.",
+   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+   "pubdate": "2026-09-09",
+   "doi": "10.1016/j.jconrel.2026.115343",
+   "authors": [
+    "Yang",
+    "Guan",
+    "Shang",
+    "Liu"
+   ],
+   "abstract": "Boron neutron capture therapy (BNCT) requires selective accumulation and retention of 10B in cancer cells during neutron irradiation. However, current clinical boron agents are limited by transient intracellular residence, rapid clearance, and insufficient tumour selectivity. Here, we report a glucose-hijacking strategy that converts the glucose avidity of malignant cells into an endogenous chemical machinery for sustained boron trapping. We engineered AbChol10B, an albumin-based nanoparticle containing a 10B-labeled cholesterol derivative, Chol10B. Upon internalization, Chol10B is released and spontaneously covalently conjugates with intracellular glucose. This in situ process creates a bulky complex that anchors 10B within the cells, while simultaneously engaging glucose to disrupt tumour metabolic homeostasis. Driven by the increased glucose uptake of malignant cells, this reversible covalent binding becomes more pronounced, thereby promoting prolonged 10B retention. Compared with boronophenylalanine (10BPA), AbChol10B increased 10B uptake by 238.8-fold and reduced 10B clearance by 81.96%. GLUT1 knockdown markedly reduced this retention, supporting a glucose-dependent mechanism. In vivo, AbChol10B increased intratumoural 10B accumulation by 33.52-fold and achieved a tumour to blood ratio (T/B) of 24.48. Most notably, even at a sub-threshold macroscopic tumour boron concentration (~7.7 ppm), this boron trapping strategy suppressed tumour growth by 87.32% with minimal systemic toxicity. These findings suggest that intracellular boron trapping mediated by hijacking glucose can enhance the effective utilization of boron and reframes BNCT drug design from maximizing bulk tumour boron loading to engineering intracellular boron residence.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42716126/",
+   "journal_display": "Journal of Controlled Release",
+   "matched": [
+    "nanoparticle"
+   ],
+   "ai": "【一句话】纳米颗粒劫持癌细胞糖分来持续留住硼。\n【发现了什么】设计了一种纳米颗粒，能劫持癌细胞对糖的喜爱，让硼在细胞里待更久，同时干扰癌细胞代谢。\n【为什么重要】解决了现有硼药物在癌细胞里留不住的问题，提高了硼的利用效率，可能改善癌症治疗。\n【跟纳米医学的关系】用纳米颗粒作为载体，把硼带到癌细胞里，并利用癌细胞自身的糖代谢来增强硼的滞留。"
+  },
+  {
+   "pmid": "42716125",
+   "title": "Pathogen capture driven spatial reprogramming microgels for oral treatment of bacterial enteritis.",
+   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+   "pubdate": "2026-09-09",
+   "doi": "10.1016/j.jconrel.2026.115342",
+   "authors": [
+    "Li",
+    "Zhou",
+    "Yang",
+    "Chen"
+   ],
+   "abstract": "Intestinal Salmonella infections are primarily treated with antibiotics, yet non-selective bactericidal activity often disrupts the gut microbiota and limits therapeutic efficacy. Here, we introduce a precision anti-infective strategy based on spatial reprogramming, which redefines where antibacterial activity occurs rather than increasing antimicrobial potency. By functionally integrating Salmonella-specific nanobodies anchored on oral hydrogel microgels with meropenem-loaded bacterial membrane vesicles, we construct a targeted delivery system, termed HAMA-Nb@BM. Surface-anchored nanobodies selectively capture and concentrate dispersed Salmonella, spatially confining pathogens to the microgel surface. The microgels subsequently trigger the release of antibiotic-loaded vesicles, which deliver antibiotics directly into the periplasmic space of nearby pathogens via outer-membrane fusion, thereby avoiding diffusion-dependent dilution of free antibiotics and minimizing off-target microbiota perturbation. In a murine Salmonella infection model, this spatially confined therapy reduces intestinal pathogen burden, preserves microbiota homeostasis, and promotes inflammation resolution and mucus barrier restoration. This work establishes spatially reprogrammed antibacterial delivery as a strategy to reconcile effective pathogen clearance with host intestinal homeostasis.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42716125/",
+   "journal_display": "Journal of Controlled Release",
+   "matched": [
+    "targeted delivery"
+   ],
+   "ai": "【一句话】用特殊微球把病菌锁住再放药治肠炎。\n【发现了什么】造出能抓住沙门氏菌的微球，把病菌聚在表面再释放抗生素。\n【为什么重要】精准杀菌不伤肠道菌群，治肠炎效果更好。\n【跟纳米医学的关系】用纳米抗体和微球做递送系统，定点释放药物。"
+  },
+  {
+   "pmid": "42715057",
+   "title": "Biomimetic Virus-Like Mesoporous Silica Nanoparticles Activate NK Cells Indirectly via Monocyte Crosstalk.",
+   "journal": "Nano letters",
+   "pubdate": "2026-09-09",
+   "doi": "10.1021/acs.nanolett.6c01832",
+   "authors": [
+    "Sivonen",
+    "Saarela",
+    "Wang",
+    "Saari"
+   ],
+   "abstract": "Cancer immunotherapies show clinical promise but often rely on T-cell priming and are limited by tumor heterogeneity and the immunosuppressive tumor microenvironment (TME). Innate immune activation offers a complementary approach, with specific aim in natural killer (NK) cell activation for antigen-independent response. Biomimetic nanoparticles combining virus-like morphology with cell membrane (CM) coating offer a strategy to engage this innate immune axis. This study investigates virus-like mesoporous silica nanoparticles (VLPSi) with tunable spikes, surface functionalization, and CM coating as innate immunity modulators. Optimization revealed that longer spikes, amine functionalization, and CM coating synergistically enhance NK cell activation within human PBMCs, as indicated by CD69/CD25 upregulation and IFN-γ secretion. CD14+ monocyte depletion attenuated activation, identifying monocyte-dependent crosstalk as a key mechanism. In purified NK cells, engineered CM-coated VLPSi induced early activation and supported feeder-free expansion. These results define topology, surface chemistry, and CM coating as parameters for innate immune modulation.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42715057/",
+   "journal_display": "Nano Letters",
+   "matched": [
+    "nanoparticle",
+    "tumor microenvironment"
+   ],
+   "ai": "【一句话】用像病毒一样的纳米颗粒间接激活NK细胞抗癌。\n【发现了什么】这种纳米颗粒能激活NK细胞，且需要巨噬细胞帮忙。\n【为什么重要】为克服肿瘤免疫抑制提供新方法，可能改善免疫治疗效果。\n【跟纳米医学的关系】用病毒样外形和细胞膜包覆的纳米颗粒激活先天免疫。"
+  },
+  {
+   "pmid": "42715048",
+   "title": "Zwitterionic Brush-Engineered Molecular Spherical Nucleic Acids for Enhanced Intracellular Antisense Activity.",
+   "journal": "Nano letters",
+   "pubdate": "2026-09-09",
+   "doi": "10.1021/acs.nanolett.6c02662",
+   "authors": [
+    "Xu",
+    "Sun",
+    "Yan",
+    "Li"
+   ],
+   "abstract": "Spherical nucleic acids (SNAs) enhance antisense oligonucleotide (ASO) uptake and nuclease resistance, but their activity is often constrained by inefficient intracellular trafficking. Here, we developed a zwitterionic brush-engineered molecular SNA (EmSNA) to improve ASO delivery. EmSNA was constructed by grafting poly(carboxybetaine) side chains onto a unimolecular ASO nanostructure, generating a compact, hydrated, near-neutral corona that modulated interfacial charge, oligonucleotide crowding, and intracellular processing. This architecture preserved rapid, sequence-specific hybridization while increasing duplex thermal stability and nuclease resistance. The zwitterionic brush further enhanced cellular uptake and reduced lysosomal sequestration, thereby improving antisense activity. Using a HER2-targeted ASO as a model cargo, EmSNA achieved stronger HER2 silencing in vitro and greater tumor growth inhibition in a xenograft model after local intratumoral administration, without overt systemic toxicity under the tested conditions. These findings establish zwitterionic brush engineering as an effective strategy to enhance functional SNA-based ASO delivery.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42715048/",
+   "journal_display": "Nano Letters",
+   "matched": [
+    "targeted delivery",
+    "gene delivery"
+   ],
+   "ai": "【一句话】给基因药穿上特殊外套，让它更容易进入细胞发挥作用。\n【发现了什么】发明了一种带特殊电荷的分子球状核酸，能帮基因药更顺利进细胞，还更耐分解。\n【为什么重要】解决了基因药进细胞难、易分解的老问题，让治疗效果更好。\n【跟纳米医学的关系】用的是球状核酸技术，通过纳米材料外壳改造基因药，提高递送效率。"
   },
   {
    "pmid": "42715039",
@@ -658,8 +685,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42715039/",
    "journal_display": "Nano Letters",
    "matched": [
-    "tumor therapy"
-   ]
+    "nanoparticle",
+    "tumor microenvironment"
+   ],
+   "ai": "【一句话】用细菌和纳米颗粒组合治疗卵巢癌，既能化疗又能激活免疫。\n【发现了什么】发现了一种能同时化疗和激活免疫的细菌-纳米颗粒系统，在肿瘤微环境中能释放药物并激活免疫系统。\n【为什么重要】解决了卵巢癌药物难以靶向、毒性大和免疫抑制的问题，为治疗这种难治癌症提供了新方法。\n【跟纳米医学的关系】这个系统结合了纳米颗粒（BD-Poly）和细菌（VNP），通过纳米技术实现药物递送和免疫激活。"
   },
   {
    "pmid": "42715037",
@@ -677,9 +706,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42715037/",
    "journal_display": "Nano Letters",
    "matched": [
-    "lipid nanoparticle",
-    "nanoparticle delivery"
-   ]
+    "nanoparticle",
+    "gene delivery"
+   ],
+   "ai": "【一句话】这种纳米颗粒能直接和细胞融合，送药进细胞。\n【发现了什么】发现了一种能直接和细胞膜融合的纳米颗粒，不用经过细胞内吞就能把药物送进细胞质，还能在融合时把功能分子加到细胞表面。\n【为什么重要】解决了传统药物递送容易被细胞内吞困住的问题，提高了药物递送效率，为基因和细胞治疗提供了新方法。\n【跟纳米医学的关系】这种纳米颗粒利用膜融合技术，是纳米药物递送系统的一种新形式，能直接把基因或药物送进细胞，用于基因治疗和细胞治疗。"
   },
   {
    "pmid": "42711458",
@@ -697,8 +727,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42711458/",
    "journal_display": "Nano-Micro Letters",
    "matched": [
-    "tumor therapy"
-   ]
+    "tumor microenvironment"
+   ],
+   "ai": "【一句话】这种凝胶能同时清除肿瘤、改善环境、促进修复。\n【发现了什么】发明了一种含锰和螺旋藻的凝胶，能按pH值和激光变化释放药物和金属，还能粘住伤口。\n【为什么重要】解决了手术前后肿瘤扩散和胰腺瘘的问题，提高了治疗效果和安全性。\n【跟纳米医学的关系】用纳米材料（凝胶）和纳米药物（螺旋藻提取物、锰离子）组合，实现精准治疗和伤口愈合。"
   },
   {
    "pmid": "42712196",
@@ -716,9 +747,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42712196/",
    "journal_display": "Nanomedicine (UK)",
    "matched": [
-    "cancer treatment",
-    "drug delivery"
-   ]
+    "targeted delivery"
+   ],
+   "ai": "【一句话】用特殊纳米球让抗体药能从嘴里吸收。  \n【发现了什么】发现了一种能穿过肠道黏液的纳米球，能让抗体药从嘴里进入身体。  \n【为什么重要】解决了抗体药只能打针的老问题，可能让口服抗体药成为现实。  \n【跟纳米医学的关系】这种纳米球是专门设计来穿过黏液的新型递送系统。"
   },
   {
    "pmid": "42714955",
@@ -736,8 +767,10 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42714955/",
    "journal_display": "Nanoscale",
    "matched": [
-    "tumor therapy"
-   ]
+    "tumor microenvironment",
+    "liposome"
+   ],
+   "ai": "【一句话】用特殊纳米气泡结合光疗和免疫疗法治疗结直肠癌。\n【发现了什么】造出能精准找到癌细胞并杀死的纳米气泡，用光激活后还能刺激免疫细胞攻击癌细胞。\n【为什么重要】解决了结直肠癌免疫治疗效果差的问题，能让\"冷\"肿瘤变\"热\"从而提高免疫疗法效果。\n【跟纳米医学的关系】用纳米气泡作为药物载体，结合光敏剂和免疫蛋白实现靶向治疗和免疫激活。"
   },
   {
    "pmid": "42714842",
@@ -755,28 +788,111 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42714842/",
    "journal_display": "Small",
    "matched": [
-    "tumor therapy",
     "photothermal therapy"
-   ]
+   ],
+   "ai": "【一句话】用特殊塑料保护纳米片，喷在皮肤上治术后肿瘤。\n【发现了什么】特殊塑料比例能保护纳米片不被氧化，喷剂接触皮肤能自动凝胶覆盖伤口。\n【为什么重要】解决了纳米片易氧化的问题，提供了一种喷剂凝胶的新疗法。\n【跟纳米医学的关系】用纳米材料（MXene）和特殊塑料（PLGA-PEG-PLGA）做喷剂药物递送系统。"
   },
   {
-   "pmid": "42708907",
-   "title": "Weight Loss without Food Intake Suppression through Size-Dependent Retention of Anti-Inflammatory Nanomedicines.",
+   "pmid": "42708927",
+   "title": "Covalently Self-Polymerized Bioactive Poly(dopamine-silicon) Nanoplatform Reprograms Macrophage Metabolism, Modulates Redox Homeostasis, and Promotes Efficient Angiogenesis for Inflammation Injury Repair.",
    "journal": "ACS nano",
    "pubdate": "2026-09-08",
-   "doi": "10.1021/acsnano.6c00432",
+   "doi": "10.1021/acsnano.5c20148",
    "authors": [
-    "Medina",
-    "Cui",
-    "Chen",
-    "Fayyaz"
+    "Wang",
+    "Li",
+    "Leng",
+    "Luo"
    ],
-   "abstract": "Obesity is a risk factor for high-mortality health conditions, including cardiovascular diseases and type 2 diabetes, which makes the advancement of efficacious and safe weight loss therapies a high priority in pharmacology. The causal link between obesity and its comorbid conditions is believed to be a chronic state of inflammation originating within adipose tissue, with macrophages playing central roles, an axis that is not targeted directly by current therapies. Here, we use nanocarriers to deliver an anti-inflammatory glucocorticoid receptor agonist to adipose tissue macrophages and report the impact of size on therapeutic effect. Three dextran nanocarriers between 4-30 nm in hydrodynamic diameter released molecular drug cargo at equivalent rates and exhibited similar biological potency in vitro. In vivo in a mouse model of obesity, body weight and body fat were reduced in a size-dependent manner after 2-4 weeks of treatment. Unlike current clinical pharmacotherapies for weight loss, these body composition changes were not associated with changes in food intake. Greater retention of larger dextran nanocarriers in visceral adipose tissue appears to elicit a local change to promote browning by increasing mitochondrial abundance and lipid droplet fragmentation. Further development of this platform may result in a safe and potent modulator of adipose tissue in the state of obesity without direct action on nutrient intake to address malnutrition and lean body mass deficiencies observed with current weight loss pharmacotherapies.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42708907/",
+   "abstract": "The inflammation-related tissue injury repair is still a challenge, in which the metabolic disturbance of macrophages induces cascade amplification of inflammatory mediators and hinders tissue repair. Herein, we developed covalently self-assembled poly(dopamine-silicon) nanoparticles (DS NPs) that integrate enzyme-mimetic catalysis with bioactive ion release to achieve sequential redox modulation and metabolic immune regulation in infected wounds and lung injury models. The covalent linkage reorganized dopamine into a stable amorphous network, preventing π-π stacking and exposing reactive catechol groups, thereby enhancing antioxidant and superoxide dismutase-like activities, which efficiently eliminated reactive oxygen/nitrogen species and corrected oxidative imbalance. Meanwhile, DS NPs supported mitochondrial oxidative phosphorylation and modulated macrophage polarization toward an M2 phenotype with an 89% reduction in TNF-α expression. The immunometabolic reprogramming promoted the transition from inflammation to regeneration, while the sustained release of bioactive silicate ions synergistically promoted angiogenesis by upregulating ANG expression in HUVECs by 2.06-fold. As a proof of concept, in MRSA-infected wound and the early inflammatory stage of acute lung injury models, DS NPs suppressed cytokine overexpression, accelerated re-epithelialization, and restored microvascular integrity. This work demonstrates a biomimetic hybrid platform that can integrate modulation of the inflammatory microenvironment, metabolic reprogramming, and tissue regeneration, offering a promising therapeutic strategy for early intervention in inflammation-associated tissue injuries.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42708927/",
    "journal_display": "ACS Nano",
    "matched": [
-    "nanomedicine"
-   ]
+    "nanoparticle"
+   ],
+   "ai": "【一句话】这种纳米材料能调节巨噬细胞代谢，帮助伤口和肺部炎症愈合。\n【发现了什么】发现了一种能同时抗氧化、调节巨噬细胞向M2型转变、促进血管生成的纳米材料。\n【为什么重要】解决了炎症损伤中代谢紊乱导致修复困难的问题，为炎症相关组织损伤修复提供了新方法。\n【跟纳米医学的关系】这是一种能模拟生物酶活性的纳米材料，通过调节氧化还原平衡和免疫代谢来促进组织再生。"
+  },
+  {
+   "pmid": "42708921",
+   "title": "Metal-Phenolic Nanocatalysts Block Transient Receptor Potential Vanilloid 1 and Regulate Bone Homeostasis for Arthritic Analgesia and Therapeutics.",
+   "journal": "ACS nano",
+   "pubdate": "2026-09-08",
+   "doi": "10.1021/acsnano.6c09403",
+   "authors": [
+    "Ji",
+    "Li",
+    "Tang",
+    "Hong"
+   ],
+   "abstract": "Inflammatory arthritis is a chronic immune disorder characterized by synovial inflammation, pain, and progressive joint destruction, yet most current therapies focus on the regulation of a single pathological process or symptom. In the present work, we report the establishment of self-assembled strontium-caffeic acid nanoparticles (CA-Sr NPs) through metal-polyphenol coordination, which function as an integrated neuro-immune-bone modulator for inflammatory arthritis therapy. By coupling redox catalysis with TRPV1-associated Ca2+ antagonism and Sr2+-enabled osteoregulation, CA-Sr NPs exhibit combined effects of sustained reactive oxygen species scavenging and enhanced regulation of the Ca2+-permeable TRPV1 channel on macrophages and dorsal root ganglion (DRG) neurons, thus repolarizing macrophages from M1 to M2 phenotype and suppressing the pathological Ca2+ influx and neuronal hyperexcitability, respectively. Meanwhile, CA-Sr NPs promote osteoblast activity while inhibiting osteoclast differentiation. In the Complete Freund's Adjuvant-induced murine arthritis model, CA-Sr NPs markedly alleviated multiple inflammatory arthritis symptoms, including joint swelling, pain, and bone erosion. Collectively, this study highlights highly promising therapeutic potentials of CA-Sr NPs for inflammatory arthritis management and broadens the scope of metal-phenolic nanocatalysts toward treating neuro-immune-bone disorders.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42708921/",
+   "journal_display": "ACS Nano",
+   "matched": [
+    "nanoparticle"
+   ],
+   "ai": "【一句话】这种纳米材料能同时止痛、抗炎、修复骨病。\n【发现了什么】发现了一种由金属和植物酸组成的纳米颗粒，能同时调节神经、免疫和骨骼系统。\n【为什么重要】解决了关节炎需要多种药物才能控制的难题，提供了一种更全面的疗法。\n【跟纳米医学的关系】这种纳米颗粒通过催化和调节离子通道来发挥作用，属于纳米药物递送系统。"
+  },
+  {
+   "pmid": "42708904",
+   "title": "Phenylborate-Functionalized Nanocarriers Enable Lung-Tropic Protein Delivery and Reprogramming of Tissue-Resident Immunity.",
+   "journal": "ACS nano",
+   "pubdate": "2026-09-08",
+   "doi": "10.1021/acsnano.6c05606",
+   "authors": [
+    "Wang",
+    "Zhou",
+    "Chen",
+    "Jia"
+   ],
+   "abstract": "Effective lung-targeted therapies can directly treat pulmonary diseases and engage tissue-resident immunity for lasting effects. However, protein delivery systems specifically targeting the lung remain scarce. Here, we report the discovery of phenylborate (PBA)-functionalized polymeric nanocapsules that enable efficient pulmonary delivery of protein cargos following systemic administration. Systematic structure-activity relationship studies revealed that PBA incorporation strongly correlates with enhanced lung tropism, establishing a previously unrecognized materials design principle for lung-targeted protein delivery. Leveraging this capability, we demonstrate that lung-targeted antigen delivery induces robust tissue-resident memory T cell responses within the pulmonary microenvironment and suppresses tumor growth in preclinical models of lung metastasis. Together, these findings redefine the in vivo functional role of phenylborate in nanocarrier systems and establish a versatile materials platform for lung-targeted protein therapeutics and site-specific immune modulation.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42708904/",
+   "journal_display": "ACS Nano",
+   "matched": [
+    "tumor microenvironment",
+    "targeted delivery"
+   ],
+   "ai": "【一句话】用特殊纳米球把蛋白质送到肺部，重新安排那里的免疫细胞。\n【发现了什么】发现一种带特殊化学物质的纳米球，能让蛋白质精准送到肺部，还能激活免疫细胞。\n【为什么重要】解决了蛋白质难以精准送到肺部的问题，为肺部疾病治疗和免疫调节提供了新方法。\n【跟纳米医学的关系】这种纳米球是用特殊材料做的，能帮蛋白质穿过身体到达肺部，激活免疫细胞。"
+  },
+  {
+   "pmid": "42708901",
+   "title": "Cyclosporine-A Nanotherapeutics Ameliorate Lupus Nephritis by Reprogramming the Gut-Microbial Metabolic Axis and Systemic Inflammation.",
+   "journal": "ACS nano",
+   "pubdate": "2026-09-08",
+   "doi": "10.1021/acsnano.6c03606",
+   "authors": [
+    "Babalola",
+    "Ganugula",
+    "Arora",
+    "Agarwal"
+   ],
+   "abstract": "Systemic lupus erythematosus (SLE) is a debilitating autoimmune disease fueled by abnormal immune responses and metabolic dysregulation, often leading to life-threatening lupus nephritis (LN). While Cyclosporine A (CsA) is a potent therapeutic agent, its clinical utility is severely constrained by systemic off-target toxicity and the necessity for frequent, high-dose administration. This study evaluates P2Ns-GA-CsA, a receptor-mediated, targeted nanoparticle formulation designed to modulate the core immune-metabolic axis in LN. Using an NZBWF1/J murine model, the administration of P2Ns-GA-CsA achieves enhanced renal protection compared to conventional oral CsA (Neoral), effectively suppressing serum creatinine, clusterin, and proinflammatory cytokines while preserving renal histoarchitecture. This therapeutic efficacy is realized with less than half the dosing frequency of the clinical standard, requiring 42 doses versus 98 doses over a 14 week period. Mechanistically, P2Ns-GA-CsA treatment is associated with the restoration of gut microbial homeostasis through the enrichment of protective taxa (Lactobacillus and Muribaculaceae), facilitating a metabolic shift. This modulation of the gut-microbial metabolic axis promotes the anti-inflammatory indole pathway while suppressing the pathogenic indoleamine 2,3-dioxygenase 1 (IDO1)-kynurenine pathway. These findings demonstrate that this targeted nanotherapeutic strategy decouples the immunosuppressive benefits of CsA from its systemic toxicity while restoring gut-renal integrity in autoimmune disorders.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42708901/",
+   "journal_display": "ACS Nano",
+   "matched": [
+    "nanoparticle"
+   ],
+   "ai": "【一句话】用纳米药包治狼疮肾病，调节肠道和身体炎症。\n【发现了什么】发现纳米药包能比普通药更有效治狼疮肾病，还减少用药次数，通过调节肠道菌群来改善炎症。\n【为什么重要】解决了普通药副作用大、需频繁用药的问题，为狼疮肾病提供更安全有效的治疗选择。\n【跟纳米医学的关系】用纳米颗粒包载药物，精准递送到目标部位，减少副作用并提高疗效。"
+  },
+  {
+   "pmid": "42709982",
+   "title": "Charge-Mixed Nanogels for siRNA Delivery: Concurrent Optimization of Efficacy and Safety via Structure-Activity Relationships.",
+   "journal": "ACS applied materials & interfaces",
+   "pubdate": "2026-09-08",
+   "doi": "10.1021/acsami.6c17668",
+   "authors": [
+    "Gao",
+    "Fang",
+    "Qiu",
+    "Yu"
+   ],
+   "abstract": "Cationic nanogels are efficient polymeric vectors for siRNA delivery but often raise toxicity concerns. To address this efficacy-toxicity trade-off, we present a charge-mixed nanogel platform that reconciles high delivery potency with excellent biocompatibility. Specifically, a library of cationic nanogels was synthesized with precise control over charge composition, size, and cross-linking degree, enabling systematic investigation of their effects on delivery performance and toxicity. Our findings reveal that delivery efficiency is cooperatively modulated by charge, size, and cross-linking degree, whereas toxicity reduction is primarily achieved by diluting the positive charge density through incorporation of anionic units. The established structure-activity relationship identified an optimal formulation comprising 80% cationic and 20% anionic monomers, with a hydrodynamic radius of approximately 83 nm and a cross-linking degree of 20% using a disulfide-based cross-linker. This design enables intracellular glutathione-responsive dissociation and efficient siRNA release. The engineered charge-mixed nanogels demonstrate potent gene silencing (83.0%) and antitumor efficacy (84.3%), alongside notably reduced cellular and systemic toxicity. Collectively, this work provides rational design principles for cationic nanocarriers and establishes a promising vector platform that effectively overcomes the efficacy-toxicity dilemma for advanced siRNA therapeutics.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42709982/",
+   "journal_display": "ACS Applied Materials & Interfaces",
+   "matched": [
+    "gene delivery",
+    "sirna delivery"
+   ],
+   "ai": "【一句话】用带正电和负电的纳米球送siRNA，效果更好更安全。\n【发现了什么】发现正负电比例、大小和交联度能同时影响siRNA递送效率和毒性，负电能降低毒性。\n【为什么重要】解决了阳离子纳米球递送siRNA常有毒性的问题，让siRNA治疗更安全有效。\n【跟纳米医学的关系】用纳米球作为siRNA载体，通过调控电荷结构优化递送和降低毒性。"
   },
   {
    "pmid": "42709578",
@@ -794,9 +910,31 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42709578/",
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "tumor therapy",
-    "photothermal therapy"
-   ]
+    "tumor microenvironment",
+    "photothermal therapy",
+    "gene delivery"
+   ],
+   "ai": "【一句话】用一种能看能治的纳米材料给肿瘤做精准治疗。\n【发现了什么】设计了一种能看能治的纳米材料，能精准找到肿瘤并协同治疗。\n【为什么重要】解决了以前看不准肿瘤和治疗效果不好的问题，提高了治疗精度。\n【跟纳米医学的关系】这种纳米材料能同时看和治肿瘤，属于纳米药物和递送系统的一种。"
+  },
+  {
+   "pmid": "42711833",
+   "title": "Multifunctional Nanofiber Membrane With Directional Moisture Pumping, Rapid Cooling, and Antibacterial Activity for Intertrigo Wound Microclimate Regulation and Therapy.",
+   "journal": "Advanced healthcare materials",
+   "pubdate": "2026-09-08",
+   "doi": "10.1002/adhm.71701",
+   "authors": [
+    "Li",
+    "Li",
+    "Li",
+    "Guan"
+   ],
+   "abstract": "Both exposed-surface exudative wounds (e.g., burns and infected wounds) and intertriginous exudative wounds (e.g., intertrigo wounds) are characterized by excessive exudation, localized hyperthermia, and pathogen infection, yet effective dressings that simultaneously regulate these micro environmental factors remain limited. Herein, a sandwich-structured nanofiber membrane is developed with upper and lower hydrophobic pumping/antimicrobial layers and a middle hydrophilic xylitol-loaded cooling layer. Benefiting from the hydrophobic-hydrophilic-hydrophobic architecture, liquid is rapidly pumped from both sides into the middle layer, where xylitol dissolution is activated to induce localized endothermic cooling. The cooling effect is xylitol-dependent, reaching a temperature reduction of 6.5 °C within 5 min. This cascaded moisture-thermal regulation capability is validated in rat dorsal wounds and human skinfolds, representing exposed-surface and intertriginous exudative wounds, respectively. Moreover, incorporation of Ag nanoparticles confers broad-spectrum antimicrobial activity against S. aureus, E. coli, and C. albicans. The membrane significantly accelerates infected wound healing through synergistic moisture-thermal microclimate regulation and antibacterial action. This work provides an integrated strategy for microclimate management in complex exudative wounds and offers a promising platform for improving wound healing outcomes.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42711833/",
+   "journal_display": "Advanced Healthcare Materials",
+   "matched": [
+    "nanoparticle"
+   ],
+   "ai": "【一句话】这种纳米纤维膜能吸湿、降温、杀菌，帮伤口恢复。\n【发现了什么】发明了一种夹心纳米纤维膜，上层和下层防湿杀菌，中间吸湿层含木糖醇快速降温。\n【为什么重要】解决了伤口湿气、过热和感染难处理的问题，能加速伤口愈合。\n【跟纳米医学的关系】用纳米纤维材料做智能伤口敷料，结合控湿、降温、杀菌功能。"
   },
   {
    "pmid": "42706905",
@@ -814,9 +952,31 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42706905/",
    "journal_display": "Advanced Healthcare Materials",
    "matched": [
-    "nanoparticle delivery",
-    "drug delivery"
-   ]
+    "nanoparticle",
+    "gene delivery"
+   ],
+   "ai": "【一句话】研究证明蚕丝蛋白纳米颗粒对免疫细胞没刺激作用。  \n【发现了什么】用蚕丝蛋白纳米颗粒处理人免疫细胞，发现细胞没受刺激，没变少，也没产生更多炎症因子。  \n【为什么重要】解决了生物材料可能引发免疫反应的老问题，证明蚕丝蛋白安全可用。  \n【跟纳米医学的关系】蚕丝蛋白纳米颗粒是新型纳米药物递送载体，因其安全特性适合做药物载体。"
+  },
+  {
+   "pmid": "42706901",
+   "title": "Leveraging Tissue-Derived Extracellular Vesicles for Regenerative Medicine.",
+   "journal": "Advanced materials (Deerfield Beach, Fla.)",
+   "pubdate": "2026-09-08",
+   "doi": "10.1002/adma.74930",
+   "authors": [
+    "Xu",
+    "Wang",
+    "Li",
+    "Liu"
+   ],
+   "abstract": "Tissue-derived extracellular vesicles (Ti-EVs) encapsulate the complex molecular signature of their native microenvironment, serving as critical mediators for tissue homeostasis and regeneration. This review provides a state-of-the-art overview of Ti-EV biology, critically evaluating current evidence from the liver, heart, adipose tissue, and skeletal muscle while identifying key challenges and future perspectives for clinical translation. We first categorize current isolation technologies by their validation status in the Ti-EV context, and then survey organ-specific functional profiles with emphasis on the functional shifts that accompany transitions between physiological and pathological states, as well as inter-organ communication. Cross-tissue comparison reveals conserved cargo classes, shared signaling pathways, and five recurrent regenerative mechanisms, including cell cycle regulation, metabolic reprogramming, microenvironment remodeling, angiogenesis, and programmed cell death control. These patterns point to three overarching principles: cargo composition encodes tissue identity, effector mechanisms are drawn from a constrained functional repertoire, and functional output is calibrated by tissue states. Engineering strategies for cargo reprogramming, controlled delivery, and targeted modification are discussed alongside bottlenecks in scalable production and regulatory compliance. This integrated framework positions Ti-EVs as context-dependent signaling systems and highlights single-vesicle analysis, smart cargo editing, and personalized precision approaches as key directions for clinical translation.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42706901/",
+   "journal_display": "Advanced Materials",
+   "matched": [
+    "targeted delivery",
+    "gene delivery"
+   ],
+   "ai": "【一句话】用组织里的小包裹促进身体再生。\n【发现了什么】组织里的小包裹能携带组织信息，促进修复；不同组织的小包裹有共性机制。\n【为什么重要】解决了如何用自然方式促进组织再生的问题，为再生医学提供新思路。\n【跟纳米医学的关系】这些小包裹是天然的纳米载体，可用来递送修复信号，类似纳米药物。"
   },
   {
    "pmid": "42710751",
@@ -834,8 +994,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42710751/",
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
-    "drug delivery"
-   ]
+    "gene delivery"
+   ],
+   "ai": "【一句话】用含着释放姜黄素的纳米膜片来治口腔伤口。\n【发现了什么】把姜黄素包进纳米小液滴，再放进含壳聚糖和纤维素的膜片中，这种膜片能粘在口腔黏膜上，持续释放姜黄素48小时，还能杀菌。\n【为什么重要】解决了姜黄素难溶解、易失效的问题，为口腔手术后的伤口愈合提供了局部、持久的抗菌消炎方法。\n【跟纳米医学的关系】用纳米液滴（nanoemulsion）把姜黄素包起来提高溶解度，再用纳米膜片（wafers）作为载体实现局部持续递送。"
   },
   {
    "pmid": "42710750",
@@ -853,184 +1014,70 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42710750/",
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
-    "drug delivery"
-   ]
-  },
-  {
-   "pmid": "42710610",
-   "title": "Naringenin and collagen encapsulated alginate containing niosomes: A novel drug delivery system for wound healing.",
-   "journal": "Nanomedicine : nanotechnology, biology, and medicine",
-   "pubdate": "2026-09-08",
-   "doi": "10.1016/j.nano.2026.103019",
-   "authors": [
-    "Baghaei",
-    "Khalaj",
-    "Ebrahimnejad",
-    "Ghadi"
+    "targeted delivery"
    ],
-   "abstract": "Wound healing is a complex process, the disruption of which can lead to infection, scarring, and chronic wounds. Natural agents such as naringenin, a flavonoid with antioxidant activity, and collagen, a structural protein with anti-inflammatory properties, can enhance wound repair. Niosomes are vesicular carriers that can improve the delivery of healing agents. In this study, a polymeric niosomal system containing naringenin and collagen was developed and its wound healing efficacy was evaluated. A 2 × 3 factorial design with 8 primary formulations was used to optimize formulation variables. Niosomes were prepared by a modified thin-film hydration method and incorporated into a topical gel. An in vivo rat excisional wound model was used to assess wound healing over 15 days. The optimized niosomes were 236.03 ± 12.80 nm with poly dispersity value of 0.45 ± 0.05. The zeta potential value was -49.50 ± 0.87 mv and entrapment efficiency of naringenin and collagen were 36.77% and 39.26% respectively. Moreover, drug loading for naringenin and collagen were 3.33% and 3.56% respectively. The optimized niosomal collagen-naringenin gel showed suitable stability and demonstrated wound healing efficacy comparable to the positive control and significantly superior to negative and sham groups (P < 0.05).",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42710610/",
-   "journal_display": "Nanomedicine: Nanotechnology, Biology, and Medicine",
-   "matched": [
-    "drug delivery"
-   ]
+   "ai": "【一句话】用带药的纳米纤维贴在食道壁治炎症。\n【发现了什么】做了带药的纳米纤维，能让药在食道壁待更久。\n【为什么重要】解决了普通药容易掉的问题，效果更好。\n【跟纳米医学的关系】用纳米纤维做药物载体，精准递送到食道黏膜。"
   },
   {
-   "pmid": "42708173",
-   "title": "Tumor-Adhesive Ru/Ca-Tannic Acid Network Enables Phosphate-Independent Calcification and Photothermal-Synergistic Therapy for Osteolytic Bone Metastasis.",
+   "pmid": "42710742",
+   "title": "A liposomal inverse vaccine protects mice from arthritis and experimental autoimmune encephalomyelitis.",
+   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+   "pubdate": "2026-09-08",
+   "doi": "10.1016/j.jconrel.2026.115339",
+   "authors": [
+    "Benne",
+    "Fernández",
+    "Porenta",
+    "Bolkaerts"
+   ],
+   "abstract": "Chronic autoinflammatory diseases such as rheumatoid arthritis and multiple sclerosis lack curative therapies, and current immunosuppressive treatments often cause systemic off-target effects. To address this unmet need, we previously developed an \"inverse vaccine\" based on anionic phosphatidylglycerol liposomes carrying a disease-specific peptide antigen conjugated to dexamethasone. Here, we assess the therapeutic efficacy and immunomodulatory mechanisms of this platform in two murine models of autoimmunity. In the proteoglycan-induced arthritis model, a single administration of liposomal dexamethasone-human proteoglycan peptide (Dex-K4-hPG) markedly slowed arthritis progression compared to an equivalent dose of free Dex-K4-hPG. Long-term follow-up showed that two injections provided superior protection over a single dose, whereas a third injection yielded no additional benefit. Flow cytometry of paw draining lymph nodes revealed reduced RORγt+CD4+ T cells in mice receiving multiple doses indicating a shift toward less pro-inflammatory T-cell responses. Histological staining of the knees of mice also revealed less damage to the joints of mice receiving 2 or 3 injections of liposomes. To evaluate the versatility of this platform, we generated a novel Dex-peptide conjugate by replacing hPG for myelin oligodendrocyte glycoprotein (MOG). The resulting Dex-K4-MOG conjugate was encapsulated in the liposomes at high encapsulation efficiency (∼60%), demonstrating platform modularity. In an experimental autoimmune encephalomyelitis mouse model, two injections of Dex-K4-MOG liposomes (one before disease induction and one after) strongly suppressed disease development compared with controls. Together, these findings demonstrate that antigen-specific inverse vaccination using anionic liposomes offers a modular and broadly applicable strategy for inducing long-term protection in multiple autoimmune disease models. The platform elicits regulatory immune signatures and suppresses pathogenic Th17 responses, supporting its potential as a tolerogenic therapeutic approach.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42710742/",
+   "journal_display": "Journal of Controlled Release",
+   "matched": [
+    "liposome"
+   ],
+   "ai": "【一句话】用脂质体装抗炎药和病蛋白，治好小鼠的关节炎和脑炎。\n【发现了什么】发现这种脂质体疫苗能减缓关节炎和脑炎，还能调节免疫反应。\n【为什么重要】解决了现有免疫疗法副作用大的问题，为慢性自身免疫病提供了新思路。\n【跟纳米医学的关系】用脂质体这种纳米材料递送药物和抗原，实现靶向免疫调节。"
+  },
+  {
+   "pmid": "42711506",
+   "title": "Publisher Correction: An inherent T cell-activating mRNA delivery carrier for in vivo CAR T generation.",
+   "journal": "Nature materials",
+   "pubdate": "2026-09-08",
+   "doi": "10.1038/s41563-026-02753-w",
+   "authors": [
+    "Cao",
+    "Yao",
+    "Zheng",
+    "Liu"
+   ],
+   "abstract": "",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42711506/",
+   "journal_display": "Nature Materials",
+   "matched": [
+    "gene delivery"
+   ],
+   "ai": "【一句话】用纳米材料帮身体快速制造抗癌T细胞。\n【发现了什么】发现了一种能直接在体内激活T细胞的纳米药丸。\n【为什么重要】解决了以前需要在体外处理T细胞再回输的老问题，更高效。\n【跟纳米医学的关系】用的是纳米颗粒作为药物载体，把mRNA送到T细胞里。"
+  },
+  {
+   "pmid": "42708347",
+   "title": "Sequence-Programmable Iron Oxide Nanoparticles Enable Dual-Phase T1-Weighted MRI of Ultrasmall Hepatocellular Carcinoma and Tumor Vascular Architecture.",
    "journal": "Small (Weinheim an der Bergstrasse, Germany)",
    "pubdate": "2026-09-08",
-   "doi": "10.1002/smll.75689",
+   "doi": "10.1002/smll.75669",
    "authors": [
-    "Li",
-    "Li",
-    "Zeng",
-    "Dong"
+    "Cui",
+    "Xu",
+    "Yang",
+    "Yang"
    ],
-   "abstract": "Osteolytic bone metastasis remains difficult to treat because effective tumor eradication and bone regeneration must be achieved simultaneously. Current calcification-based strategies are constrained by their reliance on exogenous phosphate, and poor integration with controllable therapeutic modalities. Herein, we report a tumor adhesive metal-phenolic network nanoplatform that enables phosphate-independent membrane biomineralization combined with photothermal amplification. The Ru/Ca-TA-ALN network, assembled from ruthenium ions (Ru3+), calcium ions (Ca2+), tannic acid (TA), and alendronate (ALN), co-integrates Ca2+ and phosphate-bearing moieties within a single coordination framework, allowing autonomous mineral deposition upon adhesion to tumor cell membranes. This membrane-confined calcified interface induced S-phase arrest, and impaired tumor viability. Under 1064 nm near-infrared (NIR) irradiation, Ru3+-mediated photothermal activation amplifies tumor cell apoptosis. Beyond tumor inhibition, the calcified nano-bio interface promoted osteogenic differentiation while suppressing osteoclastogenesis, shifting the bone microenvironment toward regeneration. In a murine breast cancer bone metastasis model, calcification-photothermal synergy significantly reduced tumor burden, mitigated bone destruction, and prolonged survival, while maintaining favorable biocompatibility. By transforming biomineralization into a controllable interfacial therapeutic modality, this work establishes a strategy that couples tumor suppression with bone reconstruction for metastatic bone disease.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42708173/",
+   "abstract": "Early-stage hepatocellular carcinoma diagnosis is hindered by the inability of conventional MRI to concurrently detect tiny tumors and delineate their microvascular networks. To address this, we engineered sequence-programmable iron oxide nanoparticles with precisely tuned magnetic properties that enable dual-phase T1-weighted imaging tailored to specific MRI sequences. Under ultra-short TR/TE angiography sequences, these nanoparticles produce strong T1-positive enhancement, allowing high-resolution visualization of tumor neovasculature down to 0.3 mm (in rabbits) at one-quarter of the standard gadolinium dose. Following selective uptake and aggregation by Kupffer cells, the same nanoparticles induce localized magnetic field inhomogeneity, generating pronounced T1-negative contrast in normal liver parenchyma on conventional sequences and thereby highlighting HCC lesions independent of OATP expression with detection sensitivity down to 0.4 mm (in mouse). This single-agent, dual-phase strategy integrates sensitive lesion detection with detailed vascular phenotyping, and is enabled by a green, scalable synthesis using an FDA-approved biocompatible polymer. By overcoming key limitations of current gadolinium-based agents, our platform provides a versatile and high-performance imaging solution for comprehensive early-stage HCC evaluation.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42708347/",
    "journal_display": "Small",
    "matched": [
-    "tumor therapy",
-    "photothermal therapy"
-   ]
-  },
-  {
-   "pmid": "42706771",
-   "title": "A Self-Assembling Janus Dendron-Modified Phthalocyanine Enables Deep Tumor-Targeted Therapy for Gastric Cancer Peritoneal Metastases.",
-   "journal": "Advanced healthcare materials",
-   "pubdate": "2026-09-07",
-   "doi": "10.1002/adhm.71702",
-   "authors": [
-    "Guo",
-    "Zhang",
-    "Deng",
-    "He"
+    "nanoparticle"
    ],
-   "abstract": "Peritoneal metastasis is a leading cause of mortality in end-stage gastric cancer and remains poorly responsive to conventional chemotherapy. To address this unmet need, Janus dendron-modified phthalocyanines were developed as tumor-targeted photosensitizers for photodynamic therapy (PDT). A series of Janus dendron-modified phthalocyanines with tailored surface functionalities s synthesized, exhibiting spontaneous self-assembly into nanoparticles with augmented fluorescence, amplified reactive oxygen species (ROS) production, and improved tumor-targeting specificity. Among them, the lead compound TT1-4PYR, bearing pyrrolidone moieties, demonstrated ascites-derived protein corona and macropinocytosis-mediated cellular internalization, enabling deep penetration and selective accumulation in peritoneal metastasis lesions. Comprehensive evaluation in vitro, in vivo, and in human-derived gastric cancer organoid models confirmed its potent and targeted photodynamic cytotoxicity, effectively suppressing tumor progression without inducing systemic toxicity, achieving a favorable biosafety profile. These results highlight TT1-4PYR as a promising and deep-penetrating therapeutic agent for peritoneal metastasis, with potential applicability to other metastatic malignancies.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42706771/",
-   "journal_display": "Advanced Healthcare Materials",
-   "matched": [
-    "tumor therapy"
-   ]
-  },
-  {
-   "pmid": "42706765",
-   "title": "Profiling Inflammatory Pathogenesis and Therapy: Ratiometric Photoacoustic Imaging of Energy Metabolism Dynamics With Upconversion Nanoprobes.",
-   "journal": "Advanced healthcare materials",
-   "pubdate": "2026-09-07",
-   "doi": "10.1002/adhm.71697",
-   "authors": [
-    "Zhang",
-    "Deng",
-    "Li",
-    "Chen"
-   ],
-   "abstract": "NAD(P)H is a critical redox cofactor in cellular energy metabolism, yet real-time monitoring of its spatiotemporal dynamics in pathological contexts remains challenging due to the limited penetration depth and resolution of conventional imaging modalities. In this study, we developed a dual-modal ratiometric imaging nanoprobe that enables precise photoacoustic (PA) and upconversion luminescence imaging of this energy metabolism substrates. The nanoprobe conjugates an NAD(P)H-responsive chromophore and an internal reference dye onto NIR-excited upconversion nanoparticles, enabling self-calibrated quantification through ratiometric UCL and mPAT signals. This design minimizes artifacts from nanoprobe distribution and environmental variations, enhancing spatiotemporal accuracy. The utility of the nanoprobe is demonstrated in multiple disease models: it visualizes metabolic reprogramming during macrophage M1 polarization, tracks aberrant NAD(P)H accumulation in drug-induced and acute liver injury (ALI), and monitors metabolic responses to NAC and 2-DG interventions. Furthermore, in a calorie restriction (CR) combined immunotherapy model, the nanoprobe reveals that the TLR7/8 agonist R848 and glycolytic inhibitor 2-DG synergistically suppress tumor growth by reprogramming tumor-associated macrophage metabolism. This work provides a robust imaging platform for tracking energy metabolism dynamics, offering insights into the interplay between metabolic pathways and inflammatory diseases for developing targeted therapies.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42706765/",
-   "journal_display": "Advanced Healthcare Materials",
-   "matched": [
-    "tumor therapy"
-   ]
-  },
-  {
-   "pmid": "42706763",
-   "title": "A Self-Adjuvant Photothermal Carbon Dot-Based Nanovaccine for Multimodal Nasopharyngeal Cancer Treatment and Prophylaxis.",
-   "journal": "Advanced healthcare materials",
-   "pubdate": "2026-09-07",
-   "doi": "10.1002/adhm.71703",
-   "authors": [
-    "Ji",
-    "Mei",
-    "Wang",
-    "Shen"
-   ],
-   "abstract": "Developing a \"full-cycle\" strategy that integrates both treatment and prophylaxis remains a central challenge against nasopharyngeal carcinoma (NPC). Here, a biomimetic nanovaccine (CDC/Toy@CCM) is designed by coating toyocamycin (Toy)-loaded redox-responsive carbon dot clusters (CDCs) with homologous cancer cell membranes (CCMs). The obtained nanovaccine exhibits an average size of 70.7 nm, a high drug loading capacity (12.3%), and a superior photothermal conversion efficiency of 48.7%. The nanovaccine leverages the homologous targeting capacity of CCMs for precise tumor homing, while the disulfide-cross-linked CDCs enable glutathione-triggered drug release specifically within the tumor microenvironment for controlled chemotherapy. Under near-infrared laser irradiation, the CDCs generate robust photothermal ablation of primary tumors, and the combination of chemotherapy and photothermal therapy (PTT) effectively induces immunogenic cell death (ICD), which synergizes the self-adjuvant of CDCs and CCM antigens to generate significant antitumor response to suppress both primary and distant tumors in a bilateral NPC mouse model. In a prophylactic setting, the nanovaccine pre-vaccination generates effective immune protection against subsequent tumor challenge. This work provides a promising \"full-cycle\" nanoplatform that synergistically integrates PTT, chemotherapy, and immunotherapy for both NPC treatment and prophylaxis.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42706763/",
-   "journal_display": "Advanced Healthcare Materials",
-   "matched": [
-    "tumor therapy",
-    "photothermal therapy",
-    "cancer treatment"
-   ]
-  },
-  {
-   "pmid": "42706754",
-   "title": "Nanocatalytic Phase Separation Augments Tumor-specific cGAS-STING Activation for Spinal Metastasized Breast Cancer Metalloimmunotherapy.",
-   "journal": "Advanced healthcare materials",
-   "pubdate": "2026-09-07",
-   "doi": "10.1002/adhm.71684",
-   "authors": [
-    "Qin",
-    "Wang",
-    "Zhou",
-    "Zhang"
-   ],
-   "abstract": "The cGAS-STING pathway is a pivotal therapeutic target for antitumor immunity, yet clinical translation of its small-molecule agonists is hindered by poor tumor specificity, suboptimal pharmacokinetics, and systemic off-target effects. Here, we report a nanocatalytic strategy based on a tumor microenvironment (TME)-responsive iron-oxygen-vanadium metal-organic framework (MIL-88B(Fe─O─V)) that enables tumor-specific cGAS-STING activation via catalytic phase separation for targeted immunotherapy in spinal metastasized breast cancer. Specifically, MIL-88B(Fe─O─V) undergoes disassembly within the acidic TME to release iron ions and polyoxovanadate (POV). Iron ions enable catalytic reactive oxygen species (ROS) generation to release double-stranded DNA (dsDNA) and induce immunogenic cell death (ICD). Critically, we demonstrate for the first time that POV potently promotes liquid-liquid phase separation (LLPS) of cGAS, enhancing its affinity for dsDNA and amplifying STING pathway activation in dendritic cells (DCs) without systemic immune dysregulation. Such combinational ICD induction and LLPS-driven cGAS activation synergistically boost DC maturation, cytotoxic T-cell responses, and establish durable antitumor immunity. In spinal metastasis models, MIL-88B(Fe─O─V) not only achieves robust tumor regression and prolonged survival, but also mitigates cancer-related pain via IFN-β-mediated suppression of TRPV1 channel activity. Our findings unveil a paradigm of nanocatalytic STING activation for advanced metastatic cancer metalloimmunotherapy and cancer pain alleviation.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42706754/",
-   "journal_display": "Advanced Healthcare Materials",
-   "matched": [
-    "tumor therapy"
-   ]
-  },
-  {
-   "pmid": "42706752",
-   "title": "Bio-Inspired Albumin Platform for Synergistic Co-Delivery of Tanespimycin, Dasatinib, and Quercetin and Enhanced Therapeutic Efficacy in Triple-Negative Breast Cancer.",
-   "journal": "Advanced healthcare materials",
-   "pubdate": "2026-09-07",
-   "doi": "10.1002/adhm.71690",
-   "authors": [
-    "Deręgowska",
-    "Oklejewicz",
-    "Stec",
-    "Wawruszak"
-   ],
-   "abstract": "Despite increasing awareness of molecular subtypes of breast cancer, this heterogeneous malignant disease is still one of the leading causes of cancer death in women worldwide. Although receptor status may define the precise therapeutic targets, treatment of triple-negative breast cancer (TNBC) relies mainly on chemotherapy with accompanying side-effects. Thus, there is a need for the design and testing of more effective drug delivery systems and drug combinations. In this study, biomimetic self-assembled bovine serum albumin (BSA) capsules (Cs) co-loaded with a new drug combination, namely two drugs tanespimycin (T) and dasatinib (D), and natural compound quercetin (Q), were fabricated, and their anti-breast cancer effects were assessed. (T-D-Q)-BSA Cs were more active against TNBC cells compared to other types of breast cancer. Encapsulated drugs potentiated apoptotic cell death in TNBC cells compared to the effect of the free three-drug formulation. In TNBC cells with mutated TP53, (T-D-Q)-BSA Cs also induced necroptotic cell death accompanied by RAP1-mediated stimulation of NFκB activity and IL-6-related proinflammatory response. (T-D-Q)-BSA Cs also inhibited TNBC-based tumor growth in two zebrafish xenograft in vivo models. In conclusion, the efficacy of (T-D-Q)-BSA Cs as a novel therapeutic strategy to eradicate TNBC in vitro and in vivo was demonstrated.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42706752/",
-   "journal_display": "Advanced Healthcare Materials",
-   "matched": [
-    "tumor therapy",
-    "cancer treatment",
-    "drug delivery"
-   ]
-  },
-  {
-   "pmid": "42710336",
-   "title": "Microenvironment-responsive coating with bio-functional switching from infection clearance to adaptive osteogenesis.",
-   "journal": "Biomaterials",
-   "pubdate": "2026-09-06",
-   "doi": "10.1016/j.biomaterials.2026.124619",
-   "authors": [
-    "Shi",
-    "Liu",
-    "Han",
-    "Hou"
-   ],
-   "abstract": "Successful long-term bone repair requires implant interfaces to precisely regulate the competitive recruitment between pathogens and host cells. However, coordinating the transition from potent pathogen clearance to refined osteogenic induction remains challenging, as the high-affinity synergies required for rapid bactericidal action often hinder the spatiotemporal signaling necessary for later cell differentiation. Herein, a microenvironment-responsive implant coating (Ti-TF-R) is developed to orchestrate this critical spatiotemporal transition from infection eradication to tissue repair. The platform encapsulates a photothermal metal-phenolic network (TA/Fe) within a biomimetic red blood cell membrane (RBCM) shell. During the acidic infection phase, near-infrared (NIR) irradiation enhances RBCM fluidity, opening \"lipid valves\" that promote the dissociation and release of the inner TA/Fe layer. TA reduces Fe3+ to Fe2+, triggering a strong Fenton-like reaction in the infectious environment with high H2O2 concentration. This reaction, together with the RBCM-enhanced local photothermal efficiency, induces a bacterial metabolic collapse and ferroptosis. As the infection subsides, the gradually shedding of the RBCM exposes the underlying bioactive TA/Fe layer, which maintains a sustained low-dose iron supply, creating a favorable microenvironment for osteoblast adhesion and differentiation. This spatiotemporally coordinated strategy effectively addresses recalcitrant implant-associated infections while accelerating bone-implant integration, providing a generalizable paradigm for time-programmed therapeutic biomaterials.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42710336/",
-   "journal_display": "Biomaterials",
-   "matched": [
-    "ferroptosis"
-   ]
-  },
-  {
-   "pmid": "42710337",
-   "title": "Self-oxygenating nanoreactors enable effective low-dose X-ray photodynamic immunotherapy against refractory tumors.",
-   "journal": "Biomaterials",
-   "pubdate": "2026-09-03",
-   "doi": "10.1016/j.biomaterials.2026.124597",
-   "authors": [
-    "Yu",
-    "Liu",
-    "Wang",
-    "Lin"
-   ],
-   "abstract": "Although low-dose radiotherapy (LDRT) exhibits high potential for radiotherapy, it meets a cascade of limitations for effectively eradicating refractory tumors due to low cell-killing effects, insufficient reactive oxygen species (ROS) production and acquired radio-resistance. Here, we engineered a new type of self-oxygenating nanoreactor (HCCP) to relieve hypoxia and effectively eradicate radio-resistant triple-negative breast cancer (TNBC) by combining low-dose X-ray-induced photodynamic therapy (LX-PDT), cuproptosis and chemodynamic therapy (CDT), which was further discovered to trigger the stimulator of interferon genes (STING) pathway for immunotherapy. HCCP was engineered by self-assembling hyaluronic acid-shielded ultrasmall calcium peroxide nanodots onto Cu-porphyrin coordinated core nanoparticles. HCCP can target breast cancer cells to supply O2 and H2O2 to relieve hypoxia, generate ROS, and induce cuproptosis and apoptosis by Cu, CDT and LX-PDT. By i.v. injection, HCCP exhibited high tumor accumulation and alleviated tumor hypoxia, leading to effective eradication of conventional, large and radio-resistant TNBC upon low-dose X-ray irradiation with promoted survival rates. Additionally, HCCP was further found to activate STING and elicit robust antitumor immunity for potently inhibiting distant and metastatic TNBC. Collectively, this study presents an effective nanoreactor-based strategy to overcome the limitations of LDRT for potently treating refractory TNBC malignancies, and highlights its potential for further translational development.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42710337/",
-   "journal_display": "Biomaterials",
-   "matched": [
-    "tumor therapy"
-   ]
+   "ai": "【一句话】用特殊纳米铁粉让超小的肝癌和血管在磁共振上同时显影。\n【发现了什么】造出能根据不同磁共振指令改变显影效果的纳米铁粉，既能看清超小肝癌，又能看清肿瘤血管。\n【为什么重要】解决了普通磁共振药只能看一个或另一个的问题，能同时检测微小肿瘤和血管，提高早期肝癌诊断率。\n【跟纳米医学的关系】用纳米铁粉作为显影剂，通过调控其特性实现双模式磁共振成像，是纳米药物和递送系统在癌症诊断中的应用。"
   }
- ]
+ ],
+ "ai_tokens_used": 21591
 }
