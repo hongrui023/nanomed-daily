@@ -24,6 +24,7 @@ jobs:
       - name: 生成 Gradle 包装器（锁定 8.9 版）
         run: |
           mkdir -p /tmp/wrap && cd /tmp/wrap
+          touch settings.gradle
           gradle wrapper --gradle-version 8.9 --distribution-type bin
           cp -r /tmp/wrap/gradle "$GITHUB_WORKSPACE/android/"
           cp /tmp/wrap/gradlew /tmp/wrap/gradlew.bat "$GITHUB_WORKSPACE/android/"
