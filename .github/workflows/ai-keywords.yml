@@ -1,0 +1,40 @@
+name: AI 生成关键词
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "用户的一句话描述（可以有错别字、口语化）"
+        required: true
+
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 调 AI 提取关键词
+        env:
+          ZHIPU_KEY: ${{ secrets.ZHIPU_KEY }}
+          USER_TEXT: ${{ github.event.inputs.text }}
+        run: python scripts/ai_keywords.py "$USER_TEXT" > ai_keywords.json
+
+      - name: 写回仓库（供网页读取）
+        run: |
+          git config user.name "nanomed-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add ai_keywords.json
+          if git diff --cached --quiet; then
+            echo "内容无变化，跳过提交"
+          else
+            git commit -m "[auto] AI 生成关键词"
+            for i in 1 2 3; do
+              git pull --rebase -q origin main && git push && break || sleep 5
+            done
+          fi
