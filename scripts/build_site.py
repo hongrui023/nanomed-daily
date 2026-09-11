@@ -595,11 +595,23 @@ fetch("data/index.json?t="+Date.now()).then(function(r){return r.json()})
    '<div class="empty">加载失败：'+e.message+'<br>请确认已开启 GitHub Pages 并选对部署目录。</div>';
 });
 
+function fmtTime(s){
+  if(!s){return "未知"}
+  try{
+    var d=new Date(s.replace(" ","T")+"Z");
+    if(isNaN(d.getTime())){return s}
+    return d.toLocaleString("zh-CN",{timeZone:"Asia/Shanghai",
+      month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});
+  }catch(e){return s}
+}
+
 function load(d){
   CUR=d;
   fetch("data/"+d+".json?t="+Date.now()).then(function(r){return r.json()})
     .then(function(j){
       DATA=j;
+      var sub=document.getElementById("sub");
+      if(sub){sub.textContent="（数据更新于 "+fmtTime(j.generated_at)+"）"}
       var bar=document.getElementById("warnbar");
       if(bar){
         var miss=(j.papers||[]).filter(function(p){return !p.ai}).length;
@@ -607,7 +619,7 @@ function load(d){
           bar.style.display="block";
           bar.innerHTML="<b>⚠ 这批有 "+miss+" 篇还没生成大白话摘要</b><br>"
             +"通常再点一次「设置 → 立刻运行」就能补上（已写好的不会重复花钱）。<br>"
-            +"数据生成时间："+esc(j.generated_at||"未知");
+            +"数据生成时间："+fmtTime(j.generated_at);
         }else{bar.style.display="none"}
       }
       render();
