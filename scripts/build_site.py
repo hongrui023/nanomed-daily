@@ -197,23 +197,38 @@ function openPanel(){
    +'<div class="msg" id="m0"></div></div>'
 
    +'<div class="panel"><h3>② 期刊列表</h3><div class="hint">一行一本。格式：<code>显示名 | PubMed写法</code>。'
-   +'不知道写法就只写期刊全名。删除=删掉那行。</div>'
+   +'不知道写法就只写期刊全名。删除=删掉那行。<br>'
+   +'⚠ 一行只能有一个竖线 <code>|</code>，至少留 3 本。</div>'
    +'<textarea id="j"></textarea>'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'journals.txt\',\'j\',\'m1\')">保存期刊</button></div>'
-   +'<div class="msg" id="m1"></div></div>'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'journals.txt\',\'j\',\'m1\')">保存期刊</button> '
+   +'<button class="btn" onclick="restore(\'journals.txt\',\'j\',\'m1\')">↺ 恢复默认</button></div>'
+   +'<div class="msg" id="m1"></div><div id="un_m1"></div></div>'
 
    +'<div class="panel"><h3>③ 关键词</h3><div class="hint">一行一个，中英文都行。'
-   +'程序会把关键词拆成单词，全部出现才算命中。词越多越精准。</div>'
+   +'程序会把关键词拆成单词，全部出现才算命中。词越多越精准。<br>'
+   +'⚠ 至少要留 1 个，全删光就抓不到任何论文了。</div>'
    +'<textarea id="k"></textarea>'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'keywords.txt\',\'k\',\'m2\')">保存关键词</button></div>'
-   +'<div class="msg" id="m2"></div></div>'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'keywords.txt\',\'k\',\'m2\')">保存关键词</button> '
+   +'<button class="btn" onclick="restore(\'keywords.txt\',\'k\',\'m2\')">↺ 恢复默认</button></div>'
+   +'<div class="msg" id="m2"></div><div id="un_m2"></div></div>'
 
-   +'<div class="panel"><h3>④ 抓取天数 & 数量</h3><div class="hint">config.txt：days=抓取最近几天（PubMed 有 1-3 天延迟，建议 3）；max_papers=最多总结几篇。</div>'
+   +'<div class="panel"><h3>④ 门槛词（重要，但一般不用改）</h3><div class="hint">'
+   +'作用：拦掉综合材料期刊（ACS AMI、Advanced Materials、Small 等）里跟医学无关的论文，'
+   +'比如太阳能电池、海水淡化。规则：标题或摘要里至少出现其中一个词才保留。<br>'
+   +'⚠ 至少要留 1 个，全删光会涌进大量不相关的材料学论文。</div>'
+   +'<textarea id="g" style="min-height:120px"></textarea>'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'gate.txt\',\'g\',\'mg\')">保存门槛词</button> '
+   +'<button class="btn" onclick="restore(\'gate.txt\',\'g\',\'mg\')">↺ 恢复默认</button></div>'
+   +'<div class="msg" id="mg"></div><div id="un_mg"></div></div>'
+
+   +'<div class="panel"><h3>⑤ 抓取天数 & 数量</h3><div class="hint">days=抓最近几天（PubMed 有 1-3 天延迟，建议 3，范围 1-30）；'
+   +'max_papers=最多总结几篇（建议 50，范围 1-200）。</div>'
    +'<textarea id="c" style="min-height:90px"></textarea>'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'config.txt\',\'c\',\'m3\')">保存参数</button></div>'
-   +'<div class="msg" id="m3"></div></div>'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'config.txt\',\'c\',\'m3\')">保存参数</button> '
+   +'<button class="btn" onclick="restore(\'config.txt\',\'c\',\'m3\')">↺ 恢复默认</button></div>'
+   +'<div class="msg" id="m3"></div><div id="un_m3"></div></div>'
 
-   +'<div class="panel"><h3>⑤ 触发一次运行</h3><div class="hint">保存好令牌后点这里，'
+   +'<div class="panel"><h3>⑥ 触发一次运行</h3><div class="hint">保存好令牌后点这里，'
    +'GitHub 会开始抓最新论文，约 3-8 分钟后回来刷新本页。</div>'
    +'<button class="btn btn-p" onclick="trigger()">▶ 立刻运行</button>'
    +'<div class="msg" id="m4"></div>'
@@ -221,24 +236,28 @@ function openPanel(){
    +'<a href="https://github.com/'+OWNER+'/'+REPO+'/actions/workflows/run.yml" target="_blank" rel="noopener">'
    +'在 GitHub 网页点 Run workflow →</a></div></div>'
 
-   +'<div class="panel"><h3>⑥ 安装安卓 App</h3><div class="hint">想用独立图标而不是浏览器？点下面下载安装包（约 1.5 MB），'
+   +'<div class="panel"><h3>⑦ 安装安卓 App</h3><div class="hint">想用独立图标而不是浏览器？点下面下载安装包（约 1.5 MB），'
    +'装好后桌面出现「纳米日报」，点开就是全屏界面。<br>'
    +'安装时手机可能提示「未知来源应用」，选「允许」即可——这是自己签名的个人应用，没上应用商店。</div>'
    +'<a class="btn btn-p" style="display:block;text-align:center;text-decoration:none;line-height:20px" '
    +'href="__APK__">↓ 下载安卓 App</a></div>'
 
-   +'<div class="panel"><h3>⑦ 本机数据</h3><div class="hint">收藏和已读只存在这台手机的浏览器里，'
-   +'换手机或清缓存会丢。</div>'
-   +'<button class="btn" onclick="clearAll()">清空收藏和已读</button>'
+   +'<div class="panel"><h3>⑧ 改坏了怎么办 / 本机数据</h3>'
+   +'<div class="hint">改配置改出问题了？两招都能救回来，随便挑一个。</div>'
+   +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">'
+   +'<button class="btn btn-p" onclick="restoreAll()">🛟 一键全部恢复出厂</button> '
+   +'<a class="btn" style="text-decoration:none;line-height:20px" target="_blank" rel="noopener" '
+   +'href="https://github.com/'+OWNER+'/'+REPO+'/commits/'+BRANCH+'">'
+   +'查看修改历史（GitHub）</a></div>'
+   +'<div class="hint">每次保存都会留一份历史记录，在 GitHub 上能看到改了什么、随时能退回去。</div>'
+   +'<div style="margin-top:12px;border-top:1px solid var(--line);padding-top:10px">'
+   +'<button class="btn" onclick="clearAll()">清空收藏和已读</button></div>'
    +'<div class="msg" id="m5"></div></div>';
 
-  ["journals.txt","keywords.txt","config.txt"].forEach(function(f){
-    fetch(f+"?t="+Date.now()).then(function(r){return r.text()})
-      .then(function(t){
-        if(f==="journals.txt")document.getElementById("j").value=t;
-        if(f==="keywords.txt")document.getElementById("k").value=t;
-        if(f==="config.txt")document.getElementById("c").value=t;
-      }).catch(function(e){});
+  [["journals.txt","j"],["keywords.txt","k"],["gate.txt","g"],["config.txt","c"]].forEach(function(p){
+    fetch(p[0]+"?t="+Date.now()).then(function(r){return r.text()})
+      .then(function(t){document.getElementById(p[1]).value=t;})
+      .catch(function(e){});
   });
   document.getElementById("stats").style.display="none";
 }
@@ -248,15 +267,66 @@ function saveTok(){set(LS.tok,document.getElementById("tok").value.trim());
 
 function b64(s){var b=new TextEncoder().encode(s),r="";
   for(var i=0;i<b.length;i++)r+=String.fromCharCode(b[i]);return btoa(r)}
+var NL=String.fromCharCode(10);
+function unb64(s){var bin=atob(s.replace(/[^A-Za-z0-9+/=]/g,"")),b=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)b[i]=bin.charCodeAt(i);
+  return new TextDecoder().decode(b)}
+
+// 出厂默认：仓库 defaults/ 目录下的副本，永远不会被用户改动
+var DEFAULTS={"journals.txt":"defaults/journals.txt","keywords.txt":"defaults/keywords.txt",
+  "gate.txt":"defaults/gate.txt","config.txt":"defaults/config.txt"};
+var LABELS={"journals.txt":"期刊列表","keywords.txt":"关键词",
+  "gate.txt":"门槛词","config.txt":"运行参数"};
+
+// 保存前体检：返回 null 表示没问题，返回文字就是错误原因
+function valid(path,txt){
+  var lines=txt.split(NL),real=[],i;
+  for(i=0;i<lines.length;i++){var s=lines[i].trim();if(s&&s.charAt(0)!=="#")real.push(s);}
+  if(path==="journals.txt"){
+    if(real.length<3)return "至少要留 3 本期刊，现在只剩 "+real.length+" 本。";
+    for(i=0;i<real.length;i++){
+      var parts=real[i].split("|");
+      if(parts.length>2)return "第 "+(i+1)+" 行有 "+parts.length+" 个竖线 |，一行只能有 1 个。";
+      if(!parts[0].trim())return "第 "+(i+1)+" 行竖线前面是空的，得写期刊名字。";
+    }
+    return null;
+  }
+  if(path==="keywords.txt"){
+    if(real.length<1)return "至少要留 1 个关键词，全空就抓不到任何论文了。";
+    return null;
+  }
+  if(path==="gate.txt"){
+    if(real.length<1)return "门槛词至少要留 1 个，全删光会涌进大量不相关的材料学论文。";
+    return null;
+  }
+  if(path==="config.txt"){
+    var d=null,mp=null;
+    for(i=0;i<real.length;i++){
+      if(real[i].indexOf("days=")===0)d=parseInt(real[i].slice(5),10);
+      if(real[i].indexOf("max_papers=")===0)mp=parseInt(real[i].slice(11),10);
+    }
+    if(!d||d<1||d>30)return "days= 后面要填 1 到 30 的数字（现在是「"+d+"」）。";
+    if(!mp||mp<1||mp>200)return "max_papers= 后面要填 1 到 200 的数字（现在是「"+mp+"」）。";
+    return null;
+  }
+  return null;
+}
 
 function save(path,id,mid){
   var m=document.getElementById(mid),tok=get(LS.tok,'""');
   if(!tok){m.className="msg err";m.textContent="请先填并保存令牌";return}
-  m.className="msg";m.textContent="正在保存…";
   var content=document.getElementById(id).value;
+  var err=valid(path,content);
+  if(err){
+    m.className="msg err";
+    m.textContent="⚠ 没保存 —— "+err+" 请改好再点保存。";
+    return;
+  }
+  m.className="msg";m.textContent="正在保存…";
   fetch(API+path+"?ref="+BRANCH+"&t="+Date.now(),{headers:ghH(tok)})
   .then(function(r){return r.json()}).then(function(j){
     if(!j.sha){throw new Error(j.message||"读取失败，检查令牌权限")}
+    if(j.content){set("nm_bak_"+path,unb64(j.content));}   // 改之前先留一份，供「撤销」
     return fetch(API+path,{
       method:"PUT",
       headers:ghH(tok,1),
@@ -264,12 +334,66 @@ function save(path,id,mid){
         sha:j.sha,message:"更新 "+path,branch:BRANCH})
     }).then(function(r){return r.json()});
   }).then(function(j){
-    if(j.content){m.className="msg ok";m.textContent="已保存到仓库，下次运行生效 ✅"}
+    if(j.content){
+      m.className="msg ok";m.textContent="已保存到仓库，下次运行生效 ✅";
+      var u=document.getElementById("un_"+mid);
+      if(u)u.innerHTML='<button class="btn" style="margin-top:7px" '
+        +'onclick="undo(\''+path+'\',\''+id+'\',\''+mid+'\')">↩ 撤销这次修改</button>';
+    }
     else{m.className="msg err";m.textContent="失败："+(j.message||JSON.stringify(j).slice(0,120))}
   }).catch(function(e){
     m.className="msg err";
     m.textContent="保存失败（"+e.message+"）。也可去 GitHub 网页点文件右上角铅笔图标直接改。";
   });
+}
+
+// 撤销：把上一次保存前的旧内容写回去
+function undo(path,id,mid){
+  var old=get("nm_bak_"+path,'""');
+  if(!old){var m=document.getElementById(mid);m.className="msg err";
+    m.textContent="没找到上一次的内容（可能是刚打开页面还没改过）。可以用「恢复默认」。";return}
+  if(!confirm("撤销「"+LABELS[path]+"」的上一次修改？"))return;
+  document.getElementById(id).value=old;
+  save(path,id,mid);
+}
+
+// 恢复出厂默认：从 defaults/ 读原始文件写回仓库
+function restore(path,id,mid){
+  var m=document.getElementById(mid);
+  if(!confirm("把「"+LABELS[path]+"」恢复成出厂默认吗？"+NL+"你现在改的内容会被覆盖（之后还能用「撤销」找回）。"))return;
+  m.className="msg";m.textContent="正在读取默认…";
+  fetch(DEFAULTS[path]+"?t="+Date.now()).then(function(r){
+    if(!r.ok)throw new Error("HTTP "+r.status);return r.text();})
+  .then(function(t){
+    document.getElementById(id).value=t;
+    save(path,id,mid);
+  }).catch(function(e){m.className="msg err";m.textContent="读取默认失败："+e.message});
+}
+
+// 一键全部恢复
+function restoreAll(){
+  if(!confirm("把【期刊 + 关键词 + 门槛词 + 运行参数】全部恢复成出厂默认吗？"+NL+"你自己加的期刊和关键词都会没掉，确定？"))return;
+  var m=document.getElementById("m5");
+  var tok=get(LS.tok,'""');
+  if(!tok){m.className="msg err";m.textContent="请先填并保存令牌（面板最上面①）";return}
+  m.className="msg";m.textContent="正在恢复…";
+  var seq=[["journals.txt","j"],["keywords.txt","k"],["gate.txt","g"],["config.txt","c"]];
+  var i=0;
+  (function next(){
+    if(i>=seq.length){m.className="msg ok";m.textContent="全部恢复出厂 ✅ 下次运行就按默认来了";return}
+    var p=seq[i][0],box=seq[i][1];i++;
+    fetch(DEFAULTS[p]+"?t="+Date.now()).then(function(r){return r.text()})
+    .then(function(t){document.getElementById(box).value=t;
+      return fetch(API+p+"?ref="+BRANCH+"&t="+Date.now(),{headers:ghH(tok)})
+      .then(function(r){return r.json()}).then(function(j){
+        if(!j.sha)throw new Error(j.message||"读取失败");
+        return fetch(API+p,{method:"PUT",headers:ghH(tok,1),
+          body:JSON.stringify({content:b64(t),sha:j.sha,
+            message:"恢复默认 "+p,branch:BRANCH})}).then(function(r){return r.json()});
+      });
+    }).then(function(){next();})
+    .catch(function(e){m.className="msg err";m.textContent="恢复中断（"+p+"："+e.message+"）";});
+  })();
 }
 
 function trigger(){
