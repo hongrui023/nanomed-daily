@@ -1,0 +1,72 @@
+name: 打包安卓 APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 取出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 装 Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: 生成 Gradle 包装器（锁定 8.9 版）
+        run: |
+          mkdir -p /tmp/wrap && cd /tmp/wrap
+          gradle wrapper --gradle-version 8.9 --distribution-type bin
+          cp -r /tmp/wrap/gradle "$GITHUB_WORKSPACE/android/"
+          cp /tmp/wrap/gradlew /tmp/wrap/gradlew.bat "$GITHUB_WORKSPACE/android/"
+          chmod +x "$GITHUB_WORKSPACE/android/gradlew"
+
+      - name: 取出签名钥匙
+        working-directory: android
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+        run: |
+          if [ -z "$KS_B64" ]; then echo "❌ 缺少密钥 ANDROID_KEYSTORE_B64"; exit 1; fi
+          echo "$KS_B64" | base64 -d > keystore.p12
+          keytool -list -keystore keystore.p12 -storetype PKCS12 \
+            -storepass nanomed2026 -alias nanomed > /dev/null
+          echo "✅ 签名钥匙可用（每次打包用同一把，更新时不用卸载旧版）"
+
+      - name: 打包正式版 APK
+        working-directory: android
+        run: ./gradlew assembleRelease --no-daemon --stacktrace
+
+      - name: 拷到仓库根目录
+        run: |
+          cp android/app/build/outputs/apk/release/app-release.apk nanomed.apk
+          ls -lh nanomed.apk
+
+      - name: 上传为构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: nanomed-apk
+          path: nanomed.apk
+          retention-days: 90
+
+      - name: 提交到仓库（供手机直接下载）
+        run: |
+          git config user.name "nanomed-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -f nanomed.apk
+          if git diff --cached --quiet; then
+            echo "APK 无变化，跳过提交"
+          else
+            git commit -m "更新安卓 APK $(date +'%Y-%m-%d %H:%M')"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "推送失败，重试 $i"; sleep 5
+            done
+          fi
