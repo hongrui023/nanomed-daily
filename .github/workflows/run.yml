@@ -1,0 +1,71 @@
+name: 抓取今日论文
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "抓最近几天的新论文。留空=用网页里 config.txt 的设置"
+        required: false
+        default: ""
+      max_papers:
+        description: "最多总结多少篇。留空=用网页里 config.txt 的设置"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-summarize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 取出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 装依赖
+        run: pip install --quiet requests
+
+      - name: 按你填的参数改写配置
+        run: |
+          if [ -n "${{ github.event.inputs.days }}" ]; then
+            sed -i "s/^days=.*/days=${{ github.event.inputs.days }}/" config.txt
+          fi
+          if [ -n "${{ github.event.inputs.max_papers }}" ]; then
+            sed -i "s/^max_papers=.*/max_papers=${{ github.event.inputs.max_papers }}/" config.txt
+          fi
+          echo "--- 本次使用的参数（来自 config.txt）---"
+          cat config.txt
+
+      - name: 抓取论文
+        run: python scripts/fetch_papers.py
+
+      - name: AI 写大白话摘要
+        env:
+          ZHIPU_KEY: ${{ secrets.ZHIPU_KEY }}
+        run: python scripts/summarize.py
+
+      - name: 生成网页
+        run: python scripts/build_site.py
+
+      - name: 把结果存回仓库
+        run: |
+          git config user.name "nanomed-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "没有新内容，跳过提交"
+          else
+            git commit -m "更新论文数据 $(date +'%Y-%m-%d %H:%M')"
+            for i in 1 2 3; do
+              git pull --rebase origin ${{ github.ref_name }} && git push && break
+              echo "推送失败，重试 $i"
+              sleep 5
+            done
+          fi
