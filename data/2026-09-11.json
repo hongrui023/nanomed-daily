@@ -2,7 +2,7 @@
  "date": "2026-09-11",
  "range": "2026-09-08 ~ 2026-09-11",
  "days": 3,
- "generated_at": "2026-09-11 04:58:28",
+ "generated_at": "2026-09-11 06:40:16",
  "journal_count": 46,
  "keyword_count": 11,
  "total_found": 398,
@@ -114,8 +114,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42718604/",
    "journal_display": "Materials Today Bio",
    "matched": [
-    "targeted delivery",
-    "gene delivery"
+    "gene delivery",
+    "targeted delivery"
    ],
    "ai": "【一句话】用特殊纳米材料帮鼻子抗过敏。\n【发现了什么】造出一种能找对人鼻细胞、放药又当催化剂的纳米花。\n【为什么重要】以前抗过敏药效果不好，这个能精准放药、减少发炎，治得更准。\n【跟纳米医学的关系】用纳米材料当药物载体和催化剂，同时瞄准目标细胞。"
   },
@@ -135,8 +135,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42721613/",
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "targeted delivery",
-    "liposome"
+    "liposome",
+    "targeted delivery"
    ],
    "ai": "【一句话】用特殊脂质体把药送到血栓和有氧应激的脑部。\n【发现了什么】发明了一种能对脑血栓和氧气应激反应的脂质体，能精准递送药物到缺血脑部。\n【为什么重要】解决了缺血再灌注损伤中氧化应激、线粒体功能障碍和血脑屏障破坏的问题，可能改善脑卒中治疗效果。\n【跟纳米医学的关系】用脂质体作为纳米载体递送药物，结合血栓识别和氧气应激响应机制，提高脑卒中靶向治疗效率。"
   },
@@ -196,8 +196,9 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722181/",
    "journal_display": "Acta Biomaterialia",
    "matched": [
+    "gene delivery",
     "targeted delivery",
-    "gene delivery"
+    "controlled release"
    ],
    "ai": "【一句话】用纳米材料同时递送药物和做磁共振成像，帮脊髓受伤的动物恢复功能。\n【发现了什么】造了一种能感知酸和过氧化氢的纳米球，能自动释放抗铁死亡药物，同时用里面的二氧化锰做磁共振成像。\n【为什么重要】解决了抗铁死亡药物递送难的问题，让脊髓损伤治疗更精准，还能实时看到药物效果。\n【跟纳米医学的关系】用纳米材料做药物载体，结合了药物递送和成像功能，属于智能纳米治疗系统。"
   },
@@ -217,7 +218,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722180/",
    "journal_display": "Acta Biomaterialia",
    "matched": [
-    "gene delivery"
+    "gene delivery",
+    "controlled release"
    ],
    "ai": "【一句话】用纳米技术送抗生素，帮它绕过细菌的抵抗。\n【发现了什么】发现纳米送药能改变抗生素的保护、释放和作用位置，但不是所有纳米材料都有效，也不能单靠包起来就逆转抵抗。\n【为什么重要】解决了传统抗生素难进入感染部位的问题，为对抗耐药菌提供了新思路。\n【跟纳米医学的关系】属于纳米药物递送系统，通过纳米材料送药，改变药物在体内的行为，提高疗效。"
   },
@@ -237,6 +239,7 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722218/",
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
+    "tumor treatment",
     "nanoparticle",
     "liposome"
    ],
@@ -279,8 +282,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42722163/",
    "journal_display": "Journal of Controlled Release",
    "matched": [
-    "nanoparticle",
     "tumor microenvironment",
+    "nanoparticle",
     "targeted delivery"
    ],
    "ai": "【一句话】这篇论文研究怎么把纳米药物和改变肿瘤微环境结合起来，让药物更好地进入肿瘤。\n【发现了什么】发现不同类型的肿瘤有不同阻碍药物进入的地方，需要根据具体情况调整微环境和纳米药物的设计。\n【为什么重要】解决了以前没有统一方法来提高肿瘤药物递送效率的问题，为个性化治疗提供了思路。\n【跟纳米医学的关系】通过分析肿瘤微环境和纳米载体的特性，找到了更适合不同肿瘤的药物递送方案。"
@@ -322,6 +325,7 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42720610/",
    "journal_display": "Nanomedicine (UK)",
    "matched": [
+    "tumor treatment",
     "nanoparticle",
     "gene delivery"
    ],
@@ -389,6 +393,26 @@
    "ai": "【一句话】用纳米颗粒在伤口里生产抗生素治细菌感染。\n【发现了什么】造了带催化剂的纳米颗粒，能在细菌群落里释放抗生素。\n【为什么重要】解决了抗生素难进细菌群落的问题，治感染效果更好。\n【跟纳米医学的关系】用纳米颗粒做药物递送系统，在局部激活抗生素。"
   },
   {
+   "pmid": "42716413",
+   "title": "Scaffold-guided breast reconstruction: A review of current scaffold architectures, materials and fabrication methods.",
+   "journal": "Acta biomaterialia",
+   "pubdate": "2026-09-09",
+   "doi": "10.1016/j.actbio.2026.09.001",
+   "authors": [
+    "Laurens",
+    "Foumani",
+    "Zadpoor",
+    "Mirzaali"
+   ],
+   "abstract": "Breast cancer (BC) remains one of the most prevalent malignancies globally, with mastectomy frequently required as part of treatment. This creates a critical clinical demand for effective breast reconstruction strategies. Conventional reconstruction methods, such as silicone implants, autologous fat grafting, and free-flap surgery, have notable drawbacks. Scaffold-guided breast reconstruction (SGBR) is a promising alternative that relies on biocompatible, biodegradable scaffolds to support and direct the regeneration of vascularized soft tissue. This review summarizes the current state of SGBR approaches, emphasizing scaffold architecture, biomaterials, and fabrication techniques. Various scaffold configurations, including fibrous, porous, hydrogel-based, mesh-like, and composite architectures, are discussed, along with natural and synthetic polymeric biomaterials. The integration of advanced additive manufacturing (AM) technologies is also explored, highlighting their role in enabling patient-specific scaffold designs. The review outlines key biological and mechanical criteria for a successful reconstruction, with particular attention to challenges such as neovascularization and tumor recurrence. Although preclinical studies have yielded promising outcomes, clinical translation remains limited, highlighting the need for continued research to optimize scaffold functionality, integration, and long-term performance.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42716413/",
+   "journal_display": "Acta Biomaterialia",
+   "matched": [
+    "tumor treatment"
+   ],
+   "ai": "【一句话】用特殊支架帮助重建乳房。\n【发现了什么】总结了不同支架结构、材料和制作方法，用于引导乳房再生。\n【为什么重要】提供了一种比传统方法更好的乳房重建选择，可能改善效果。\n【跟纳米医学的关系】可能用到纳米材料来增强支架的生物相容性和功能。"
+  },
+  {
    "pmid": "42717630",
    "title": "A Spatially Controlled Glioblastoma-on-a-Chip for Dissecting Tumor-Immune-Vascular Crosstalk and Bevacizumab Resistance.",
    "journal": "Advanced healthcare materials",
@@ -404,6 +428,7 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42717630/",
    "journal_display": "Advanced Healthcare Materials",
    "matched": [
+    "tumor treatment",
     "tumor microenvironment"
    ],
    "ai": "【一句话】造了个芯片模型研究脑瘤、免疫细胞和血管的相互作用及药物耐药。\n【发现了什么】这个芯片能精确控制脑瘤、免疫细胞和血管的位置，发现内皮细胞会让免疫细胞变弱，还揭示了脑瘤对药物产生耐药的原因。\n【为什么重要】解决了现有模型无法模拟真实脑瘤微环境的难题，有助于理解脑瘤进展和药物耐药机制。\n【跟纳米医学的关系】可能用纳米材料构建更真实的微环境，但论文没直接提纳米药物或递送系统。"
@@ -464,6 +489,7 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42714307/",
    "journal_display": "Advanced Materials",
    "matched": [
+    "tumor treatment",
     "tumor microenvironment"
    ],
    "ai": "【一句话】用一种能同时攻击两种癌症蛋白的光敏剂治疗前列腺癌。\n【发现了什么】发明了一种能同时攻击两种癌症蛋白（AR和PARP）的光敏剂QTEO，结合光动力疗法杀伤癌细胞。\n【为什么重要】解决了传统光敏剂功能单一和易产生耐药性的问题，通过激活免疫反应提高治疗效果。\n【跟纳米医学的关系】可能用纳米材料包裹这种光敏剂，提高其在肿瘤部位的富集和递送效率。"
@@ -509,6 +535,26 @@
    "ai": "【一句话】这篇论文讨论了如何合作改进药物递送技术。  \n【发现了什么】专家们强调了皮下和微针递送系统的重要性，并讨论了纳米粒子递送的发展。  \n【为什么重要】合作可以加速药物从实验室到临床的转化，解决传统研发中的障碍。  \n【跟纳米医学的关系】论文提到了纳米粒子递送，并探讨了如何通过合作推动纳米药物的研发。"
   },
   {
+   "pmid": "42714735",
+   "title": "Cooling-triggered sciatic nerve block using thermoresponsive hydrogel implants.",
+   "journal": "Drug delivery and translational research",
+   "pubdate": "2026-09-09",
+   "doi": "10.1007/s13346-026-02215-5",
+   "authors": [
+    "Lobban",
+    "Ray",
+    "Srilouangkhol",
+    "Yu"
+   ],
+   "abstract": "Opioids remain the standard of post-operative pain management despite their known addiction risks. Local anesthetics, like bupivacaine, offer a safer, non-systemic alternative; however, existing delivery methods are either inconvenient, painful, or require complex equipment. Herein, we describe an implantable drug delivery device that leverages the cooling-triggered, reversible gel-to-sol transition of poly-N-isopropylacrylamide [PNIPAM] (achieved by simple icepack cooling, a pain-relief strategy already familiar to patients) for on-demand release of bupivacaine hydrochloride. Conveniently, this system allows on/off drug release over multiple cycles, as the drug release rate is significantly reduced when the cooling stimulus is removed but can be restored upon subsequent reapplication of cooling. We detail device fabrication and cooling-triggered release testing of a model dye and the drug of interest both in vitro and in vivo, with thermal latency testing on Sprague-Dawley rats used to demonstrate cooling-triggered sensory nerve block. Our results establish cooling as an intuitive trigger for delivery of local anesthetics, offering a promising route to patient-controlled, repeatable pain relief that could reduce opioid dependency in post-operative care.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42714735/",
+   "journal_display": "Drug Delivery and Translational Research",
+   "matched": [
+    "controlled release"
+   ],
+   "ai": "【一句话】用冰块控制局部麻醉药释放来止痛。\n【发现了什么】发明了一种遇冷会释放麻醉药的凝胶植入物，能按需给药。\n【为什么重要】提供了一种更方便、安全的局部麻醉方法，减少术后止痛对阿片类药物的依赖。\n【跟纳米医学的关系】可能用热敏性纳米凝胶材料实现药物按需递送。"
+  },
+  {
    "pmid": "42716152",
    "title": "A liposome-in-hydrogel hybrid system for spatially targeted delivery and prolonged intradermal retention of vitamin K1 against EGFR inhibitor-induced skin toxicity.",
    "journal": "International journal of pharmaceutics",
@@ -524,10 +570,30 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42716152/",
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
-    "targeted delivery",
-    "liposome"
+    "tumor treatment",
+    "liposome",
+    "targeted delivery"
    ],
    "ai": "【一句话】用脂质体和凝胶混合物帮维生素K1精准、持久地留在皮肤里治副作用。\n【发现了什么】发明了一种脂质体-凝胶混合物，能让维生素K1在皮肤里待更久，精准作用在发炎部位。\n【为什么重要】解决了维生素K1治EGFR抑制剂副作用效果不好、容易流失的问题，提高疗效。\n【跟纳米医学的关系】用的是脂质体这种纳米载体，通过凝胶系统延长纳米药物在皮肤里的停留时间。"
+  },
+  {
+   "pmid": "42716151",
+   "title": "Cryo-emulsion gel patches as versatile platform for dual drug delivery to wounds.",
+   "journal": "International journal of pharmaceutics",
+   "pubdate": "2026-09-09",
+   "doi": "10.1016/j.ijpharm.2026.127397",
+   "authors": [
+    "Wiedemann",
+    "Abdel-Mottaleb",
+    "Lunter"
+   ],
+   "abstract": "Cryo emulsion gels (C-EGs) represent a promising drug delivery approach that combines the possibility to deliver both, hydrophilic and lipophilic drugs, with the mechanical stability of hydrogel matrices for dermal application. In this study, poly(vinyl alcohol) (PVA) was used as a multifunctional polymer acting as both a polymeric emulsifier and as a gelling agent for cryogelation to minimize formulation complexity. Medium-chain triglycerides, castor oil, and rapeseed oil were identified as suitable candidates for the dispersed phase of the emulsions. The influence of oil type and oil content on the rheological and mechanical properties of the patches was investigated, allowing the definition of a maximum oil content of 30%. Within this range, C-EGs with consistent droplet distribution were obtained. The two-phase structure enabled dual drug loading using hydrophilic N-acetylcysteine and lipophilic phenytoin, which complement each other in wound healing. The system showed controlled drug release over 48 h with release rates depending on the physicochemical properties of the drugs and their location within the patch. Ex vivo penetration studies on intact and wounded skin revealed different penetration profiles according to the drug and skin condition. Cytocompatibility studies demonstrated excellent tolerability of the PVA-based vehicle. Drug incorporation resulted in a synergistic effect between the C-EGs and the drugs, increasing cell viability up to 178%. Peel adhesion testing revealed very low adhesion of the C-EG patches on both bloody and dry wound surfaces. Overall, PVA-based C-EGs provide a stable and cytocompatible platform for incorporating emulsions into cryogel patches, representing an attractive strategy for advanced wound care applications.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42716151/",
+   "journal_display": "International Journal of Pharmaceutics",
+   "matched": [
+    "controlled release"
+   ],
+   "ai": "【一句话】这种冰冻乳液凝胶贴片能同时给伤口送水溶性和脂溶性两种药。\n【发现了什么】用PVA材料做这种凝胶贴片，能同时送两种药，还比较稳定。找到了适合做内芯的油类，确定了最多放30%油的配方。\n【为什么重要】解决了以前送两种药需要两种贴片的问题，让伤口治疗更简单有效。这种贴片能同时送出水溶性和脂溶性药物，效果互补。\n【跟纳米医学的关系】这种贴片用的是纳米乳液技术，把药物包在纳米大小的液滴里送进伤口，属于纳米药物递送系统的一种。"
   },
   {
    "pmid": "42716149",
@@ -546,8 +612,8 @@
    "journal_display": "International Journal of Pharmaceutics",
    "matched": [
     "tumor microenvironment",
-    "targeted delivery",
-    "gene delivery"
+    "gene delivery",
+    "targeted delivery"
    ],
    "ai": "【一句话】用能识别癌细胞的短肽给纳米药指路，精准治肺癌。  \n【发现了什么】把短肽和纳米药结合，能更准地送到肺癌细胞上。  \n【为什么重要】解决了纳米药容易跑到别处伤身体的问题，提高了疗效。  \n【跟纳米医学的关系】用短肽修饰纳米药，让它们像导弹一样专门攻击肺癌细胞。"
   },
@@ -643,10 +709,30 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42715057/",
    "journal_display": "Nano Letters",
    "matched": [
-    "nanoparticle",
-    "tumor microenvironment"
+    "tumor microenvironment",
+    "nanoparticle"
    ],
    "ai": "【一句话】用像病毒一样的纳米颗粒间接激活NK细胞抗癌。\n【发现了什么】这种纳米颗粒能激活NK细胞，且需要巨噬细胞帮忙。\n【为什么重要】为克服肿瘤免疫抑制提供新方法，可能改善免疫治疗效果。\n【跟纳米医学的关系】用病毒样外形和细胞膜包覆的纳米颗粒激活先天免疫。"
+  },
+  {
+   "pmid": "42715055",
+   "title": "Energy Migration-Directed Orthogonal Emissive Nanocrystals for NIR-IIb Imaging Navigation toward Precise UV Photoactivation.",
+   "journal": "Nano letters",
+   "pubdate": "2026-09-09",
+   "doi": "10.1021/acs.nanolett.6c01843",
+   "authors": [
+    "Li",
+    "Li",
+    "Sun",
+    "Geng"
+   ],
+   "abstract": "Upconversion-based photoactivation offers a transformative approach to precision medicine by leveraging near-infrared light to trigger specific chemical and biological activities. However, the lack of favorable photoswitchable agents combining deep-tissue high-resolution imaging with orthogonal photoactivation hinders precise and site-specific interventions. This work reports the precise modulation of energy transfer within Yb/Tm/Er codoped nanocrystals via an energy migration strategy, achieving orthogonal emissions from Er3+ (NIR-IIb) and Tm3+ (UV) by adjusting the excitation between 808 and 980 nm. These rationally designed core-shell-shell optical conversion-switching nanocrystals (OCSNs) do not require a complicated multilayer doping design, as both activators reside within the same luminescent core. Furthermore, Ce3+ is incorporated to enhance Er3+-mediated 1550 nm emission. As proof of concept, the OCSNs are functionalized with mesoporous silica and UV-responsive azobenzene, enabling real-time navigation and controlled release of drug guests under orthogonal optical control. This OCSN offers immense potential for spatiotemporally precise photoactivation in various biomedical applications.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42715055/",
+   "journal_display": "Nano Letters",
+   "matched": [
+    "controlled release"
+   ],
+   "ai": "【一句话】用两种不同光激活，一种看深部病灶，一种控制药物释放。  \n【发现了什么】发明了一种能同时发出近红外和紫外光的纳米晶体，通过不同光激发实现两种功能。  \n【为什么重要】解决了现有技术无法同时精准成像和光控药物的问题。  \n【跟纳米医学的关系】这种纳米晶体可用于精准定位病灶并控制药物释放，提升治疗效果。"
   },
   {
    "pmid": "42715048",
@@ -664,8 +750,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42715048/",
    "journal_display": "Nano Letters",
    "matched": [
-    "targeted delivery",
-    "gene delivery"
+    "gene delivery",
+    "targeted delivery"
    ],
    "ai": "【一句话】给基因药穿上特殊外套，让它更容易进入细胞发挥作用。\n【发现了什么】发明了一种带特殊电荷的分子球状核酸，能帮基因药更顺利进细胞，还更耐分解。\n【为什么重要】解决了基因药进细胞难、易分解的老问题，让治疗效果更好。\n【跟纳米医学的关系】用的是球状核酸技术，通过纳米材料外壳改造基因药，提高递送效率。"
   },
@@ -685,8 +771,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42715039/",
    "journal_display": "Nano Letters",
    "matched": [
-    "nanoparticle",
-    "tumor microenvironment"
+    "tumor microenvironment",
+    "nanoparticle"
    ],
    "ai": "【一句话】用细菌和纳米颗粒组合治疗卵巢癌，既能化疗又能激活免疫。\n【发现了什么】发现了一种能同时化疗和激活免疫的细菌-纳米颗粒系统，在肿瘤微环境中能释放药物并激活免疫系统。\n【为什么重要】解决了卵巢癌药物难以靶向、毒性大和免疫抑制的问题，为治疗这种难治癌症提供了新方法。\n【跟纳米医学的关系】这个系统结合了纳米颗粒（BD-Poly）和细菌（VNP），通过纳米技术实现药物递送和免疫激活。"
   },
@@ -747,7 +833,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42712196/",
    "journal_display": "Nanomedicine (UK)",
    "matched": [
-    "targeted delivery"
+    "targeted delivery",
+    "controlled release"
    ],
    "ai": "【一句话】用特殊纳米球让抗体药能从嘴里吸收。  \n【发现了什么】发现了一种能穿过肠道黏液的纳米球，能让抗体药从嘴里进入身体。  \n【为什么重要】解决了抗体药只能打针的老问题，可能让口服抗体药成为现实。  \n【跟纳米医学的关系】这种纳米球是专门设计来穿过黏液的新型递送系统。"
   },
@@ -771,26 +858,6 @@
     "liposome"
    ],
    "ai": "【一句话】用特殊纳米气泡结合光疗和免疫疗法治疗结直肠癌。\n【发现了什么】造出能精准找到癌细胞并杀死的纳米气泡，用光激活后还能刺激免疫细胞攻击癌细胞。\n【为什么重要】解决了结直肠癌免疫治疗效果差的问题，能让\"冷\"肿瘤变\"热\"从而提高免疫疗法效果。\n【跟纳米医学的关系】用纳米气泡作为药物载体，结合光敏剂和免疫蛋白实现靶向治疗和免疫激活。"
-  },
-  {
-   "pmid": "42714842",
-   "title": "Sprayable MXene Hydrogels With Composition-Driven Interfacial Stabilization and on-Skin Gelation for Conformal Postsurgical Photothermal Therapy.",
-   "journal": "Small (Weinheim an der Bergstrasse, Germany)",
-   "pubdate": "2026-09-09",
-   "doi": "10.1002/smll.75631",
-   "authors": [
-    "Hwang",
-    "Ko",
-    "Jeon",
-    "Jo"
-   ],
-   "abstract": "Oxidative degradation of Ti3C2Tx MXene in aqueous and biological environments remains a persistent obstacle to its long-term use in biomedical applications, yet the role of the surrounding polymer matrix in governing this process has received little systematic attention. Here, we show that the lactide-to-glycolide ratio of a PLGA-PEG-PLGA triblock copolymer directly controls interfacial interactions at the MXene surface and, through this mechanism, determines how well the encapsulated nanosheets resist oxidation over time. Combined computational and experimental analyses reveal that glycolide-rich segments form dense hydrogen-bonding networks at the MXene interface, providing effective surface protection despite accelerated bulk hydrolysis. This competing interplay defines a compositional window in which MXene stability and hydrogel degradability are simultaneously optimized, a balance we validate through combined DFT, molecular dynamics, and experimental characterization. Building on this design principle, we formulate a sprayable composite that gels in situ upon contact with tissue, conformally coating irregular wound surfaces without manual placement. The optimized hydrogel exhibits robust photothermal performance under physiological conditions and effectively suppresses tumor growth in a postoperative melanoma model. These findings highlight the importance of interfacial design in stabilizing oxidation-sensitive nanomaterials within dynamic polymer systems and provide practical guidelines for developing durable MXene-based biomedical platforms.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42714842/",
-   "journal_display": "Small",
-   "matched": [
-    "photothermal therapy"
-   ],
-   "ai": "【一句话】用特殊塑料保护纳米片，喷在皮肤上治术后肿瘤。\n【发现了什么】特殊塑料比例能保护纳米片不被氧化，喷剂接触皮肤能自动凝胶覆盖伤口。\n【为什么重要】解决了纳米片易氧化的问题，提供了一种喷剂凝胶的新疗法。\n【跟纳米医学的关系】用纳米材料（MXene）和特殊塑料（PLGA-PEG-PLGA）做喷剂药物递送系统。"
   },
   {
    "pmid": "42708927",
@@ -889,8 +956,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42709982/",
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
-    "gene delivery",
-    "sirna delivery"
+    "sirna delivery",
+    "gene delivery"
    ],
    "ai": "【一句话】用带正电和负电的纳米球送siRNA，效果更好更安全。\n【发现了什么】发现正负电比例、大小和交联度能同时影响siRNA递送效率和毒性，负电能降低毒性。\n【为什么重要】解决了阳离子纳米球递送siRNA常有毒性的问题，让siRNA治疗更安全有效。\n【跟纳米医学的关系】用纳米球作为siRNA载体，通过调控电荷结构优化递送和降低毒性。"
   },
@@ -911,7 +978,6 @@
    "journal_display": "ACS Applied Materials & Interfaces",
    "matched": [
     "tumor microenvironment",
-    "photothermal therapy",
     "gene delivery"
    ],
    "ai": "【一句话】用一种能看能治的纳米材料给肿瘤做精准治疗。\n【发现了什么】设计了一种能看能治的纳米材料，能精准找到肿瘤并协同治疗。\n【为什么重要】解决了以前看不准肿瘤和治疗效果不好的问题，提高了治疗精度。\n【跟纳米医学的关系】这种纳米材料能同时看和治肿瘤，属于纳米药物和递送系统的一种。"
@@ -973,8 +1039,8 @@
    "url": "https://pubmed.ncbi.nlm.nih.gov/42706901/",
    "journal_display": "Advanced Materials",
    "matched": [
-    "targeted delivery",
-    "gene delivery"
+    "gene delivery",
+    "targeted delivery"
    ],
    "ai": "【一句话】用组织里的小包裹促进身体再生。\n【发现了什么】组织里的小包裹能携带组织信息，促进修复；不同组织的小包裹有共性机制。\n【为什么重要】解决了如何用自然方式促进组织再生的问题，为再生医学提供新思路。\n【跟纳米医学的关系】这些小包裹是天然的纳米载体，可用来递送修复信号，类似纳米药物。"
   },
@@ -1017,67 +1083,7 @@
     "targeted delivery"
    ],
    "ai": "【一句话】用带药的纳米纤维贴在食道壁治炎症。\n【发现了什么】做了带药的纳米纤维，能让药在食道壁待更久。\n【为什么重要】解决了普通药容易掉的问题，效果更好。\n【跟纳米医学的关系】用纳米纤维做药物载体，精准递送到食道黏膜。"
-  },
-  {
-   "pmid": "42710742",
-   "title": "A liposomal inverse vaccine protects mice from arthritis and experimental autoimmune encephalomyelitis.",
-   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
-   "pubdate": "2026-09-08",
-   "doi": "10.1016/j.jconrel.2026.115339",
-   "authors": [
-    "Benne",
-    "Fernández",
-    "Porenta",
-    "Bolkaerts"
-   ],
-   "abstract": "Chronic autoinflammatory diseases such as rheumatoid arthritis and multiple sclerosis lack curative therapies, and current immunosuppressive treatments often cause systemic off-target effects. To address this unmet need, we previously developed an \"inverse vaccine\" based on anionic phosphatidylglycerol liposomes carrying a disease-specific peptide antigen conjugated to dexamethasone. Here, we assess the therapeutic efficacy and immunomodulatory mechanisms of this platform in two murine models of autoimmunity. In the proteoglycan-induced arthritis model, a single administration of liposomal dexamethasone-human proteoglycan peptide (Dex-K4-hPG) markedly slowed arthritis progression compared to an equivalent dose of free Dex-K4-hPG. Long-term follow-up showed that two injections provided superior protection over a single dose, whereas a third injection yielded no additional benefit. Flow cytometry of paw draining lymph nodes revealed reduced RORγt+CD4+ T cells in mice receiving multiple doses indicating a shift toward less pro-inflammatory T-cell responses. Histological staining of the knees of mice also revealed less damage to the joints of mice receiving 2 or 3 injections of liposomes. To evaluate the versatility of this platform, we generated a novel Dex-peptide conjugate by replacing hPG for myelin oligodendrocyte glycoprotein (MOG). The resulting Dex-K4-MOG conjugate was encapsulated in the liposomes at high encapsulation efficiency (∼60%), demonstrating platform modularity. In an experimental autoimmune encephalomyelitis mouse model, two injections of Dex-K4-MOG liposomes (one before disease induction and one after) strongly suppressed disease development compared with controls. Together, these findings demonstrate that antigen-specific inverse vaccination using anionic liposomes offers a modular and broadly applicable strategy for inducing long-term protection in multiple autoimmune disease models. The platform elicits regulatory immune signatures and suppresses pathogenic Th17 responses, supporting its potential as a tolerogenic therapeutic approach.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42710742/",
-   "journal_display": "Journal of Controlled Release",
-   "matched": [
-    "liposome"
-   ],
-   "ai": "【一句话】用脂质体装抗炎药和病蛋白，治好小鼠的关节炎和脑炎。\n【发现了什么】发现这种脂质体疫苗能减缓关节炎和脑炎，还能调节免疫反应。\n【为什么重要】解决了现有免疫疗法副作用大的问题，为慢性自身免疫病提供了新思路。\n【跟纳米医学的关系】用脂质体这种纳米材料递送药物和抗原，实现靶向免疫调节。"
-  },
-  {
-   "pmid": "42711506",
-   "title": "Publisher Correction: An inherent T cell-activating mRNA delivery carrier for in vivo CAR T generation.",
-   "journal": "Nature materials",
-   "pubdate": "2026-09-08",
-   "doi": "10.1038/s41563-026-02753-w",
-   "authors": [
-    "Cao",
-    "Yao",
-    "Zheng",
-    "Liu"
-   ],
-   "abstract": "",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42711506/",
-   "journal_display": "Nature Materials",
-   "matched": [
-    "gene delivery"
-   ],
-   "ai": "【一句话】用纳米材料帮身体快速制造抗癌T细胞。\n【发现了什么】发现了一种能直接在体内激活T细胞的纳米药丸。\n【为什么重要】解决了以前需要在体外处理T细胞再回输的老问题，更高效。\n【跟纳米医学的关系】用的是纳米颗粒作为药物载体，把mRNA送到T细胞里。"
-  },
-  {
-   "pmid": "42708347",
-   "title": "Sequence-Programmable Iron Oxide Nanoparticles Enable Dual-Phase T1-Weighted MRI of Ultrasmall Hepatocellular Carcinoma and Tumor Vascular Architecture.",
-   "journal": "Small (Weinheim an der Bergstrasse, Germany)",
-   "pubdate": "2026-09-08",
-   "doi": "10.1002/smll.75669",
-   "authors": [
-    "Cui",
-    "Xu",
-    "Yang",
-    "Yang"
-   ],
-   "abstract": "Early-stage hepatocellular carcinoma diagnosis is hindered by the inability of conventional MRI to concurrently detect tiny tumors and delineate their microvascular networks. To address this, we engineered sequence-programmable iron oxide nanoparticles with precisely tuned magnetic properties that enable dual-phase T1-weighted imaging tailored to specific MRI sequences. Under ultra-short TR/TE angiography sequences, these nanoparticles produce strong T1-positive enhancement, allowing high-resolution visualization of tumor neovasculature down to 0.3 mm (in rabbits) at one-quarter of the standard gadolinium dose. Following selective uptake and aggregation by Kupffer cells, the same nanoparticles induce localized magnetic field inhomogeneity, generating pronounced T1-negative contrast in normal liver parenchyma on conventional sequences and thereby highlighting HCC lesions independent of OATP expression with detection sensitivity down to 0.4 mm (in mouse). This single-agent, dual-phase strategy integrates sensitive lesion detection with detailed vascular phenotyping, and is enabled by a green, scalable synthesis using an FDA-approved biocompatible polymer. By overcoming key limitations of current gadolinium-based agents, our platform provides a versatile and high-performance imaging solution for comprehensive early-stage HCC evaluation.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42708347/",
-   "journal_display": "Small",
-   "matched": [
-    "nanoparticle"
-   ],
-   "ai": "【一句话】用特殊纳米铁粉让超小的肝癌和血管在磁共振上同时显影。\n【发现了什么】造出能根据不同磁共振指令改变显影效果的纳米铁粉，既能看清超小肝癌，又能看清肿瘤血管。\n【为什么重要】解决了普通磁共振药只能看一个或另一个的问题，能同时检测微小肿瘤和血管，提高早期肝癌诊断率。\n【跟纳米医学的关系】用纳米铁粉作为显影剂，通过调控其特性实现双模式磁共振成像，是纳米药物和递送系统在癌症诊断中的应用。"
   }
  ],
- "ai_tokens_used": 21591
+ "ai_tokens_used": 497
 }
