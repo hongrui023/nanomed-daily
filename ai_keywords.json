@@ -1,16 +1,19 @@
 {
-  "intent": "我想追踪纳米药物靶向递送，以及铁死亡和肿瘤免疫治疗的研究方向",
-  "corrected": "低送应为靶向递送，免役应为免疫治疗",
+  "intent": "我想追踪纳米材料在神经肿瘤治疗中的应用研究",
+  "corrected": "",
   "keywords": [
-    "nanoparticle delivery",
+    "nanoparticle",
+    "neuro-oncology",
+    "tumor microenvironment",
     "targeted delivery",
-    "ferroptosis",
-    "tumor immunotherapy",
-    "immunotherapy",
-    "cancer immunotherapy",
-    "nanomedicine",
-    "drug delivery"
+    "liposome",
+    "micelle",
+    "photothermal therapy",
+    "sonodynamic therapy",
+    "exosome",
+    "gene delivery",
+    "siRNA delivery"
   ],
-  "text": "我搞纳米药低送的，想看铁死亡和肿瘤免役治疗",
-  "ts": 1789102235
+  "text": "纳米材料，神经肿瘤治疗",
+  "ts": 1789102640
 }
