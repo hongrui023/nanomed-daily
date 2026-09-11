@@ -45,7 +45,14 @@ font-weight:600;flex-shrink:0}
 .acts button{border:none;background:none;font-size:19px;padding:0 3px;
 cursor:pointer;line-height:1;color:#c8ccd1}
 .acts button.on{color:var(--star)}
-.tt{font-weight:600;font-size:15.5px;line-height:1.45;margin-bottom:9px}
+.tt{font-weight:600;font-size:15.5px;line-height:1.45;margin-bottom:8px}
+.mch{margin:0 0 9px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.mch i{font-style:normal;font-size:11px;color:var(--sub)}
+.mch span{font-size:11px;background:#eef4ff;color:#2563eb;border-radius:20px;padding:2px 8px}
+.kwst{margin-top:8px;font-size:12px;line-height:1.9;border-top:1px dashed var(--line);padding-top:7px}
+.kwst em{font-style:normal;color:var(--sub)}
+.kwst .dead{color:#d93025;font-weight:600}
+.kwst .wide{color:#b26a00}
 .ai{background:#fafbfc;border-left:3px solid var(--brand);border-radius:0 8px 8px 0;
 padding:9px 11px;font-size:14px;line-height:1.65}
 .ai p{margin:0 0 6px}
@@ -86,6 +93,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
     <div class="chip" data-f="unread">未读</div>
     <div class="chip" data-f="fav">收藏 <span id="fc">(0)</span></div>
     <div class="chip" data-f="today">今天</div>
+    <div class="chip" id="srt" title="切换排序方式">⇅ 最相关</div>
   </div>
   <div id="list"><div class="empty">正在加载…</div></div>
   <footer>数据来源：PubMed（免费公开） · 摘要由 AI 生成，仅供参考，<br>引用前请点「查看原文」核对。</footer>
@@ -101,7 +109,7 @@ function ghH(t,json){
   if(json)h["Content-Type"]="application/json";
   return h;
 }
-var DATES=[], CUR="", DATA=null, FILTER="all";
+var DATES=[], CUR="", DATA=null, FILTER="all", SORT="rel";
 var TODAY=new Date().toISOString().slice(0,10);
 
 function get(k,d){try{return JSON.parse(localStorage.getItem(k)||d)}catch(e){return d}}
@@ -130,8 +138,29 @@ function render(){
   document.getElementById("sub").textContent=DATA.date||"";
   var s=document.getElementById("stats");
   s.style.display="block";
-  s.innerHTML="本期共 <b>"+ps.length+"</b> 篇（扫描 "+DATA.total_found+" 篇 / "
-    +DATA.journal_count+" 本期刊）<br>抓取区间："+(DATA.range||"")+"　生成时间："+(DATA.generated_at||"");
+  var head="本期共 <b>"+ps.length+"</b> 篇（扫描 "+DATA.total_found+" 篇 / "
+    +DATA.journal_count+" 本期刊）<br>抓取区间："+(DATA.range||"")
+    +"　更新于："+fmtTime(DATA.generated_at);
+  var kw=DATA.keyword_stats||{}, kws=Object.keys(kw);
+  if(kws.length){
+    kws.sort(function(a,b){return kw[b]-kw[a]});
+    var lim=ps.length*0.8, must=DATA.keywords_must||[];
+    var rows=kws.map(function(k){
+      var n=kw[k], cls="", tail="", isMust=must.indexOf(k)>=0;
+      if(n===0){
+        cls="dead";
+        tail = isMust ? " ← 必须词一个都没抓到！检查写法，或先去掉 + 试试"
+                      : " ← 一个都没抓到，建议换掉或删掉";
+      }else if(!must.length && ps.length>10 && n>lim){
+        cls="wide";tail="（偏宽泛，会盖住其他词的效果）";
+      }
+      return '<span class="'+cls+'">'+(isMust?"★ ":"")+esc(k)+" "+n+" 篇"+tail+'</span>';
+    });
+    head+='<div class="kwst"><em>关键词效果（★＝必须命中，每个词本次抓到多少篇）：</em><br>'
+      +rows.join("<br>")
+      +'</div>';
+  }
+  s.innerHTML=head;
 
   var items=ps.filter(function(p){
     if(FILTER==="unread") return !read[p.pmid];
@@ -139,6 +168,13 @@ function render(){
     if(FILTER==="today") return p.pubdate===TODAY;
     return true;
   });
+  if(SORT==="new"){
+    items=items.slice().sort(function(a,b){
+      if((b.pubdate||"")>(a.pubdate||"")) return 1;
+      if((b.pubdate||"")<(a.pubdate||"")) return -1;
+      return 0;
+    });
+  }
 
   if(!items.length){box.innerHTML='<div class="empty">这个筛选下没有内容</div>';return}
 
@@ -152,6 +188,10 @@ function render(){
       +'<button onclick="tgRead(\''+p.pmid+'\')" class="'+(read[p.pmid]?'on':'')+'" title="标记已读">✓</button>'
       +'</span></div>'
       +'<div class="tt">'+esc(p.title)+'</div>'
+      +(p.matched&&p.matched.length
+         ?'<div class="mch"><i>命中</i>'+p.matched.map(function(k){
+             return '<span>'+esc(k)+'</span>'}).join("")+'</div>'
+         :'')
       +(p.ai?'<div class="ai">'+parseAI(p.ai)+'</div>'
            :'<div class="ai" style="border-left-color:#e0a800;background:#fffdf5">'
             +'<p style="color:#8a6d00">⚠ 这篇还没生成大白话摘要。</p>'
@@ -171,9 +211,17 @@ function tgFav(id){fav[id]=!fav[id];if(!fav[id])delete fav[id];set(LS.fav,fav);r
 function tgRead(id){read[id]=!read[id];if(!read[id])delete read[id];set(LS.read,read);render()}
 
 document.querySelectorAll(".chip").forEach(function(c){
+  if(c.id==="srt") return;   // 排序按钮单独处理，不参与筛选
   c.onclick=function(){
     document.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});
     c.classList.add("on");FILTER=c.dataset.f;render()}});
+
+document.getElementById("srt").onclick=function(){
+  SORT = (SORT==="rel") ? "new" : "rel";
+  this.textContent = (SORT==="rel") ? "⇅ 最相关" : "⇅ 最新";
+  this.classList.toggle("on", SORT==="new");
+  render();
+};
 
 // 设置面板
 document.getElementById("sett").onclick=openPanel;
@@ -219,8 +267,12 @@ function openPanel(){
    +'<div class="hint" style="margin-top:6px">你写的这句话会存进你的公开仓库，别写机密内容。</div>'
    +'</div>'
 
-   +'<div class="hint">一行一个，中英文都行。'
-   +'程序会把关键词拆成单词，全部出现才算命中。词越多越精准。<br>'
+   +'<div class="hint"><b>一行一个，中英文都行。两种写法：</b><br>'
+   +'① 普通词（如 <code>tumor therapy</code>）：命中任意一个就保留 —— 用来扩大范围。<br>'
+   +'② <b>前面加 + 的词（如 <code>+neuromodulation</code>）：每一篇都必须含它</b> —— 用来锁死研究方向。<br>'
+   +'<b>怎么用才好：</b>把你最在意的方向写成 + 词，其他写成普通词。'
+   +'只写普通词时，一个宽泛词（比如 nanoparticle）会把结果全占满，'
+   +'你换别的词也看不出变化。<br>'
    +'⚠ 至少要留 1 个，全删光就抓不到任何论文了。</div>'
    +'<textarea id="k"></textarea>'
    +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'keywords.txt\',\'k\',\'m2\')">保存关键词</button> '
@@ -308,6 +360,14 @@ function valid(path,txt){
   }
   if(path==="keywords.txt"){
     if(real.length<1)return "至少要留 1 个关键词，全空就抓不到任何论文了。";
+    var nMust=0,nBare=0,j;
+    for(j=0;j<real.length;j++){
+      if(real[j]==="+"){nBare++}
+      else if(real[j].indexOf("+")===0){nMust++}
+    }
+    if(nBare>0)return "有 "+nBare+" 行只写了一个 +，后面要写上词，比如 +neuromodulation。";
+    if(nMust>4)return "「必须命中」（带 +）的词有 "+nMust+" 个，太严了，几乎会一篇都抓不到。"
+      +"建议只留 1-2 个最核心的，其他的去掉 + 号变成普通词。";
     return null;
   }
   if(path==="gate.txt"){

@@ -1,117 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-第 3 步：生成手机网页
-读取 data/*.json，生成 index.html（你最终看到的页面）+ data/index.json（日期目录）
-"""
-import json
-import os
-import sys
 
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-HTML = r"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#ffffff">
-<title>纳米医学·今日速览</title>
-<style>
-:root{--bg:#f6f7f9;--card:#fff;--line:#e6e8eb;--txt:#1a1d21;--sub:#6b7280;
---brand:#0f7b6c;--brand-l:#e6f4f1;--star:#f0a020;--danger:#c0392b}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:var(--bg);color:var(--txt);
-font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-padding-bottom:40px}
-header{background:var(--card);border-bottom:1px solid var(--line);
-padding:14px 16px 12px;position:sticky;top:0;z-index:20}
-h1{margin:0;font-size:18px;font-weight:700}
-h1 small{font-weight:400;color:var(--sub);font-size:12px;margin-left:6px}
-.row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
-select,button,textarea{font:inherit;color:inherit}
-select{flex:1;min-width:120px;padding:8px 10px;border:1px solid var(--line);
-border-radius:9px;background:#fff}
-.btn{padding:8px 14px;border:1px solid var(--line);border-radius:9px;
-background:#fff;cursor:pointer;font-size:14px}
-.btn:active{background:#eee}
-.btn-p{background:var(--brand);color:#fff;border-color:var(--brand)}
-.btn-p:active{opacity:.85}
-.wrap{padding:12px 14px;max-width:820px;margin:0 auto}
-.stats{background:var(--brand-l);border-radius:11px;padding:11px 13px;
-font-size:13px;color:#0d5f53;margin-bottom:12px}
-.stats b{font-weight:700}
-.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 10px}
-.chip{padding:6px 13px;border:1px solid var(--line);border-radius:20px;
-background:#fff;font-size:13px;white-space:nowrap;cursor:pointer;color:var(--sub)}
-.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:13px;
-padding:13px 14px;margin-bottom:11px}
-.card.gone{opacity:.45}
-.jt{display:flex;justify-content:space-between;align-items:center;
-font-size:12px;color:var(--sub);margin-bottom:7px;gap:8px}
-.jn{background:var(--brand-l);color:#0d5f53;padding:2px 8px;border-radius:5px;
-font-weight:600;flex-shrink:0}
-.acts{display:flex;gap:6px;flex-shrink:0}
-.acts button{border:none;background:none;font-size:19px;padding:0 3px;
-cursor:pointer;line-height:1;color:#c8ccd1}
-.acts button.on{color:var(--star)}
-.tt{font-weight:600;font-size:15.5px;line-height:1.45;margin-bottom:8px}
-.mch{margin:0 0 9px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
-.mch i{font-style:normal;font-size:11px;color:var(--sub)}
-.mch span{font-size:11px;background:#eef4ff;color:#2563eb;border-radius:20px;padding:2px 8px}
-.kwst{margin-top:8px;font-size:12px;line-height:1.9;border-top:1px dashed var(--line);padding-top:7px}
-.kwst em{font-style:normal;color:var(--sub)}
-.kwst .dead{color:#d93025;font-weight:600}
-.kwst .wide{color:#b26a00}
-.ai{background:#fafbfc;border-left:3px solid var(--brand);border-radius:0 8px 8px 0;
-padding:9px 11px;font-size:14px;line-height:1.65}
-.ai p{margin:0 0 6px}
-.ai p:last-child{margin:0}
-.ai b{color:var(--brand);margin-right:4px}
-.link{display:inline-block;margin-top:9px;font-size:13px;color:var(--brand);
-text-decoration:none;border:1px solid var(--brand-l);padding:5px 11px;border-radius:7px}
-.more{font-size:13px;color:var(--sub);background:none;border:none;
-padding:4px 0;cursor:pointer;text-decoration:underline}
-.abs{display:none;margin-top:8px;font-size:13px;color:#4b5563;
-background:#f6f7f9;padding:9px 11px;border-radius:8px;line-height:1.6}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:13px;
-padding:13px 14px;margin-bottom:11px}
-.panel h3{margin:0 0 4px;font-size:15px}
-.panel .hint{font-size:12px;color:var(--sub);margin-bottom:9px;line-height:1.5}
-textarea{width:100%;min-height:170px;border:1px solid var(--line);border-radius:9px;
-padding:9px 10px;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;resize:vertical}
-.msg{font-size:13px;margin-top:8px;min-height:18px}
-.ok{color:var(--brand)}.err{color:var(--danger)}
-.empty{text-align:center;color:var(--sub);padding:50px 20px;font-size:14px}
-footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
-</style>
-</head>
-<body>
-<header>
-  <h1>纳米医学 · 今日速览<small id="sub"></small></h1>
-  <div class="row">
-    <select id="dates"></select>
-    <button class="btn" id="sett">设置</button>
-  </div>
-</header>
-
-<div class="wrap">
-  <div id="warnbar" class="stats" style="display:none;background:#fff8e1;border-color:#f0d488;color:#8a6d00"></div>
-  <div id="stats" class="stats" style="display:none"></div>
-  <div class="chips">
-    <div class="chip on" data-f="all">全部</div>
-    <div class="chip" data-f="unread">未读</div>
-    <div class="chip" data-f="fav">收藏 <span id="fc">(0)</span></div>
-    <div class="chip" data-f="today">今天</div>
-    <div class="chip" id="srt" title="切换排序方式">⇅ 最相关</div>
-  </div>
-  <div id="list"><div class="empty">正在加载…</div></div>
-  <footer>数据来源：PubMed（免费公开） · 摘要由 AI 生成，仅供参考，<br>引用前请点「查看原文」核对。</footer>
-</div>
-
-<script>
-var OWNER="__OWNER__", REPO="__REPO__", BRANCH="main";
+var OWNER="hongrui023", REPO="nanomed-daily", BRANCH="main";
 var API="https://api.github.com/repos/"+OWNER+"/"+REPO+"/contents/";
 var GH="https://api.github.com/repos/"+OWNER+"/"+REPO;
 var LS={tok:"nm_token",fav:"nm_fav",read:"nm_read"};
@@ -318,7 +206,7 @@ function openPanel(){
    +'装好后桌面出现「纳米日报」，点开就是全屏界面。<br>'
    +'安装时手机可能提示「未知来源应用」，选「允许」即可——这是自己签名的个人应用，没上应用商店。</div>'
    +'<a class="btn btn-p" style="display:block;text-align:center;text-decoration:none;line-height:20px" '
-   +'href="__APK__">↓ 下载安卓 App</a></div>'
+   +'href="https://hongrui023.github.io/nanomed-daily/nanomed.apk">↓ 下载安卓 App</a></div>'
 
    +'<div class="panel"><h3>⑧ 改坏了怎么办 / 本机数据</h3>'
    +'<div class="hint">改配置改出问题了？两招都能救回来，随便挑一个。</div>'
@@ -687,41 +575,3 @@ function load(d){
     .catch(function(e){document.getElementById("list").innerHTML=
       '<div class="empty">读取 '+d+' 失败</div>'});
 }
-</script>
-</body></html>
-"""
-
-
-def main():
-    owner = os.environ.get("GH_OWNER", "hongrui023")
-    repo = os.environ.get("GH_REPO", "nanomed-daily")
-
-    ddir = os.path.join(BASE, "data")
-    dates = []
-    if os.path.isdir(ddir):
-        for fn in sorted(os.listdir(ddir)):
-            if not fn.endswith(".json") or fn == "index.json":
-                continue
-            try:
-                d = json.load(open(os.path.join(ddir, fn), encoding="utf-8"))
-            except Exception:
-                continue
-            dates.append({"date": d.get("date", fn[:-5]),
-                          "count": len(d.get("papers", []))})
-    dates.sort(key=lambda x: x["date"])
-
-    with open(os.path.join(ddir, "index.json"), "w", encoding="utf-8") as f:
-        json.dump({"dates": dates}, f, ensure_ascii=False, indent=1)
-
-    apk = "https://%s.github.io/%s/nanomed.apk" % (owner, repo)
-    html = (HTML.replace("__OWNER__", owner)
-                .replace("__REPO__", repo)
-                .replace("__APK__", apk))
-    with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:
-        f.write(html)
-
-    print(f"已生成 index.html 与 data/index.json（{len(dates)} 个日期）")
-
-
-if __name__ == "__main__":
-    main()

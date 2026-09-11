@@ -57,12 +57,28 @@ def read_journals():
 
 
 def read_keywords():
-    out, p = [], os.path.join(BASE, "keywords.txt")
+    """返回 (must, opt)。
+
+    一行一个关键词。以 + 开头的表示「必须命中」（AND）：
+        必须词：每一篇论文都得含有它，否则不要 —— 用来锁死研究方向。
+        可选词：命中任意一个就算（OR），用来扩大覆盖面。
+    例：
+        +nanoparticle     ← 必须是纳米相关
+        +neuromodulation  ← 而且还必须跟神经调控有关
+        tumor therapy     ← 可选：肿瘤治疗也一起看
+    """
+    must, opt, p = [], [], os.path.join(BASE, "keywords.txt")
     for line in open(p, encoding="utf-8"):
         line = line.strip()
-        if line and not line.startswith("#"):
-            out.append(line.lower())
-    return out
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("+"):
+            v = line[1:].strip().lower()
+            if v:
+                must.append(v)
+        else:
+            opt.append(line.lower())
+    return must, opt
 
 
 def read_gate():
@@ -182,7 +198,8 @@ def main():
     days = int(cfg.get("days", 3))
     max_papers = int(cfg.get("max_papers", 50))
     journals = read_journals()
-    keywords = read_keywords()
+    kw_must, kw_opt = read_keywords()
+    keywords = kw_must + kw_opt
 
     today = date.today()
     start = today - timedelta(days=days)
@@ -191,6 +208,10 @@ def main():
     log("=" * 70)
     log(f"抓取区间：最近 {days} 天（{span}）")
     log(f"期刊：{len(journals)} 本　关键词：{len(keywords)} 个　上限：{max_papers} 篇")
+    if kw_must:
+        log(f"必须命中：{'、'.join(kw_must)}（缺一个就不要）")
+    if kw_opt:
+        log(f"可选命中：{'、'.join(kw_opt)}（命中任一即可）")
     log("=" * 70)
 
     # 关键词拆成单词
@@ -245,16 +266,35 @@ def main():
     items = list(papers.values())
 
     # 关键词筛选（拆词匹配：一个关键词里的词全部出现才算命中）
+    kw_hits = {k: 0 for k in keywords}
     if keywords:
         kept = []
         for p in items:
             blob = (p.get("title", "") + " " + p.get("abstract", "")).lower()
-            hits = [k for k, toks in kw_tokens.items()
-                    if all(t in blob for t in toks)]
-            if hits:
-                p["matched"] = hits
-                kept.append(p)
+            must_hits = [k for k in kw_must if all(t in blob for t in kw_tokens[k])]
+            if kw_must:
+                # 必须词必须全部命中
+                if len(must_hits) < len(kw_must):
+                    continue
+            opt_hits = [k for k in kw_opt if all(t in blob for t in kw_tokens[k])]
+            if kw_must:
+                # 写了可选词，还得至少命中一个，避免只有必须词时把范围放太开
+                if kw_opt and not opt_hits:
+                    continue
+            else:
+                if not opt_hits:
+                    continue
+            hits = must_hits + opt_hits
+            p["matched"] = hits
+            p["matched_n"] = len(hits)
+            p["must_n"] = len(must_hits)
+            for k in hits:
+                kw_hits[k] += 1
+            kept.append(p)
         log(f"关键词命中 {len(kept)} 篇（总 {len(items)} 篇）")
+        if kw_must and not kept:
+            log("  ⚠ 一篇都没命中：必须词可能太严，或这几个词组合起来在最近这几天没有论文。")
+            log("    建议：把最核心的那个词留成必须，其他改成不带 + 的可选词。")
         items = kept
     else:
         log("没有关键词，保留全部")
@@ -268,7 +308,31 @@ def main():
                         for g in gate)]
         log(f"门槛筛选后剩 {len(items)} 篇（拦掉 {before - len(items)} 篇非医学论文）")
 
+    # 门槛之后再统计一次每个关键词真正带来多少「对口」论文（截断前）
+    kw_final = {k: 0 for k in keywords}
+    for p in items:
+        for k in p.get("matched", []):
+            kw_final[k] += 1
+
+    if keywords:
+        log("-" * 70)
+        log("关键词体检（门槛后实际带来多少篇）：")
+        for k, n in sorted(kw_final.items(), key=lambda x: -x[1]):
+            tag = " [必须]" if k in kw_must else ""
+            if n == 0:
+                log(f"  {k:<38}{tag} {n:>4} 篇   ← 一个都没抓到，建议换掉或删掉")
+            else:
+                log(f"  {k:<38}{tag} {n:>4} 篇")
+        if not kw_must:
+            wide = [k for k, n in kw_final.items()
+                    if n > len(items) * 0.8 and len(items) > 10]
+            if wide:
+                log("  ⚠ 这些词几乎命中所有论文，会盖住别的词的效果：" + "、".join(wide))
+                log("    想让研究方向更聚焦？在最关键的那个词前面加一个 +（必须命中）。")
+
+    # 排序：先按「命中关键词个数」多的在前（越对口越靠前），同分再按日期新的在前
     items.sort(key=lambda x: x.get("pubdate", ""), reverse=True)
+    items.sort(key=lambda x: x.get("matched_n", 0), reverse=True)
     items = items[:max_papers]
 
     os.makedirs(os.path.join(BASE, "data"), exist_ok=True)
@@ -279,6 +343,10 @@ def main():
         "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         "journal_count": len(journals),
         "keyword_count": len(keywords),
+        "keywords_used": keywords,
+        "keywords_must": kw_must,
+        "keywords_opt": kw_opt,
+        "keyword_stats": kw_final,
         "total_found": len(all_ids),
         "matched": len(items),
         "per_journal": per_journal,

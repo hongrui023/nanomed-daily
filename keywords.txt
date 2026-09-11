@@ -1,8 +1,6 @@
++neuro
 nanoparticle
-neuroregulation
-tumor therapy
-nerve modulation
-neural control
-cancer treatment
 nanomedicine
-neuromodulation
+tumor therapy
+drug delivery
+photothermal therapy

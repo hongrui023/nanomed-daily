@@ -13,6 +13,16 @@
    - 不要重复、不要近义堆叠
 3. corrected：如果用户原话里有明显的错别字或用词错误，逐条指出（例如「低送」应为「递送」、
    「纳迷」应为「纳米」、「免役」应为「免疫」）；如果没有错误就填空字符串。
+4. 【核心方向标记】在 keywords 里，挑出 1-2 个最能代表用户研究方向的词，在前面加一个 + 号。
+   含义是「每篇论文都必须含这个词」，用来锁死方向。
+   - 加 + 的必须是这个方向在文献里最常见、最标准的说法，否则一篇都搜不到
+   - 最多 2 个。加太多会过严，导致什么都抓不到
+   - 不要让 + 落在过于宽泛的词上（nanomedicine、drug delivery、nanoparticle 单独一个
+     代表不了方向时不要加 +，除非用户的方向本身就是泛泛的纳米医学）
+   - 其余关键词不加 +，作为可选补充（命中任一即可）
+   - 示例：用户说「我做纳米材料治疗脑瘤，想看跨血脑屏障」
+     → {"keywords":["+brain tumor","+blood-brain barrier","nanoparticle",
+        "glioma","targeted delivery","photothermal therapy", ...]}
 
 【极其重要：中英术语必须用地道的标准写法，严禁逐字直译】
 下面这些是必须遵守的对照，直译会导致在 PubMed 里根本搜不到：
@@ -26,6 +36,10 @@
 靶向递送=targeted delivery｜控释=controlled release｜穿透肽=cell-penetrating peptide
 肿瘤微环境=tumor microenvironment｜血管生成=angiogenesis｜转移=metastasis
 mRNA 疫苗=mRNA vaccine｜基因递送=gene delivery｜siRNA 递送=siRNA delivery
+神经调控=neuromodulation（不是 nerve modulation，后面这个说法几乎没人用）
+神经刺激=neural stimulation｜神经元=neuron｜神经退行性疾病=neurodegeneration
+血脑屏障=blood-brain barrier｜胶质瘤=glioma｜脑肿瘤=brain tumor
+神经炎症=neuroinflammation｜脊髓损伤=spinal cord injury｜周围神经=peripheral nerve
 
 【其他硬性要求】
 - 严禁近义词堆叠：不要同时给 lipid nanoparticle 和 lipid-based nanoparticle 这种重复项
