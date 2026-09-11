@@ -1,11 +1,8 @@
-nerve therapy
-tumor treatment
-neuroimmunotherapy
-tumor microenvironment
 nanoparticle
-liposome
-siRNA delivery
-gene delivery
-targeted delivery
-controlled release
-cell-penetrating peptide
+neuroregulation
+tumor therapy
+nerve modulation
+neural control
+cancer treatment
+nanomedicine
+neuromodulation
