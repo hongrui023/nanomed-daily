@@ -1,0 +1,31 @@
+# 门槛词（默认已填好，一般不用改）
+# 作用：拦掉 ACS AMI、Advanced Materials、Small 这类综合材料期刊里
+#      跟医学无关的论文（比如太阳能电池、海水淡化、催化剂）。
+# 规则：论文标题或摘要里【至少出现其中一个词】才保留。
+# 觉得漏得多：在下面加词。想放宽：把词删掉。
+tumor
+tumour
+cancer
+carcinoma
+oncology
+chemotherapy
+radiotherapy
+immunotherapy
+therapeutic
+therapy
+drug
+pharmaceutic
+biomedical
+nanomedicine
+in vivo
+disease
+immune
+vaccine
+mrna
+sirna
+clinical
+patient
+diagnosis
+diagnostic
+tissue engineering
+regenerative medicine

@@ -1,0 +1,49 @@
+# 期刊列表：一行一本。格式：你看到的名字 | PubMed 里的准确写法
+# 想新增期刊：在下面加一行，照抄格式就行。想删除：把那行删掉。
+# 不知道 PubMed 写法怎么办？只写期刊全名也可以，程序会自动去匹配。
+ACS Nano | ACS Nano
+ACS Applied Materials & Interfaces | ACS Appl Mater Interfaces
+Acta Biomaterialia | Acta Biomater
+Advanced Drug Delivery Reviews | Adv Drug Deliv Rev
+Advanced Healthcare Materials | Adv Healthc Mater
+Advanced Materials | Adv Mater
+Advanced Therapeutics | Adv Ther (Weinh)
+Beilstein Journal of Nanotechnology | Beilstein J Nanotechnol
+Biomaterials | Biomaterials
+Biomaterials Science | Biomater Sci
+Bioconjugate Chemistry | Bioconjug Chem
+BioNanoScience | Bionanoscience
+Colloids and Surfaces B: Biointerfaces | Colloids Surf B Biointerfaces
+Drug Delivery | Drug Deliv
+Drug Delivery and Translational Research | Drug Deliv Transl Res
+European Journal of Pharmaceutics and Biopharmaceutics | Eur J Pharm Biopharm
+Expert Opinion on Drug Delivery | Expert Opin Drug Deliv
+International Journal of Nanomedicine | Int J Nanomedicine
+International Journal of Pharmaceutics | Int J Pharm
+Journal of Biomedical Nanotechnology | J Biomed Nanotechnol
+Journal of Controlled Release | J Control Release
+Journal of Drug Targeting | J Drug Target
+Journal of Nanobiotechnology | J Nanobiotechnology
+Journal of Nanoparticle Research | J Nanopart Res
+Materials Today Bio | Mater Today Bio
+Molecular Pharmaceutics | Mol Pharm
+Nano Convergence | Nano Converg
+Nano Letters | Nano Lett
+Nano Research | Nano Res
+Nano Today | Nano Today
+Nano-Micro Letters | Nanomicro Lett
+Nanomedicine (UK) | Nanomedicine (Lond)
+Nanomedicine: Nanotechnology, Biology, and Medicine | Nanomedicine
+Nanoscale | Nanoscale
+Nanoscale Advances | Nanoscale Adv
+Nanotheranostics | Nanotheranostics
+Nanotoxicology | Nanotoxicology
+Nanotechnology | Nanotechnology
+Nature Biomedical Engineering | Nat Biomed Eng
+Nature Materials | Nat Mater
+Nature Nanotechnology | Nat Nanotechnol
+Particle and Fibre Toxicology | Part Fibre Toxicol
+Precision Nanomedicine | Precis Nanomed
+Small | Small
+Theranostics | Theranostics
+WIREs Nanomedicine and Nanobiotechnology | Wiley Interdiscip Rev Nanomed Nanobiotechnol

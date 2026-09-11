@@ -1,0 +1,351 @@
+# -*- coding: utf-8 -*-
+"""
+第 3 步：生成手机网页
+读取 data/*.json，生成 index.html（你最终看到的页面）+ data/index.json（日期目录）
+"""
+import json
+import os
+import sys
+
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+HTML = r"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#ffffff">
+<title>纳米医学·今日速览</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--line:#e6e8eb;--txt:#1a1d21;--sub:#6b7280;
+--brand:#0f7b6c;--brand-l:#e6f4f1;--star:#f0a020;--danger:#c0392b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--txt);
+font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+padding-bottom:40px}
+header{background:var(--card);border-bottom:1px solid var(--line);
+padding:14px 16px 12px;position:sticky;top:0;z-index:20}
+h1{margin:0;font-size:18px;font-weight:700}
+h1 small{font-weight:400;color:var(--sub);font-size:12px;margin-left:6px}
+.row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+select,button,textarea{font:inherit;color:inherit}
+select{flex:1;min-width:120px;padding:8px 10px;border:1px solid var(--line);
+border-radius:9px;background:#fff}
+.btn{padding:8px 14px;border:1px solid var(--line);border-radius:9px;
+background:#fff;cursor:pointer;font-size:14px}
+.btn:active{background:#eee}
+.btn-p{background:var(--brand);color:#fff;border-color:var(--brand)}
+.btn-p:active{opacity:.85}
+.wrap{padding:12px 14px;max-width:820px;margin:0 auto}
+.stats{background:var(--brand-l);border-radius:11px;padding:11px 13px;
+font-size:13px;color:#0d5f53;margin-bottom:12px}
+.stats b{font-weight:700}
+.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 10px}
+.chip{padding:6px 13px;border:1px solid var(--line);border-radius:20px;
+background:#fff;font-size:13px;white-space:nowrap;cursor:pointer;color:var(--sub)}
+.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;
+padding:13px 14px;margin-bottom:11px}
+.card.gone{opacity:.45}
+.jt{display:flex;justify-content:space-between;align-items:center;
+font-size:12px;color:var(--sub);margin-bottom:7px;gap:8px}
+.jn{background:var(--brand-l);color:#0d5f53;padding:2px 8px;border-radius:5px;
+font-weight:600;flex-shrink:0}
+.acts{display:flex;gap:6px;flex-shrink:0}
+.acts button{border:none;background:none;font-size:19px;padding:0 3px;
+cursor:pointer;line-height:1;color:#c8ccd1}
+.acts button.on{color:var(--star)}
+.tt{font-weight:600;font-size:15.5px;line-height:1.45;margin-bottom:9px}
+.ai{background:#fafbfc;border-left:3px solid var(--brand);border-radius:0 8px 8px 0;
+padding:9px 11px;font-size:14px;line-height:1.65}
+.ai p{margin:0 0 6px}
+.ai p:last-child{margin:0}
+.ai b{color:var(--brand);margin-right:4px}
+.link{display:inline-block;margin-top:9px;font-size:13px;color:var(--brand);
+text-decoration:none;border:1px solid var(--brand-l);padding:5px 11px;border-radius:7px}
+.more{font-size:13px;color:var(--sub);background:none;border:none;
+padding:4px 0;cursor:pointer;text-decoration:underline}
+.abs{display:none;margin-top:8px;font-size:13px;color:#4b5563;
+background:#f6f7f9;padding:9px 11px;border-radius:8px;line-height:1.6}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:13px;
+padding:13px 14px;margin-bottom:11px}
+.panel h3{margin:0 0 4px;font-size:15px}
+.panel .hint{font-size:12px;color:var(--sub);margin-bottom:9px;line-height:1.5}
+textarea{width:100%;min-height:170px;border:1px solid var(--line);border-radius:9px;
+padding:9px 10px;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;resize:vertical}
+.msg{font-size:13px;margin-top:8px;min-height:18px}
+.ok{color:var(--brand)}.err{color:var(--danger)}
+.empty{text-align:center;color:var(--sub);padding:50px 20px;font-size:14px}
+footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
+</style>
+</head>
+<body>
+<header>
+  <h1>纳米医学 · 今日速览<small id="sub"></small></h1>
+  <div class="row">
+    <select id="dates"></select>
+    <button class="btn" id="sett">设置</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="stats" class="stats" style="display:none"></div>
+  <div class="chips">
+    <div class="chip on" data-f="all">全部</div>
+    <div class="chip" data-f="unread">未读</div>
+    <div class="chip" data-f="fav">收藏 <span id="fc">(0)</span></div>
+    <div class="chip" data-f="today">今天</div>
+  </div>
+  <div id="list"><div class="empty">正在加载…</div></div>
+  <footer>数据来源：PubMed（免费公开） · 摘要由 AI 生成，仅供参考，<br>引用前请点「查看原文」核对。</footer>
+</div>
+
+<script>
+var OWNER="__OWNER__", REPO="__REPO__", BRANCH="main";
+var API="https://api.github.com/repos/"+OWNER+"/"+REPO+"/contents/";
+var GH="https://api.github.com/repos/"+OWNER+"/"+REPO;
+var LS={tok:"nm_token",fav:"nm_fav",read:"nm_read"};
+function ghH(t,json){
+  var h={Authorization:"Bearer "+t,Accept:"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"};
+  if(json)h["Content-Type"]="application/json";
+  return h;
+}
+var DATES=[], CUR="", DATA=null, FILTER="all";
+var TODAY=new Date().toISOString().slice(0,10);
+
+function get(k,d){try{return JSON.parse(localStorage.getItem(k)||d)}catch(e){return d}}
+function set(k,v){localStorage.setItem(k,JSON.stringify(v))}
+var fav=get(LS.fav,{}), read=get(LS.read,{});
+
+function esc(s){return (s||"").replace(/[&<>"]/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+function parseAI(t){
+  if(!t) return "";
+  var out="";
+  t.split(/\n+/).forEach(function(line){
+    line=line.trim(); if(!line) return;
+    var m=line.match(/^【(.+?)】\s*(.*)$/);
+    if(m){ out+="<p><b>"+esc(m[1])+"</b>"+esc(m[2])+"</p>"; }
+    else if(out){ out+="<p>"+esc(line)+"</p>"; }
+  });
+  return out || "<p>"+esc(t)+"</p>";
+}
+
+function render(){
+  var box=document.getElementById("list");
+  if(!DATA){box.innerHTML='<div class="empty">还没有数据。<br>先在 GitHub 仓库点一下「运行」。</div>';return}
+  var ps=DATA.papers||[];
+  document.getElementById("sub").textContent=DATA.date||"";
+  var s=document.getElementById("stats");
+  s.style.display="block";
+  s.innerHTML="本期共 <b>"+ps.length+"</b> 篇（扫描 "+DATA.total_found+" 篇 / "
+    +DATA.journal_count+" 本期刊）<br>抓取区间："+(DATA.range||"")+"　生成时间："+(DATA.generated_at||"");
+
+  var items=ps.filter(function(p){
+    if(FILTER==="unread") return !read[p.pmid];
+    if(FILTER==="fav") return fav[p.pmid];
+    if(FILTER==="today") return p.pubdate===TODAY;
+    return true;
+  });
+
+  if(!items.length){box.innerHTML='<div class="empty">这个筛选下没有内容</div>';return}
+
+  box.innerHTML=items.map(function(p){
+    var i=ps.indexOf(p);
+    return '<div class="card'+(read[p.pmid]?' gone':'')+'" data-p="'+p.pmid+'">'
+      +'<div class="jt"><span class="jn">'+esc(p.journal_display||p.journal||"")+'</span>'
+      +'<span>'+esc(p.pubdate||"")+'</span>'
+      +'<span class="acts">'
+      +'<button onclick="tgFav(\''+p.pmid+'\')" class="'+(fav[p.pmid]?'on':'')+'" title="收藏">★</button>'
+      +'<button onclick="tgRead(\''+p.pmid+'\')" class="'+(read[p.pmid]?'on':'')+'" title="标记已读">✓</button>'
+      +'</span></div>'
+      +'<div class="tt">'+esc(p.title)+'</div>'
+      +(p.ai?'<div class="ai">'+parseAI(p.ai)+'</div>':'')
+      +'<div><a class="link" href="'+p.url+'" target="_blank" rel="noopener">查看原文 →</a> '
+      +'<button class="more" onclick="tgAbs('+i+')">英文摘要</button></div>'
+      +'<div class="abs" id="abs'+i+'">'+esc(p.abstract||"（这篇没有摘要）")+'</div>'
+      +'</div>';
+  }).join("");
+  document.getElementById("fc").textContent="("+Object.keys(fav).length+")";
+}
+
+function tgAbs(i){var e=document.getElementById("abs"+i);
+  e.style.display=e.style.display==="block"?"none":"block"}
+function tgFav(id){fav[id]=!fav[id];if(!fav[id])delete fav[id];set(LS.fav,fav);render()}
+function tgRead(id){read[id]=!read[id];if(!read[id])delete read[id];set(LS.read,read);render()}
+
+document.querySelectorAll(".chip").forEach(function(c){
+  c.onclick=function(){
+    document.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});
+    c.classList.add("on");FILTER=c.dataset.f;render()}});
+
+// 设置面板
+document.getElementById("sett").onclick=openPanel;
+
+function openPanel(){
+  var box=document.getElementById("list");
+  var tk=get(LS.tok,'""');
+  box.innerHTML=
+   '<div class="panel"><h3>① GitHub 私人令牌</h3>'
+   +'<div class="hint">填一次就存在这台手机上。用于保存期刊/关键词、点「运行」。'
+   +'需要勾 repo 和 workflow 权限。</div>'
+   +'<input id="tok" style="width:100%;padding:9px 10px;border:1px solid var(--line);'
+   +'border-radius:9px;font:13px monospace" value="'+esc(tk)+'" placeholder="粘贴 ghp_ 开头的令牌">'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="saveTok()">保存令牌</button></div>'
+   +'<div class="msg" id="m0"></div></div>'
+
+   +'<div class="panel"><h3>② 期刊列表</h3><div class="hint">一行一本。格式：<code>显示名 | PubMed写法</code>。'
+   +'不知道写法就只写期刊全名。删除=删掉那行。</div>'
+   +'<textarea id="j"></textarea>'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'journals.txt\',\'j\',\'m1\')">保存期刊</button></div>'
+   +'<div class="msg" id="m1"></div></div>'
+
+   +'<div class="panel"><h3>③ 关键词</h3><div class="hint">一行一个，中英文都行。'
+   +'程序会把关键词拆成单词，全部出现才算命中。词越多越精准。</div>'
+   +'<textarea id="k"></textarea>'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'keywords.txt\',\'k\',\'m2\')">保存关键词</button></div>'
+   +'<div class="msg" id="m2"></div></div>'
+
+   +'<div class="panel"><h3>④ 抓取天数 & 数量</h3><div class="hint">config.txt：days=抓取最近几天（PubMed 有 1-3 天延迟，建议 3）；max_papers=最多总结几篇。</div>'
+   +'<textarea id="c" style="min-height:90px"></textarea>'
+   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'config.txt\',\'c\',\'m3\')">保存参数</button></div>'
+   +'<div class="msg" id="m3"></div></div>'
+
+   +'<div class="panel"><h3>⑤ 触发一次运行</h3><div class="hint">保存好令牌后点这里，'
+   +'GitHub 会开始抓最新论文，约 3-8 分钟后回来刷新本页。</div>'
+   +'<button class="btn btn-p" onclick="trigger()">▶ 立刻运行</button>'
+   +'<div class="msg" id="m4"></div>'
+   +'<div class="hint" style="margin-top:8px">没令牌也能跑：'
+   +'<a href="https://github.com/'+OWNER+'/'+REPO+'/actions/workflows/run.yml" target="_blank" rel="noopener">'
+   +'在 GitHub 网页点 Run workflow →</a></div></div>'
+
+   +'<div class="panel"><h3>⑥ 本机数据</h3><div class="hint">收藏和已读只存在这台手机的浏览器里，'
+   +'换手机或清缓存会丢。</div>'
+   +'<button class="btn" onclick="clearAll()">清空收藏和已读</button>'
+   +'<div class="msg" id="m5"></div></div>';
+
+  ["journals.txt","keywords.txt","config.txt"].forEach(function(f){
+    fetch(f+"?t="+Date.now()).then(function(r){return r.text()})
+      .then(function(t){
+        if(f==="journals.txt")document.getElementById("j").value=t;
+        if(f==="keywords.txt")document.getElementById("k").value=t;
+        if(f==="config.txt")document.getElementById("c").value=t;
+      }).catch(function(e){});
+  });
+  document.getElementById("stats").style.display="none";
+}
+
+function saveTok(){set(LS.tok,document.getElementById("tok").value.trim());
+  var m=document.getElementById("m0");m.className="msg ok";m.textContent="已保存到本机";}
+
+function b64(s){var b=new TextEncoder().encode(s),r="";
+  for(var i=0;i<b.length;i++)r+=String.fromCharCode(b[i]);return btoa(r)}
+
+function save(path,id,mid){
+  var m=document.getElementById(mid),tok=get(LS.tok,'""');
+  if(!tok){m.className="msg err";m.textContent="请先填并保存令牌";return}
+  m.className="msg";m.textContent="正在保存…";
+  var content=document.getElementById(id).value;
+  fetch(API+path+"?ref="+BRANCH+"&t="+Date.now(),{headers:ghH(tok)})
+  .then(function(r){return r.json()}).then(function(j){
+    if(!j.sha){throw new Error(j.message||"读取失败，检查令牌权限")}
+    return fetch(API+path,{
+      method:"PUT",
+      headers:ghH(tok,1),
+      body:JSON.stringify({content:b64(content),
+        sha:j.sha,message:"更新 "+path,branch:BRANCH})
+    }).then(function(r){return r.json()});
+  }).then(function(j){
+    if(j.content){m.className="msg ok";m.textContent="已保存到仓库，下次运行生效 ✅"}
+    else{m.className="msg err";m.textContent="失败："+(j.message||JSON.stringify(j).slice(0,120))}
+  }).catch(function(e){
+    m.className="msg err";
+    m.textContent="保存失败（"+e.message+"）。也可去 GitHub 网页点文件右上角铅笔图标直接改。";
+  });
+}
+
+function trigger(){
+  var m=document.getElementById("m4"),tok=get(LS.tok,'""');
+  if(!tok){m.className="msg err";m.textContent="请先填并保存令牌";return}
+  m.className="msg";m.textContent="正在触发…";
+  fetch(GH+"/actions/workflows/run.yml/dispatches",{
+    method:"POST",headers:ghH(tok,1),
+    body:JSON.stringify({ref:BRANCH})
+  }).then(function(r){
+    if(r.status===204||r.ok){
+      m.className="msg ok";
+      m.textContent="已触发 ✅ 约 3-8 分钟后回到本页，下拉选今天的日期查看。";
+    }else{
+      return r.json().then(function(j){
+        throw new Error(j.message||("HTTP "+r.status))});
+    }
+  }).catch(function(e){
+    m.className="msg err";
+    m.textContent="失败："+e.message+"（令牌需要勾 Actions 写权限）";
+  });
+}
+
+function clearAll(){fav={};read={};set(LS.fav,fav);set(LS.read,read);
+  var m=document.getElementById("m5");m.className="msg ok";m.textContent="已清空";}
+
+// 启动
+fetch("data/index.json?t="+Date.now()).then(function(r){return r.json()})
+.then(function(ix){
+  DATES=ix.dates||[];
+  if(!DATES.length){document.getElementById("list").innerHTML=
+    '<div class="empty">还没有数据</div>';return}
+  var sel=document.getElementById("dates");
+  sel.innerHTML=DATES.map(function(d){
+    return '<option value="'+d.date+'">'+d.date+'（'+d.count+' 篇）</option>'}).join("");
+  sel.value=DATES[DATES.length-1].date;
+  sel.onchange=function(){load(sel.value)};
+  load(sel.value);
+}).catch(function(e){
+  document.getElementById("list").innerHTML=
+   '<div class="empty">加载失败：'+e.message+'<br>请确认已开启 GitHub Pages 并选对部署目录。</div>';
+});
+
+function load(d){
+  CUR=d;
+  fetch("data/"+d+".json?t="+Date.now()).then(function(r){return r.json()})
+    .then(function(j){DATA=j;render()})
+    .catch(function(e){document.getElementById("list").innerHTML=
+      '<div class="empty">读取 '+d+' 失败</div>'});
+}
+</script>
+</body></html>
+"""
+
+
+def main():
+    owner = os.environ.get("GH_OWNER", "hongrui023")
+    repo = os.environ.get("GH_REPO", "nanomed-daily")
+
+    ddir = os.path.join(BASE, "data")
+    dates = []
+    if os.path.isdir(ddir):
+        for fn in sorted(os.listdir(ddir)):
+            if not fn.endswith(".json") or fn == "index.json":
+                continue
+            try:
+                d = json.load(open(os.path.join(ddir, fn), encoding="utf-8"))
+            except Exception:
+                continue
+            dates.append({"date": d.get("date", fn[:-5]),
+                          "count": len(d.get("papers", []))})
+    dates.sort(key=lambda x: x["date"])
+
+    with open(os.path.join(ddir, "index.json"), "w", encoding="utf-8") as f:
+        json.dump({"dates": dates}, f, ensure_ascii=False, indent=1)
+
+    html = HTML.replace("__OWNER__", owner).replace("__REPO__", repo)
+    with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+    print(f"已生成 index.html 与 data/index.json（{len(dates)} 个日期）")
+
+
+if __name__ == "__main__":
+    main()
