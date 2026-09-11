@@ -90,6 +90,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
 </header>
 
 <div class="wrap">
+  <div id="warnbar" class="stats" style="display:none;background:#fff8e1;border-color:#f0d488;color:#8a6d00"></div>
   <div id="stats" class="stats" style="display:none"></div>
   <div class="chips">
     <div class="chip on" data-f="all">全部</div>
@@ -162,7 +163,11 @@ function render(){
       +'<button onclick="tgRead(\''+p.pmid+'\')" class="'+(read[p.pmid]?'on':'')+'" title="标记已读">✓</button>'
       +'</span></div>'
       +'<div class="tt">'+esc(p.title)+'</div>'
-      +(p.ai?'<div class="ai">'+parseAI(p.ai)+'</div>':'')
+      +(p.ai?'<div class="ai">'+parseAI(p.ai)+'</div>'
+           :'<div class="ai" style="border-left-color:#e0a800;background:#fffdf5">'
+            +'<p style="color:#8a6d00">⚠ 这篇还没生成大白话摘要。</p>'
+            +'<p style="color:#8a6d00">常见原因：这次运行时 AI 额度用完了，或运行中途被打断。'
+            +'点右上角 ⚙️ → 再「立刻运行」一次即可（已写好的不会重复花钱）。</p></div>')
       +'<div><a class="link" href="'+p.url+'" target="_blank" rel="noopener">查看原文 →</a> '
       +'<button class="more" onclick="tgAbs('+i+')">英文摘要</button></div>'
       +'<div class="abs" id="abs'+i+'">'+esc(p.abstract||"（这篇没有摘要）")+'</div>'
@@ -593,7 +598,20 @@ fetch("data/index.json?t="+Date.now()).then(function(r){return r.json()})
 function load(d){
   CUR=d;
   fetch("data/"+d+".json?t="+Date.now()).then(function(r){return r.json()})
-    .then(function(j){DATA=j;render()})
+    .then(function(j){
+      DATA=j;
+      var bar=document.getElementById("warnbar");
+      if(bar){
+        var miss=(j.papers||[]).filter(function(p){return !p.ai}).length;
+        if(miss>0){
+          bar.style.display="block";
+          bar.innerHTML="<b>⚠ 这批有 "+miss+" 篇还没生成大白话摘要</b><br>"
+            +"通常再点一次「设置 → 立刻运行」就能补上（已写好的不会重复花钱）。<br>"
+            +"数据生成时间："+esc(j.generated_at||"未知");
+        }else{bar.style.display="none"}
+      }
+      render();
+    })
     .catch(function(e){document.getElementById("list").innerHTML=
       '<div class="empty">读取 '+d+' 失败</div>'});
 }
