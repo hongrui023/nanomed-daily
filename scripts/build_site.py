@@ -2,6 +2,10 @@
 """
 第 3 步：生成手机网页
 读取 data/*.json，生成 index.html（你最终看到的页面）+ data/index.json（日期目录）
+
+界面：明亮卡片风 / 默认浅色可手动切深色 / 大卡片一屏 1-2 篇
+      中文标题在上、英文标题在下 / 顶部分两层滚动时留筛选栏吸顶
+      设置页为全屏浮层，顶栏固定「‹ 返回首页」，内容按「常用/高级」折叠
 """
 import json
 import os
@@ -10,111 +14,309 @@ import sys
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 HTML = r"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#ffffff">
-<title>纳米医学·今日速览</title>
+<meta name="theme-color" content="#eef2f7" id="tcolor">
+<title>纳米医学 · 今日速览</title>
 <style>
-:root{--bg:#f6f7f9;--card:#fff;--line:#e6e8eb;--txt:#1a1d21;--sub:#6b7280;
---brand:#0f7b6c;--brand-l:#e6f4f1;--star:#f0a020;--danger:#c0392b}
+:root{--bg:#eef2f7;--card:#fff;--card2:#f7f9fc;--line:#e3e9f2;--line2:#edf1f7;
+--txt:#0f172a;--txt2:#4a5566;--sub:#7a8699;--sub2:#9aa5b4;
+--brand:#2f6bff;--brand-l:#e9f0ff;--amber:#b45309;--amber-l:#fff4e0;
+--red:#d92d20;--star:#f59e0b;--r:16px;--r2:12px;
+--sh:0 1px 2px rgba(16,32,64,.04),0 8px 22px -12px rgba(16,32,64,.18)}
+html[data-theme=dark]{--bg:#0d1017;--card:#161a23;--card2:#11151d;--line:#252c3a;--line2:#1d232f;
+--txt:#e9edf5;--txt2:#b3bdcb;--sub:#8b95a6;--sub2:#6d7787;
+--brand:#7ba0ff;--brand-l:#1b2537;--amber:#f0b45e;--amber-l:#2a2216;
+--red:#ff8074;--star:#f0b45e;
+--sh:0 1px 2px rgba(0,0,0,.35),0 10px 26px -14px rgba(0,0,0,.6)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--txt);
 font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-padding-bottom:40px}
-header{background:var(--card);border-bottom:1px solid var(--line);
-padding:14px 16px 12px;position:sticky;top:0;z-index:20}
-h1{margin:0;font-size:18px;font-weight:700}
-h1 small{font-weight:400;color:var(--sub);font-size:12px;margin-left:6px}
-.row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
-select,button,textarea{font:inherit;color:inherit}
-select{flex:1;min-width:120px;padding:8px 10px;border:1px solid var(--line);
-border-radius:9px;background:#fff}
-.btn{padding:8px 14px;border:1px solid var(--line);border-radius:9px;
-background:#fff;cursor:pointer;font-size:14px}
-.btn:active{background:#eee}
-.btn-p{background:var(--brand);color:#fff;border-color:var(--brand)}
-.btn-p:active{opacity:.85}
-.wrap{padding:12px 14px;max-width:820px;margin:0 auto}
-.stats{background:var(--brand-l);border-radius:11px;padding:11px 13px;
-font-size:13px;color:#0d5f53;margin-bottom:12px}
-.stats b{font-weight:700}
-.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 10px}
-.chip{padding:6px 13px;border:1px solid var(--line);border-radius:20px;
-background:#fff;font-size:13px;white-space:nowrap;cursor:pointer;color:var(--sub)}
-.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:13px;
-padding:13px 14px;margin-bottom:11px}
-.card.gone{opacity:.45}
-.jt{display:flex;justify-content:space-between;align-items:center;
-font-size:12px;color:var(--sub);margin-bottom:7px;gap:8px}
-.jn{background:var(--brand-l);color:#0d5f53;padding:2px 8px;border-radius:5px;
-font-weight:600;flex-shrink:0}
-.acts{display:flex;gap:6px;flex-shrink:0}
-.acts button{border:none;background:none;font-size:19px;padding:0 3px;
-cursor:pointer;line-height:1;color:#c8ccd1}
-.acts button.on{color:var(--star)}
-.tt{font-weight:600;font-size:15.5px;line-height:1.45;margin-bottom:8px}
-.mch{margin:0 0 9px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
-.mch i{font-style:normal;font-size:11px;color:var(--sub)}
-.mch span{font-size:11px;background:#eef4ff;color:#2563eb;border-radius:20px;padding:2px 8px}
-.kwst{margin-top:8px;font-size:12px;line-height:1.9;border-top:1px dashed var(--line);padding-top:7px}
-.kwst em{font-style:normal;color:var(--sub)}
-.kwst .dead{color:#d93025;font-weight:600}
-.kwst .wide{color:#b26a00}
-.ai{background:#fafbfc;border-left:3px solid var(--brand);border-radius:0 8px 8px 0;
-padding:9px 11px;font-size:14px;line-height:1.65}
-.ai p{margin:0 0 6px}
-.ai p:last-child{margin:0}
-.ai b{color:var(--brand);margin-right:4px}
-.link{display:inline-block;margin-top:9px;font-size:13px;color:var(--brand);
-text-decoration:none;border:1px solid var(--brand-l);padding:5px 11px;border-radius:7px}
-.more{font-size:13px;color:var(--sub);background:none;border:none;
-padding:4px 0;cursor:pointer;text-decoration:underline}
-.abs{display:none;margin-top:8px;font-size:13px;color:#4b5563;
-background:#f6f7f9;padding:9px 11px;border-radius:8px;line-height:1.6}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:13px;
-padding:13px 14px;margin-bottom:11px}
-.panel h3{margin:0 0 4px;font-size:15px}
-.panel .hint{font-size:12px;color:var(--sub);margin-bottom:9px;line-height:1.5}
-textarea{width:100%;min-height:170px;border:1px solid var(--line);border-radius:9px;
-padding:9px 10px;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;resize:vertical}
-.msg{font-size:13px;margin-top:8px;min-height:18px}
-.ok{color:var(--brand)}.err{color:var(--danger)}
-.empty{text-align:center;color:var(--sub);padding:50px 20px;font-size:14px}
-footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
+padding-bottom:30px}
+.bar{position:sticky;top:0;z-index:30;height:54px;display:flex;align-items:center;gap:10px;
+padding:0 14px;background:var(--card);border-bottom:1px solid var(--line)}
+.mark{width:26px;height:26px;border-radius:8px;background:var(--brand);color:#fff;flex-shrink:0;
+display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500}
+.bt{flex:1;min-width:0}
+.bt1{font-size:16px;font-weight:500;line-height:1.25;letter-spacing:.01em}
+.bt2{font-size:11.5px;color:var(--sub2);line-height:1.35;white-space:nowrap;overflow:hidden;
+text-overflow:ellipsis}
+.tools{display:flex;gap:6px;flex-shrink:0}
+.ic{width:34px;height:34px;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);
+color:var(--txt2);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ic:active{background:var(--card2)}
+.filter{position:sticky;top:54px;z-index:29;display:flex;gap:7px;overflow-x:auto;
+padding:9px 14px 10px;background:var(--card);border-bottom:1px solid var(--line);
+scrollbar-width:none}
+.filter::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;padding:6px 13px;border:1px solid var(--line);border-radius:20px;background:var(--card);
+font-size:13px;color:var(--sub);cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.wrap{padding:14px 14px 30px;max-width:900px;margin:0 auto}
+.notice{background:var(--amber-l);color:var(--amber);border-radius:var(--r2);padding:11px 13px;
+font-size:13px;line-height:1.7;margin-bottom:13px}
+.stats{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:12px 14px;
+font-size:13px;color:var(--txt2);line-height:1.75;margin-bottom:13px}
+.stats b{color:var(--brand);font-weight:500}
+.kwtog{background:none;border:none;color:var(--brand);font-size:12.5px;cursor:pointer;padding:7px 0 0;
+display:block}
+.kwbox{display:none;margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);
+font-size:12.5px;line-height:2;color:var(--sub)}
+.kwbox.open{display:block}
+.kwbox .dead{color:var(--red);font-weight:500}
+.kwbox .wide{color:var(--amber)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+padding:15px 16px 13px;margin-bottom:14px;box-shadow:var(--sh)}
+.card.gone{opacity:.5}
+.ctop{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:11px}
+.jtag{font-size:11.5px;font-weight:500;color:var(--brand);background:var(--brand-l);
+padding:3px 9px;border-radius:20px}
+.mtag{font-size:11.5px;color:var(--amber);background:var(--amber-l);padding:3px 9px;border-radius:20px}
+.dt{font-size:11.5px;color:var(--sub2);margin-left:auto;font-variant-numeric:tabular-nums}
+.tzh{margin:0 0 6px;font-size:17px;font-weight:500;line-height:1.5}
+.ten{margin:0 0 12px;font-size:12.5px;line-height:1.6;color:var(--sub)}
+.ten.nz{margin:0 0 12px;font-size:15px;color:var(--txt);line-height:1.5}
+.ai{background:var(--card2);border-left:3px solid var(--brand);
+border-radius:4px var(--r2) var(--r2) 4px;padding:12px 14px}
+.ai-i{font-size:14px;line-height:1.75;color:var(--txt2)}
+.ai-i+.ai-i{margin-top:8px}
+.ai-k{color:var(--brand);font-weight:500;margin-right:6px;font-size:13px}
+.cfoot{display:flex;align-items:center;gap:8px;margin-top:13px;padding-top:12px;
+border-top:1px solid var(--line2)}
+.pri{font-size:13px;font-weight:500;color:#fff;background:var(--brand);padding:7px 14px;
+border-radius:9px;text-decoration:none;flex-shrink:0}
+.lnk{font-size:12.5px;color:var(--sub);background:none;border:none;padding:6px 0;cursor:pointer;
+font-family:inherit}
+.sp{flex:1}
+.ic2{width:32px;height:32px;padding:0;border:1px solid var(--line);border-radius:9px;background:var(--card);
+color:var(--sub2);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ic2.on{color:var(--star);border-color:var(--star);background:var(--amber-l)}
+.ic2.done{color:var(--brand);border-color:var(--brand);background:var(--brand-l)}
+.abs{display:none;margin-top:11px;font-size:13px;line-height:1.7;color:var(--sub);
+background:var(--card2);padding:11px 12px;border-radius:var(--r2)}
+.empty{text-align:center;color:var(--sub);padding:60px 20px;font-size:14px;line-height:1.9}
+footer{text-align:center;color:var(--sub2);font-size:12px;padding:16px 14px 6px;line-height:1.75}
+.sheet{position:fixed;inset:0;z-index:60;background:var(--bg);display:none;flex-direction:column}
+.sheet.open{display:flex}
+.sh-top{flex-shrink:0;display:flex;align-items:center;gap:10px;padding:10px 12px;
+background:var(--card);border-bottom:1px solid var(--line)}
+.back{display:inline-flex;align-items:center;gap:2px;font-size:13.5px;font-weight:500;
+color:var(--brand);background:var(--brand-l);border:none;border-radius:10px;padding:8px 13px;
+cursor:pointer;font-family:inherit;flex-shrink:0}
+.sh-ttl{flex:1;text-align:center;font-size:15px;font-weight:500;color:var(--txt)}
+.sh-body{flex:1;overflow-y:auto;padding:14px 14px 40px;-webkit-overflow-scrolling:touch}
+.sec{font-size:11.5px;color:var(--sub2);letter-spacing:.1em;margin:8px 4px 9px}
+.sec:first-child{margin-top:2px}
+.grp{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+margin-bottom:10px;overflow:hidden}
+.gh{width:100%;display:flex;align-items:center;gap:9px;padding:14px 15px;background:none;border:none;
+cursor:pointer;text-align:left;font:500 15px/1.4 inherit;color:var(--txt);font-family:inherit}
+.gv{font-size:11.5px;color:var(--sub2);font-weight:400;margin-left:auto;flex-shrink:0;
+max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+.cv{font-size:11px;color:var(--sub2);flex-shrink:0;transition:transform .2s}
+.grp.open .cv{transform:rotate(180deg)}
+.gb{display:none;padding:0 15px 15px}
+.grp.open .gb{display:block}
+.hint{font-size:12.5px;color:var(--sub);line-height:1.7;margin-bottom:10px}
+.hint b{color:var(--txt2);font-weight:500}
+.hint code{background:var(--card2);border:1px solid var(--line);border-radius:5px;
+padding:1px 5px;font-size:12px;font-family:ui-monospace,Menlo,Consolas,monospace}
+input{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 11px;
+background:var(--card2);color:var(--txt);font:13px/1.5 inherit;font-family:inherit}
+textarea{width:100%;min-height:150px;border:1px solid var(--line);border-radius:10px;
+padding:10px 11px;background:var(--card2);color:var(--txt);
+font:13px/1.7 ui-monospace,Menlo,Consolas,monospace;resize:vertical}
+.btn{padding:9px 15px;border:1px solid var(--line);border-radius:10px;background:var(--card);
+color:var(--txt);font:13.5px/1.4 inherit;font-family:inherit;cursor:pointer}
+.btn:active{background:var(--card2)}
+.btn-p{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn-p:active{opacity:.88}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.msg{font-size:13px;margin-top:9px;min-height:18px;line-height:1.65}
+.ok{color:var(--brand)}.err{color:var(--red)}
+.aibox{background:var(--brand-l);border-radius:var(--r2);padding:12px 13px;margin-bottom:13px}
+.aibox .t{font-size:13.5px;font-weight:500;color:var(--txt);margin-bottom:5px}
+.aibox textarea{min-height:68px;font-size:14px;font-family:inherit;
+background:var(--card);border-color:var(--line)}
+.kwout{margin-top:9px;padding:10px 12px;background:var(--card);border:1px solid var(--line);
+border-radius:10px;font:12.5px/2 ui-monospace,Menlo,Consolas,monospace;color:var(--txt2)}
 </style>
 </head>
 <body>
+
 <header>
-  <h1>纳米医学 · 今日速览<small id="sub"></small></h1>
-  <div class="row">
-    <select id="dates"></select>
-    <button class="btn" id="sett">设置</button>
+  <div class="bar">
+    <div class="mark">纳</div>
+    <div class="bt">
+      <div class="bt1">纳米医学速览</div>
+      <div class="bt2" id="sub">正在加载…</div>
+    </div>
+    <div class="tools">
+      <button class="ic" id="thm" onclick="toggleTheme()" title="切换深色 / 浅色">☾</button>
+      <button class="ic" id="sett" onclick="openSet()" title="设置">⚙</button>
+    </div>
+  </div>
+  <div class="filter">
+    <div class="chip on" data-f="all">全部</div>
+    <div class="chip" data-f="unread">未读</div>
+    <div class="chip" data-f="fav">收藏 <span id="fc">0</span></div>
+    <div class="chip" data-f="today">今天</div>
+    <div class="chip" id="srt" title="切换排序方式">⇅ 最相关</div>
   </div>
 </header>
 
 <div class="wrap">
-  <div id="warnbar" class="stats" style="display:none;background:#fff8e1;border-color:#f0d488;color:#8a6d00"></div>
+  <div id="warnbar" class="notice" style="display:none"></div>
   <div id="stats" class="stats" style="display:none"></div>
-  <div class="chips">
-    <div class="chip on" data-f="all">全部</div>
-    <div class="chip" data-f="unread">未读</div>
-    <div class="chip" data-f="fav">收藏 <span id="fc">(0)</span></div>
-    <div class="chip" data-f="today">今天</div>
-    <div class="chip" id="srt" title="切换排序方式">⇅ 最相关</div>
-  </div>
   <div id="list"><div class="empty">正在加载…</div></div>
-  <footer>数据来源：PubMed（免费公开） · 摘要由 AI 生成，仅供参考，<br>引用前请点「查看原文」核对。</footer>
+  <footer>数据来源：PubMed（免费公开）<br>摘要由 AI 生成，仅供参考，引用前请点「查看原文」核对</footer>
+</div>
+
+<div class="sheet" id="settings">
+  <div class="sh-top">
+    <button class="back" onclick="closeSet()">‹ 返回首页</button>
+    <div class="sh-ttl">设置</div>
+    <button class="ic" id="thm2" onclick="toggleTheme()" title="切换深色 / 浅色">☾</button>
+  </div>
+  <div class="sh-body">
+
+    <div class="sec">常用</div>
+
+    <div class="grp" id="grp_k">
+      <button class="gh" onclick="acc('grp_k')">关键词<span class="gv" id="gv_k">读取中…</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="aibox">
+          <div class="t">懒得想词？让 AI 帮你写</div>
+          <div class="hint">用一句话说说你想追踪什么就行。<b>大白话、错别字、说一半都没关系</b>，AI 会自己理解，翻成地道的英文检索词。</div>
+          <textarea id="ai_in" placeholder="例如：我做纳米材料治疗肿瘤，想看 LNP 递送和铁死亡"></textarea>
+          <div class="btnrow">
+            <button class="btn btn-p" onclick="aiGen()">AI 帮我写关键词</button>
+            <button class="btn" onclick="toggleZK()">密钥设置</button>
+          </div>
+          <div id="zkbox" style="display:none;margin-top:10px">
+            <div class="hint">填了智谱密钥 → <b>2 秒出结果</b>；不填 → 走 GitHub 服务器，约 15 秒，慢但不用配。密钥只存在这台手机。</div>
+            <input id="zk" placeholder="粘贴智谱 API Key（可选）">
+            <div class="btnrow"><button class="btn btn-p" onclick="saveZK()">保存密钥</button></div>
+            <div class="msg" id="mzk"></div>
+          </div>
+          <div id="ai_out"></div>
+          <div class="hint" style="margin:8px 0 0">你写的这句话会存进你的公开仓库，别写机密内容。</div>
+        </div>
+
+        <div class="hint"><b>一行一个，中英文都行。两种写法：</b><br>
+        ① 普通词（如 <code>tumor therapy</code>）：命中任意一个就保留 —— 用来扩大范围。<br>
+        ② <b>前面加 + 的词（如 <code>+neuromodulation</code>）：每一篇都必须含它</b> —— 用来锁死研究方向。<br>
+        <b>怎么用才好：</b>把你最在意的方向写成 + 词，其他写成普通词。只写普通词时，一个宽泛词（比如 nanoparticle）会把结果全占满，你换别的词也看不出变化。<br>
+        ⚠ 至少要留 1 个，全删光就抓不到任何论文了。</div>
+        <textarea id="k"></textarea>
+        <div class="btnrow">
+          <button class="btn btn-p" onclick="save('keywords.txt','k','m2')">保存关键词</button>
+          <button class="btn" onclick="restore('keywords.txt','k','m2')">恢复默认</button>
+        </div>
+        <div class="msg" id="m2"></div><div id="un_m2"></div>
+      </div>
+    </div>
+
+    <div class="grp" id="grp_j">
+      <button class="gh" onclick="acc('grp_j')">期刊列表<span class="gv" id="gv_j">读取中…</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="hint">一行一本。格式：<code>显示名 | PubMed写法</code>。不知道写法就只写期刊全名。删除＝删掉那行。<br>
+        ⚠ 一行只能有一个竖线 <code>|</code>，至少留 3 本。</div>
+        <textarea id="j"></textarea>
+        <div class="btnrow">
+          <button class="btn btn-p" onclick="save('journals.txt','j','m1')">保存期刊</button>
+          <button class="btn" onclick="restore('journals.txt','j','m1')">恢复默认</button>
+        </div>
+        <div class="msg" id="m1"></div><div id="un_m1"></div>
+      </div>
+    </div>
+
+    <div class="grp" id="grp_run">
+      <button class="gh" onclick="acc('grp_run')">立刻运行<span class="gv" id="gv_run">抓最新论文</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="hint">点一下，GitHub 会开始抓最新论文并生成摘要，约 3-8 分钟后回来刷新本页。</div>
+        <button class="btn btn-p" onclick="trigger()">立刻运行</button>
+        <div class="msg" id="m4"></div>
+        <div class="hint" style="margin:10px 0 0">没填令牌也能跑：<a href="https://github.com/__OWNER__/__REPO__/actions/workflows/run.yml" target="_blank" rel="noopener" style="color:var(--brand)">在 GitHub 网页点 Run workflow →</a></div>
+      </div>
+    </div>
+
+    <div class="sec">高级</div>
+
+    <div class="grp" id="grp_tok">
+      <button class="gh" onclick="acc('grp_tok')">GitHub 令牌<span class="gv" id="gv_tok">未填写</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="hint">填一次就存在这台手机上。用于保存期刊 / 关键词、点「立刻运行」。需要勾 <b>repo</b> 和 <b>workflow</b> 权限。</div>
+        <input id="tok" placeholder="粘贴 ghp_ 开头的令牌">
+        <div class="btnrow"><button class="btn btn-p" onclick="saveTok()">保存令牌</button></div>
+        <div class="msg" id="m0"></div>
+      </div>
+    </div>
+
+    <div class="grp" id="grp_g">
+      <button class="gh" onclick="acc('grp_g')">门槛词<span class="gv" id="gv_g">读取中…</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="hint"><b>重要，但一般不用改。</b>作用：拦掉综合材料期刊（ACS AMI、Advanced Materials、Small 等）里跟医学无关的论文，比如太阳能电池、海水淡化。规则：标题或摘要里至少出现其中一个词才保留。<br>
+        ⚠ 至少要留 1 个，全删光会涌进大量不相关的材料学论文。</div>
+        <textarea id="g" style="min-height:120px"></textarea>
+        <div class="btnrow">
+          <button class="btn btn-p" onclick="save('gate.txt','g','mg')">保存门槛词</button>
+          <button class="btn" onclick="restore('gate.txt','g','mg')">恢复默认</button>
+        </div>
+        <div class="msg" id="mg"></div><div id="un_mg"></div>
+      </div>
+    </div>
+
+    <div class="grp" id="grp_c">
+      <button class="gh" onclick="acc('grp_c')">抓取天数与数量<span class="gv" id="gv_c">读取中…</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="hint"><code>days=</code> 抓最近几天（PubMed 有 1-3 天延迟，建议 3，范围 1-30）；<code>max_papers=</code> 最多总结几篇（建议 50，范围 1-200）。</div>
+        <textarea id="c" style="min-height:90px"></textarea>
+        <div class="btnrow">
+          <button class="btn btn-p" onclick="save('config.txt','c','m3')">保存参数</button>
+          <button class="btn" onclick="restore('config.txt','c','m3')">恢复默认</button>
+        </div>
+        <div class="msg" id="m3"></div><div id="un_m3"></div>
+      </div>
+    </div>
+
+    <div class="grp" id="grp_apk">
+      <button class="gh" onclick="acc('grp_apk')">安装安卓 App<span class="gv" id="gv_apk">约 1.5 MB</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="hint">想用独立图标而不是浏览器？点下面下载安装包，装好后桌面出现「纳米日报」，点开就是全屏界面。<br>
+        安装时手机可能提示「未知来源应用」，选「允许」即可 —— 这是自己签名的个人应用，没上应用商店。</div>
+        <a class="btn btn-p" style="display:block;text-align:center;text-decoration:none" href="__APK__">下载安卓 App</a>
+      </div>
+    </div>
+
+    <div class="grp" id="grp_reset">
+      <button class="gh" onclick="acc('grp_reset')">改坏了怎么办<span class="gv" id="gv_reset">恢复 / 清空</span><span class="cv">▾</span></button>
+      <div class="gb">
+        <div class="hint">改配置改出问题了？两招都能救回来，随便挑一个。每次保存都会留一份历史记录，在 GitHub 上能看到改了什么、随时能退回去。</div>
+        <div class="btnrow" style="margin-top:0">
+          <button class="btn btn-p" onclick="restoreAll()">一键全部恢复出厂</button>
+          <a class="btn" style="text-decoration:none" target="_blank" rel="noopener" href="https://github.com/__OWNER__/__REPO__/commits/main">查看修改历史</a>
+        </div>
+        <div style="margin-top:14px;border-top:1px solid var(--line2);padding-top:12px">
+          <button class="btn" onclick="clearAll()">清空收藏和已读</button>
+        </div>
+        <div class="msg" id="m5"></div>
+      </div>
+    </div>
+
+    <button class="btn" style="width:100%;margin-top:6px" onclick="closeSet()">‹ 返回首页</button>
+
+  </div>
 </div>
 
 <script>
 var OWNER="__OWNER__", REPO="__REPO__", BRANCH="main";
 var API="https://api.github.com/repos/"+OWNER+"/"+REPO+"/contents/";
 var GH="https://api.github.com/repos/"+OWNER+"/"+REPO;
-var LS={tok:"nm_token",fav:"nm_fav",read:"nm_read"};
+var LS={tok:"nm_token",fav:"nm_fav",read:"nm_read",theme:"nm_theme"};
 function ghH(t,json){
   var h={Authorization:"Bearer "+t,Accept:"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"};
   if(json)h["Content-Type"]="application/json";
@@ -130,28 +332,51 @@ var fav=get(LS.fav,{}), read=get(LS.read,{});
 function esc(s){return (s||"").replace(/[&<>"]/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 
+/* ---------- 深浅色 ---------- */
+var SUN="\u2600", MOON="\u263E";
+function applyTheme(t){
+  document.documentElement.setAttribute("data-theme",t);
+  var m=document.getElementById("tcolor");
+  if(m)m.setAttribute("content",t==="dark"?"#0d1017":"#eef2f7");
+  var s=(t==="dark")?SUN:MOON;
+  var a=document.getElementById("thm"), b=document.getElementById("thm2");
+  if(a)a.textContent=s;
+  if(b)b.textContent=s;
+}
+function toggleTheme(){
+  var t=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
+  localStorage.setItem(LS.theme,t);
+  applyTheme(t);
+}
+applyTheme(get(LS.theme,'"light"'));
+
+/* ---------- 摘要排版 ---------- */
 function parseAI(t){
-  if(!t) return "";
+  if(!t)return "";
   var out="";
   t.split(/\n+/).forEach(function(line){
-    line=line.trim(); if(!line) return;
+    line=line.trim(); if(!line)return;
     var m=line.match(/^【(.+?)】\s*(.*)$/);
-    if(m){ out+="<p><b>"+esc(m[1])+"</b>"+esc(m[2])+"</p>"; }
-    else if(out){ out+="<p>"+esc(line)+"</p>"; }
+    if(m){out+='<div class="ai-i"><span class="ai-k">'+esc(m[1])+'</span>'+esc(m[2])+'</div>';}
+    else if(out){out+='<div class="ai-i">'+esc(line)+'</div>';}
   });
-  return out || "<p>"+esc(t)+"</p>";
+  return out||'<div class="ai-i">'+esc(t)+'</div>';
 }
 
 function render(){
   var box=document.getElementById("list");
-  if(!DATA){box.innerHTML='<div class="empty">还没有数据。<br>先在 GitHub 仓库点一下「运行」。</div>';return}
+  if(!DATA){
+    box.innerHTML='<div class="empty">还没有数据<br>点右上角 ⚙ 进设置，点一次「立刻运行」</div>';
+    return;
+  }
   var ps=DATA.papers||[];
-  document.getElementById("sub").textContent=DATA.date||"";
+  document.getElementById("sub").textContent=(DATA.date||"")+" · "+ps.length+" 篇";
+
   var s=document.getElementById("stats");
   s.style.display="block";
-  var head="本期共 <b>"+ps.length+"</b> 篇（扫描 "+DATA.total_found+" 篇 / "
-    +DATA.journal_count+" 本期刊）<br>抓取区间："+(DATA.range||"")
-    +"　更新于："+fmtTime(DATA.generated_at);
+  var head='<div>本期 <b>'+ps.length+'</b> 篇　扫描 <b>'+DATA.total_found+'</b> 篇　'
+    +DATA.journal_count+' 本期刊</div>'
+    +'<div style="color:var(--sub2);font-size:12px">抓取区间 '+(DATA.range||"")+'　更新于 '+fmtTime(DATA.generated_at)+'</div>';
   var kw=DATA.keyword_stats||{}, kws=Object.keys(kw);
   if(kws.length){
     kws.sort(function(a,b){return kw[b]-kw[a]});
@@ -160,16 +385,16 @@ function render(){
       var n=kw[k], cls="", tail="", isMust=must.indexOf(k)>=0;
       if(n===0){
         cls="dead";
-        tail = isMust ? " ← 必须词一个都没抓到！检查写法，或先去掉 + 试试"
+        tail = isMust ? " ← 必须词一个都没抓到，检查写法，或先去掉 + 试试"
                       : " ← 一个都没抓到，建议换掉或删掉";
       }else if(!must.length && ps.length>10 && n>lim){
         cls="wide";tail="（偏宽泛，会盖住其他词的效果）";
       }
       return '<span class="'+cls+'">'+(isMust?"★ ":"")+esc(k)+" "+n+" 篇"+tail+'</span>';
     });
-    head+='<div class="kwst"><em>关键词效果（★＝必须命中，每个词本次抓到多少篇）：</em><br>'
-      +rows.join("<br>")
-      +'</div>';
+    head+='<button class="kwtog" id="kwtog" onclick="tgKW()">关键词效果 ▾</button>'
+      +'<div class="kwbox" id="kwbox"><span style="color:var(--sub2)">★ 表示「必须命中」，括号里是本次抓到多少篇：</span><br>'
+      +rows.join("<br>")+'</div>';
   }
   s.innerHTML=head;
 
@@ -191,38 +416,46 @@ function render(){
 
   box.innerHTML=items.map(function(p){
     var i=ps.indexOf(p);
-    return '<div class="card'+(read[p.pmid]?' gone':'')+'" data-p="'+p.pmid+'">'
-      +'<div class="jt"><span class="jn">'+esc(p.journal_display||p.journal||"")+'</span>'
-      +'<span>'+esc(p.pubdate||"")+'</span>'
-      +'<span class="acts">'
-      +'<button onclick="tgFav(\''+p.pmid+'\')" class="'+(fav[p.pmid]?'on':'')+'" title="收藏">★</button>'
-      +'<button onclick="tgRead(\''+p.pmid+'\')" class="'+(read[p.pmid]?'on':'')+'" title="标记已读">✓</button>'
-      +'</span></div>'
-      +'<div class="tt">'+esc(p.title)+'</div>'
-      +(p.matched&&p.matched.length
-         ?'<div class="mch"><i>命中</i>'+p.matched.map(function(k){
-             return '<span>'+esc(k)+'</span>'}).join("")+'</div>'
-         :'')
-      +(p.ai?'<div class="ai">'+parseAI(p.ai)+'</div>'
-           :'<div class="ai" style="border-left-color:#e0a800;background:#fffdf5">'
-            +'<p style="color:#8a6d00">⚠ 这篇还没生成大白话摘要。</p>'
-            +'<p style="color:#8a6d00">常见原因：这次运行时 AI 额度用完了，或运行中途被打断。'
-            +'点右上角 ⚙️ → 再「立刻运行」一次即可（已写好的不会重复花钱）。</p></div>')
-      +'<div><a class="link" href="'+p.url+'" target="_blank" rel="noopener">查看原文 →</a> '
-      +'<button class="more" onclick="tgAbs('+i+')">英文摘要</button></div>'
+    var mch=(p.matched&&p.matched.length)
+      ?'<span class="mtag">命中 '+p.matched.map(esc).join(" · ")+'</span>' : '';
+    var title = p.title_zh
+      ? '<h2 class="tzh">'+esc(p.title_zh)+'</h2><p class="ten">'+esc(p.title)+'</p>'
+      : '<h2 class="tzh">'+esc(p.title)+'</h2>';
+    var ai = p.ai
+      ? '<div class="ai">'+parseAI(p.ai)+'</div>'
+      : '<div class="notice" style="margin:0">这篇还没生成大白话摘要。进设置点一次「立刻运行」就能补上（已写好的不会重复花钱）。</div>';
+    return '<article class="card'+(read[p.pmid]?' gone':'')+'">'
+      +'<div class="ctop">'
+      +'<span class="jtag">'+esc(p.journal_display||p.journal||"")+'</span>'+mch
+      +'<span class="dt">'+esc(p.pubdate||"")+' 发表</span>'
+      +'</div>'+title+ai
+      +'<div class="cfoot">'
+      +'<a class="pri" href="'+esc(p.url)+'" target="_blank" rel="noopener">查看原文</a>'
+      +'<button class="lnk" onclick="tgAbs('+i+')">英文摘要</button>'
+      +'<span class="sp"></span>'
+      +'<button class="ic2'+(fav[p.pmid]?' on':'')+'" onclick="tgFav(\''+p.pmid+'\')" title="收藏">★</button>'
+      +'<button class="ic2'+(read[p.pmid]?' done':'')+'" onclick="tgRead(\''+p.pmid+'\')" title="标记已读">✓</button>'
+      +'</div>'
       +'<div class="abs" id="abs'+i+'">'+esc(p.abstract||"（这篇没有摘要）")+'</div>'
-      +'</div>';
+      +'</article>';
   }).join("");
-  document.getElementById("fc").textContent="("+Object.keys(fav).length+")";
+  document.getElementById("fc").textContent=Object.keys(fav).length;
 }
 
+function tgKW(){
+  var b=document.getElementById("kwbox"), t=document.getElementById("kwtog");
+  b.classList.toggle("open");
+  t.textContent = b.classList.contains("open") ? "关键词效果 ▴" : "关键词效果 ▾";
+}
 function tgAbs(i){var e=document.getElementById("abs"+i);
-  e.style.display=e.style.display==="block"?"none":"block"}
+  var open=e.style.display==="block";
+  e.style.display=open?"none":"block";
+  e.scrollIntoView({behavior:"smooth",block:"nearest"});}
 function tgFav(id){fav[id]=!fav[id];if(!fav[id])delete fav[id];set(LS.fav,fav);render()}
 function tgRead(id){read[id]=!read[id];if(!read[id])delete read[id];set(LS.read,read);render()}
 
 document.querySelectorAll(".chip").forEach(function(c){
-  if(c.id==="srt") return;   // 排序按钮单独处理，不参与筛选
+  if(c.id==="srt") return;
   c.onclick=function(){
     document.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});
     c.classList.add("on");FILTER=c.dataset.f;render()}});
@@ -234,129 +467,78 @@ document.getElementById("srt").onclick=function(){
   render();
 };
 
-// 设置面板
-document.getElementById("sett").onclick=openPanel;
-
-function openPanel(){
-  var box=document.getElementById("list");
-  var tk=get(LS.tok,'""');
-  box.innerHTML=
-   '<div class="panel"><h3>① GitHub 私人令牌</h3>'
-   +'<div class="hint">填一次就存在这台手机上。用于保存期刊/关键词、点「运行」。'
-   +'需要勾 repo 和 workflow 权限。</div>'
-   +'<input id="tok" style="width:100%;padding:9px 10px;border:1px solid var(--line);'
-   +'border-radius:9px;font:13px monospace" value="'+esc(tk)+'" placeholder="粘贴 ghp_ 开头的令牌">'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="saveTok()">保存令牌</button></div>'
-   +'<div class="msg" id="m0"></div></div>'
-
-   +'<div class="panel"><h3>② 期刊列表</h3><div class="hint">一行一本。格式：<code>显示名 | PubMed写法</code>。'
-   +'不知道写法就只写期刊全名。删除=删掉那行。<br>'
-   +'⚠ 一行只能有一个竖线 <code>|</code>，至少留 3 本。</div>'
-   +'<textarea id="j"></textarea>'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'journals.txt\',\'j\',\'m1\')">保存期刊</button> '
-   +'<button class="btn" onclick="restore(\'journals.txt\',\'j\',\'m1\')">↺ 恢复默认</button></div>'
-   +'<div class="msg" id="m1"></div><div id="un_m1"></div></div>'
-
-   +'<div class="panel"><h3>③ 关键词</h3>'
-
-   +'<div style="background:var(--bg2,#f6f7f9);border:1px dashed var(--line);border-radius:10px;padding:11px;margin-bottom:11px">'
-   +'<div style="font-size:13px;font-weight:500;margin-bottom:5px">✨ 懒得想词？让 AI 帮你写</div>'
-   +'<div class="hint" style="margin-bottom:8px">用一句话说说你想追踪什么就行。'
-   +'<b>大白话、错别字、说一半都没关系</b>，AI 会自己理解并翻成地道的英文检索词。</div>'
-   +'<textarea id="ai_in" style="min-height:66px;font-size:14px" '
-   +'placeholder="例如：我做纳米材料治疗肿瘤，想看 LNP 递送和铁死亡"></textarea>'
-   +'<div style="margin-top:8px"><button class="btn btn-p" onclick="aiGen()">✨ AI 帮我写关键词</button> '
-   +'<button class="btn" onclick="toggleZK()">密钥设置</button></div>'
-   +'<div id="zkbox" style="display:none;margin-top:8px">'
-   +'<div class="hint">填了智谱密钥 → <b>2 秒出结果</b>；不填 → 走 GitHub 服务器，约 15 秒，慢但不用配。'
-   +'密钥只存在这台手机。</div>'
-   +'<input id="zk" style="width:100%;padding:8px 10px;border:1px solid var(--line);'
-   +'border-radius:9px;font:12px monospace" placeholder="粘贴智谱 API Key（可选）">'
-   +'<div style="margin-top:7px"><button class="btn btn-p" onclick="saveZK()">保存密钥</button></div>'
-   +'<div class="msg" id="mzk"></div></div>'
-   +'<div id="ai_out"></div>'
-   +'<div class="hint" style="margin-top:6px">你写的这句话会存进你的公开仓库，别写机密内容。</div>'
-   +'</div>'
-
-   +'<div class="hint"><b>一行一个，中英文都行。两种写法：</b><br>'
-   +'① 普通词（如 <code>tumor therapy</code>）：命中任意一个就保留 —— 用来扩大范围。<br>'
-   +'② <b>前面加 + 的词（如 <code>+neuromodulation</code>）：每一篇都必须含它</b> —— 用来锁死研究方向。<br>'
-   +'<b>怎么用才好：</b>把你最在意的方向写成 + 词，其他写成普通词。'
-   +'只写普通词时，一个宽泛词（比如 nanoparticle）会把结果全占满，'
-   +'你换别的词也看不出变化。<br>'
-   +'⚠ 至少要留 1 个，全删光就抓不到任何论文了。</div>'
-   +'<textarea id="k"></textarea>'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'keywords.txt\',\'k\',\'m2\')">保存关键词</button> '
-   +'<button class="btn" onclick="restore(\'keywords.txt\',\'k\',\'m2\')">↺ 恢复默认</button></div>'
-   +'<div class="msg" id="m2"></div><div id="un_m2"></div></div>'
-
-   +'<div class="panel"><h3>④ 门槛词（重要，但一般不用改）</h3><div class="hint">'
-   +'作用：拦掉综合材料期刊（ACS AMI、Advanced Materials、Small 等）里跟医学无关的论文，'
-   +'比如太阳能电池、海水淡化。规则：标题或摘要里至少出现其中一个词才保留。<br>'
-   +'⚠ 至少要留 1 个，全删光会涌进大量不相关的材料学论文。</div>'
-   +'<textarea id="g" style="min-height:120px"></textarea>'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'gate.txt\',\'g\',\'mg\')">保存门槛词</button> '
-   +'<button class="btn" onclick="restore(\'gate.txt\',\'g\',\'mg\')">↺ 恢复默认</button></div>'
-   +'<div class="msg" id="mg"></div><div id="un_mg"></div></div>'
-
-   +'<div class="panel"><h3>⑤ 抓取天数 & 数量</h3><div class="hint">days=抓最近几天（PubMed 有 1-3 天延迟，建议 3，范围 1-30）；'
-   +'max_papers=最多总结几篇（建议 50，范围 1-200）。</div>'
-   +'<textarea id="c" style="min-height:90px"></textarea>'
-   +'<div style="margin-top:9px"><button class="btn btn-p" onclick="save(\'config.txt\',\'c\',\'m3\')">保存参数</button> '
-   +'<button class="btn" onclick="restore(\'config.txt\',\'c\',\'m3\')">↺ 恢复默认</button></div>'
-   +'<div class="msg" id="m3"></div><div id="un_m3"></div></div>'
-
-   +'<div class="panel"><h3>⑥ 触发一次运行</h3><div class="hint">保存好令牌后点这里，'
-   +'GitHub 会开始抓最新论文，约 3-8 分钟后回来刷新本页。</div>'
-   +'<button class="btn btn-p" onclick="trigger()">▶ 立刻运行</button>'
-   +'<div class="msg" id="m4"></div>'
-   +'<div class="hint" style="margin-top:8px">没令牌也能跑：'
-   +'<a href="https://github.com/'+OWNER+'/'+REPO+'/actions/workflows/run.yml" target="_blank" rel="noopener">'
-   +'在 GitHub 网页点 Run workflow →</a></div></div>'
-
-   +'<div class="panel"><h3>⑦ 安装安卓 App</h3><div class="hint">想用独立图标而不是浏览器？点下面下载安装包（约 1.5 MB），'
-   +'装好后桌面出现「纳米日报」，点开就是全屏界面。<br>'
-   +'安装时手机可能提示「未知来源应用」，选「允许」即可——这是自己签名的个人应用，没上应用商店。</div>'
-   +'<a class="btn btn-p" style="display:block;text-align:center;text-decoration:none;line-height:20px" '
-   +'href="__APK__">↓ 下载安卓 App</a></div>'
-
-   +'<div class="panel"><h3>⑧ 改坏了怎么办 / 本机数据</h3>'
-   +'<div class="hint">改配置改出问题了？两招都能救回来，随便挑一个。</div>'
-   +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">'
-   +'<button class="btn btn-p" onclick="restoreAll()">🛟 一键全部恢复出厂</button> '
-   +'<a class="btn" style="text-decoration:none;line-height:20px" target="_blank" rel="noopener" '
-   +'href="https://github.com/'+OWNER+'/'+REPO+'/commits/'+BRANCH+'">'
-   +'查看修改历史（GitHub）</a></div>'
-   +'<div class="hint">每次保存都会留一份历史记录，在 GitHub 上能看到改了什么、随时能退回去。</div>'
-   +'<div style="margin-top:12px;border-top:1px solid var(--line);padding-top:10px">'
-   +'<button class="btn" onclick="clearAll()">清空收藏和已读</button></div>'
-   +'<div class="msg" id="m5"></div></div>';
-
-  [["journals.txt","j"],["keywords.txt","k"],["gate.txt","g"],["config.txt","c"]].forEach(function(p){
-    fetch(p[0]+"?t="+Date.now()).then(function(r){return r.text()})
-      .then(function(t){document.getElementById(p[1]).value=t;})
-      .catch(function(e){});
-  });
-  document.getElementById("stats").style.display="none";
+/* ---------- 设置页 ---------- */
+var SHEET_OPEN=false;
+function openSet(){
+  document.getElementById("settings").classList.add("open");
+  document.body.style.overflow="hidden";
+  SHEET_OPEN=true;
+  loadCfg();
 }
+function closeSet(){
+  document.getElementById("settings").classList.remove("open");
+  document.body.style.overflow="";
+  SHEET_OPEN=false;
+}
+function acc(id){document.getElementById(id).classList.toggle("open")}
 
-function saveTok(){set(LS.tok,document.getElementById("tok").value.trim());
-  var m=document.getElementById("m0");m.className="msg ok";m.textContent="已保存到本机";}
-
+var NL=String.fromCharCode(10);
 function b64(s){var b=new TextEncoder().encode(s),r="";
   for(var i=0;i<b.length;i++)r+=String.fromCharCode(b[i]);return btoa(r)}
-var NL=String.fromCharCode(10);
 function unb64(s){var bin=atob(s.replace(/[^A-Za-z0-9+/=]/g,"")),b=new Uint8Array(bin.length);
   for(var i=0;i<bin.length;i++)b[i]=bin.charCodeAt(i);
   return new TextDecoder().decode(b)}
 
-// 出厂默认：仓库 defaults/ 目录下的副本，永远不会被用户改动
 var DEFAULTS={"journals.txt":"defaults/journals.txt","keywords.txt":"defaults/keywords.txt",
   "gate.txt":"defaults/gate.txt","config.txt":"defaults/config.txt"};
 var LABELS={"journals.txt":"期刊列表","keywords.txt":"关键词",
   "gate.txt":"门槛词","config.txt":"运行参数"};
 
-// 保存前体检：返回 null 表示没问题，返回文字就是错误原因
+function realLines(txt){
+  var out=[],L=(txt||"").split(NL);
+  for(var i=0;i<L.length;i++){var s=L[i].trim();if(s&&s.charAt(0)!=="#")out.push(s)}
+  return out;
+}
+
+function loadCfg(){
+  loadFile("config.txt","c",function(t){
+    var d="",mp="";
+    realLines(t).forEach(function(x){
+      if(x.indexOf("days=")===0)d=x.slice(5);
+      if(x.indexOf("max_papers=")===0)mp=x.slice(11);
+    });
+    document.getElementById("gv_c").textContent="最近 "+d+" 天 · 最多 "+mp+" 篇";
+  });
+  loadFile("keywords.txt","k",function(t){
+    var m=0,o=0;
+    realLines(t).forEach(function(x){
+      if(x.charAt(0)==="+")m++;else o++;
+    });
+    document.getElementById("gv_k").textContent=realLines(t).length+" 个 · 必须命中 "+m+" 个";
+  });
+  loadFile("journals.txt","j",function(t){
+    document.getElementById("gv_j").textContent=realLines(t).length+" 本";
+  });
+  loadFile("gate.txt","g",function(t){
+    document.getElementById("gv_g").textContent=realLines(t).length+" 个词";
+  });
+  var tk=get(LS.tok,'""');
+  document.getElementById("tok").value=tk;
+  document.getElementById("gv_tok").textContent=tk?"已填写":"未填写";
+}
+function loadFile(name,boxId,done){
+  fetch(name+"?t="+Date.now()).then(function(r){return r.text()})
+  .then(function(t){
+    var el=document.getElementById(boxId);
+    if(el)el.value=t;
+    if(done)done(t);
+  }).catch(function(e){
+    var g=document.getElementById("gv_"+boxId);
+    if(g)g.textContent="读取失败";
+  });
+}
+
+/* ---------- 保存前体检 ---------- */
 function valid(path,txt){
   var lines=txt.split(NL),real=[],i;
   for(i=0;i<lines.length;i++){var s=lines[i].trim();if(s&&s.charAt(0)!=="#")real.push(s);}
@@ -398,6 +580,7 @@ function valid(path,txt){
   return null;
 }
 
+/* ---------- AI 写关键词 ---------- */
 var AI_SYS=null, AI_KW=null;
 
 function toggleZK(){
@@ -473,8 +656,8 @@ function aiDirect(txt,zk,out){
 function aiViaActions(txt,out){
   var tok=get(LS.tok,'""');
   if(!tok){
-    out.innerHTML='<div class="msg err">先在面板①填 GitHub 令牌；'
-      +'或者点上面「密钥设置」填智谱密钥，2 秒就出结果</div>';return;
+    out.innerHTML='<div class="msg err">先在下面「GitHub 令牌」里填好；'
+      +'或者点「密钥设置」填智谱密钥，2 秒就出结果</div>';return;
   }
   out.innerHTML='<div class="msg">AI 正在分析，约 15 秒，别走开…</div>';
   fetch(GH+"/actions/workflows/ai-keywords.yml/dispatches",{
@@ -508,17 +691,15 @@ function pollAI(txt,out){
 
 function showAI(d,out){
   AI_KW=cleanKW(d.keywords);
-  var h='<div class="msg ok" style="margin-top:8px">搞定！生成了 '+AI_KW.length+' 个关键词</div>';
-  if(d.intent)h+='<div class="hint" style="margin-top:6px"><b>AI 的理解：</b>'+esc(d.intent)+'</div>';
-  if(d.corrected)h+='<div class="hint" style="margin-top:4px"><b>帮你纠正：</b>'+esc(d.corrected)+'</div>';
-  h+='<div style="margin-top:7px;padding:9px;background:var(--card);border:1px solid var(--line);'
-    +'border-radius:8px;font:12px monospace;line-height:1.8">';
+  var h='<div class="msg ok" style="margin-top:10px">搞定，生成了 '+AI_KW.length+' 个关键词</div>';
+  if(d.intent)h+='<div class="hint" style="margin:6px 0 0"><b>AI 的理解：</b>'+esc(d.intent)+'</div>';
+  if(d.corrected)h+='<div class="hint" style="margin:4px 0 0"><b>帮你纠正：</b>'+esc(d.corrected)+'</div>';
+  h+='<div class="kwout">';
   AI_KW.forEach(function(k){h+=esc(k)+'<br>';});
   h+='</div>';
-  h+='<div style="margin-top:8px"><button class="btn btn-p" onclick="applyAI()">✅ 用这些关键词</button> '
+  h+='<div class="btnrow"><button class="btn btn-p" onclick="applyAI()">用这些关键词</button> '
     +'<button class="btn" onclick="aiGen()">换一批</button></div>';
-  h+='<div class="hint" style="margin-top:6px">点「用这些关键词」会填到下面的框里，'
-    +'你还能自己加减，然后记得点「保存关键词」。</div>';
+  h+='<div class="hint" style="margin:8px 0 0">点「用这些关键词」会填到下面的框里，你还能自己加减，然后记得点「保存关键词」。</div>';
   out.innerHTML=h;
 }
 
@@ -526,25 +707,26 @@ function applyAI(){
   if(!AI_KW||!AI_KW.length)return;
   document.getElementById("k").value=AI_KW.join(NL);
   document.getElementById("ai_out").innerHTML=
-    '<div class="msg ok">已填入下面的关键词框 ✅ 可以自己再改改，然后点「保存关键词」</div>';
+    '<div class="msg ok">已填入下面的关键词框，可以自己再改改，然后点「保存关键词」</div>';
   document.getElementById("k").scrollIntoView({behavior:"smooth",block:"center"});
 }
 
+/* ---------- 保存 / 撤销 / 恢复 ---------- */
 function save(path,id,mid){
   var m=document.getElementById(mid),tok=get(LS.tok,'""');
-  if(!tok){m.className="msg err";m.textContent="请先填并保存令牌";return}
+  if(!tok){m.className="msg err";m.textContent="请先在「GitHub 令牌」里填好";return}
   var content=document.getElementById(id).value;
   var err=valid(path,content);
   if(err){
     m.className="msg err";
-    m.textContent="⚠ 没保存 —— "+err+" 请改好再点保存。";
+    m.textContent="没保存 —— "+err+" 请改好再点保存。";
     return;
   }
   m.className="msg";m.textContent="正在保存…";
   fetch(API+path+"?ref="+BRANCH+"&t="+Date.now(),{headers:ghH(tok)})
   .then(function(r){return r.json()}).then(function(j){
     if(!j.sha){throw new Error(j.message||"读取失败，检查令牌权限")}
-    if(j.content){set("nm_bak_"+path,unb64(j.content));}   // 改之前先留一份，供「撤销」
+    if(j.content){set("nm_bak_"+path,unb64(j.content));}
     return fetch(API+path,{
       method:"PUT",
       headers:ghH(tok,1),
@@ -553,10 +735,11 @@ function save(path,id,mid){
     }).then(function(r){return r.json()});
   }).then(function(j){
     if(j.content){
-      m.className="msg ok";m.textContent="已保存到仓库，下次运行生效 ✅";
+      m.className="msg ok";m.textContent="已保存到仓库，下次运行生效";
+      loadCfg();
       var u=document.getElementById("un_"+mid);
-      if(u)u.innerHTML='<button class="btn" style="margin-top:7px" '
-        +'onclick="undo(\''+path+'\',\''+id+'\',\''+mid+'\')">↩ 撤销这次修改</button>';
+      if(u)u.innerHTML='<button class="btn" style="margin-top:8px" '
+        +'onclick="undo(\''+path+'\',\''+id+'\',\''+mid+'\')">撤销这次修改</button>';
     }
     else{m.className="msg err";m.textContent="失败："+(j.message||JSON.stringify(j).slice(0,120))}
   }).catch(function(e){
@@ -565,7 +748,6 @@ function save(path,id,mid){
   });
 }
 
-// 撤销：把上一次保存前的旧内容写回去
 function undo(path,id,mid){
   var old=get("nm_bak_"+path,'""');
   if(!old){var m=document.getElementById(mid);m.className="msg err";
@@ -575,7 +757,6 @@ function undo(path,id,mid){
   save(path,id,mid);
 }
 
-// 恢复出厂默认：从 defaults/ 读原始文件写回仓库
 function restore(path,id,mid){
   var m=document.getElementById(mid);
   if(!confirm("把「"+LABELS[path]+"」恢复成出厂默认吗？"+NL+"你现在改的内容会被覆盖（之后还能用「撤销」找回）。"))return;
@@ -588,17 +769,16 @@ function restore(path,id,mid){
   }).catch(function(e){m.className="msg err";m.textContent="读取默认失败："+e.message});
 }
 
-// 一键全部恢复
 function restoreAll(){
   if(!confirm("把【期刊 + 关键词 + 门槛词 + 运行参数】全部恢复成出厂默认吗？"+NL+"你自己加的期刊和关键词都会没掉，确定？"))return;
   var m=document.getElementById("m5");
   var tok=get(LS.tok,'""');
-  if(!tok){m.className="msg err";m.textContent="请先填并保存令牌（面板最上面①）";return}
+  if(!tok){m.className="msg err";m.textContent="请先在「GitHub 令牌」里填好";return}
   m.className="msg";m.textContent="正在恢复…";
   var seq=[["journals.txt","j"],["keywords.txt","k"],["gate.txt","g"],["config.txt","c"]];
   var i=0;
   (function next(){
-    if(i>=seq.length){m.className="msg ok";m.textContent="全部恢复出厂 ✅ 下次运行就按默认来了";return}
+    if(i>=seq.length){m.className="msg ok";m.textContent="全部恢复出厂，下次运行就按默认来了";loadCfg();return}
     var p=seq[i][0],box=seq[i][1];i++;
     fetch(DEFAULTS[p]+"?t="+Date.now()).then(function(r){return r.text()})
     .then(function(t){document.getElementById(box).value=t;
@@ -616,7 +796,7 @@ function restoreAll(){
 
 function trigger(){
   var m=document.getElementById("m4"),tok=get(LS.tok,'""');
-  if(!tok){m.className="msg err";m.textContent="请先填并保存令牌";return}
+  if(!tok){m.className="msg err";m.textContent="请先在「GitHub 令牌」里填好";return}
   m.className="msg";m.textContent="正在触发…";
   fetch(GH+"/actions/workflows/run.yml/dispatches",{
     method:"POST",headers:ghH(tok,1),
@@ -624,7 +804,7 @@ function trigger(){
   }).then(function(r){
     if(r.status===204||r.ok){
       m.className="msg ok";
-      m.textContent="已触发 ✅ 约 3-8 分钟后回到本页，下拉选今天的日期查看。";
+      m.textContent="已触发。约 3-8 分钟后回到本页，日期选今天或最新一天查看。";
     }else{
       return r.json().then(function(j){
         throw new Error(j.message||("HTTP "+r.status))});
@@ -635,26 +815,17 @@ function trigger(){
   });
 }
 
-function clearAll(){fav={};read={};set(LS.fav,fav);set(LS.read,read);
-  var m=document.getElementById("m5");m.className="msg ok";m.textContent="已清空";}
+function clearAll(){fav={};read={};set(LS.fav,fav);set(LS.read,read);render();
+  var m=document.getElementById("m5");m.className="msg ok";m.textContent="已清空收藏和已读";}
 
-// 启动
-fetch("data/index.json?t="+Date.now()).then(function(r){return r.json()})
-.then(function(ix){
-  DATES=ix.dates||[];
-  if(!DATES.length){document.getElementById("list").innerHTML=
-    '<div class="empty">还没有数据</div>';return}
-  var sel=document.getElementById("dates");
-  sel.innerHTML=DATES.map(function(d){
-    return '<option value="'+d.date+'">'+d.date+'（'+d.count+' 篇）</option>'}).join("");
-  sel.value=DATES[DATES.length-1].date;
-  sel.onchange=function(){load(sel.value)};
-  load(sel.value);
-}).catch(function(e){
-  document.getElementById("list").innerHTML=
-   '<div class="empty">加载失败：'+e.message+'<br>请确认已开启 GitHub Pages 并选对部署目录。</div>';
-});
+function saveTok(){
+  var v=document.getElementById("tok").value.trim();
+  set(LS.tok,v);
+  document.getElementById("gv_tok").textContent=v?"已填写":"未填写";
+  var m=document.getElementById("m0");m.className="msg ok";m.textContent="已保存到本机";
+}
 
+/* ---------- 启动 ---------- */
 function fmtTime(s){
   if(!s){return "未知"}
   try{
@@ -670,15 +841,13 @@ function load(d){
   fetch("data/"+d+".json?t="+Date.now()).then(function(r){return r.json()})
     .then(function(j){
       DATA=j;
-      var sub=document.getElementById("sub");
-      if(sub){sub.textContent="（数据更新于 "+fmtTime(j.generated_at)+"）"}
       var bar=document.getElementById("warnbar");
       if(bar){
         var miss=(j.papers||[]).filter(function(p){return !p.ai}).length;
         if(miss>0){
           bar.style.display="block";
-          bar.innerHTML="<b>⚠ 这批有 "+miss+" 篇还没生成大白话摘要</b><br>"
-            +"通常再点一次「设置 → 立刻运行」就能补上（已写好的不会重复花钱）。<br>"
+          bar.innerHTML="<b>这批有 "+miss+" 篇还没生成大白话摘要</b><br>"
+            +"进设置点一次「立刻运行」就能补上（已写好的不会重复花钱）。<br>"
             +"数据生成时间："+fmtTime(j.generated_at);
         }else{bar.style.display="none"}
       }
@@ -687,6 +856,17 @@ function load(d){
     .catch(function(e){document.getElementById("list").innerHTML=
       '<div class="empty">读取 '+d+' 失败</div>'});
 }
+
+fetch("data/index.json?t="+Date.now()).then(function(r){return r.json()})
+.then(function(ix){
+  DATES=ix.dates||[];
+  if(!DATES.length){document.getElementById("list").innerHTML=
+    '<div class="empty">还没有数据<br>点右上角 ⚙ 进设置，点一次「立刻运行」</div>';return}
+  load(DATES[DATES.length-1].date);
+}).catch(function(e){
+  document.getElementById("list").innerHTML=
+   '<div class="empty">加载失败：'+e.message+'<br>请确认已开启 GitHub Pages。</div>';
+});
 </script>
 </body></html>
 """
