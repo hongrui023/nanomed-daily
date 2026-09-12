@@ -1,8 +1,8 @@
 {
- "date": "2026-09-11",
- "range": "2026-08-28 ~ 2026-09-11",
+ "date": "2026-09-12",
+ "range": "2026-08-29 ~ 2026-09-12",
  "days": 14,
- "generated_at": "2026-09-11 23:49:08",
+ "generated_at": "2026-09-12 00:21:30",
  "journal_count": 46,
  "keyword_count": 6,
  "keywords_used": [
@@ -24,41 +24,41 @@
   "photothermal therapy"
  ],
  "keyword_stats": {
-  "neuro": 24,
-  "nanoparticle": 13,
-  "nanomedicine": 6,
+  "neuro": 20,
+  "nanoparticle": 10,
+  "nanomedicine": 4,
   "tumor therapy": 5,
-  "drug delivery": 8,
+  "drug delivery": 6,
   "photothermal therapy": 2
  },
- "total_found": 1131,
- "matched": 24,
+ "total_found": 1080,
+ "matched": 20,
  "per_journal": {
   "ACS Nano": 98,
   "ACS Applied Materials & Interfaces": 363,
-  "Acta Biomaterialia": 28,
+  "Acta Biomaterialia": 25,
   "Advanced Drug Delivery Reviews": 7,
   "Advanced Healthcare Materials": 53,
-  "Advanced Materials": 142,
+  "Advanced Materials": 138,
   "Advanced Therapeutics": 0,
   "Beilstein Journal of Nanotechnology": 4,
-  "Biomaterials": 34,
+  "Biomaterials": 29,
   "Biomaterials Science": 14,
   "Bioconjugate Chemistry": 2,
   "BioNanoScience": 0,
-  "Colloids and Surfaces B: Biointerfaces": 33,
+  "Colloids and Surfaces B: Biointerfaces": 28,
   "Drug Delivery": 5,
   "Drug Delivery and Translational Research": 7,
-  "European Journal of Pharmaceutics and Biopharmaceutics": 4,
-  "Expert Opinion on Drug Delivery": 5,
+  "European Journal of Pharmaceutics and Biopharmaceutics": 3,
+  "Expert Opinion on Drug Delivery": 3,
   "International Journal of Nanomedicine": 53,
-  "International Journal of Pharmaceutics": 46,
+  "International Journal of Pharmaceutics": 40,
   "Journal of Biomedical Nanotechnology": 0,
-  "Journal of Controlled Release": 39,
-  "Journal of Drug Targeting": 4,
+  "Journal of Controlled Release": 33,
+  "Journal of Drug Targeting": 3,
   "Journal of Nanobiotechnology": 9,
   "Journal of Nanoparticle Research": 0,
-  "Materials Today Bio": 47,
+  "Materials Today Bio": 37,
   "Molecular Pharmaceutics": 23,
   "Nano Convergence": 4,
   "Nano Letters": 110,
@@ -66,14 +66,14 @@
   "Nano Today": 0,
   "Nano-Micro Letters": 6,
   "Nanomedicine (UK)": 5,
-  "Nanomedicine: Nanotechnology, Biology, and Medicine": 7,
-  "Nanoscale": 75,
-  "Nanoscale Advances": 29,
+  "Nanomedicine: Nanotechnology, Biology, and Medicine": 5,
+  "Nanoscale": 70,
+  "Nanoscale Advances": 25,
   "Nanotheranostics": 4,
   "Nanotoxicology": 0,
   "Nanotechnology": 14,
   "Nature Biomedical Engineering": 7,
-  "Nature Materials": 19,
+  "Nature Materials": 18,
   "Nature Nanotechnology": 14,
   "Particle and Fibre Toxicology": 1,
   "Precision Nanomedicine": 0,
@@ -110,90 +110,6 @@
    "plain": "说白了：用特殊胶块治老年痴呆\nKPBIT@NPs这种胶块专门找大脑里的\"清洁工\"下手，让它们恢复正常工作，减少脑子里的垃圾，改善大脑能量供应。\n这种胶块由人参多糖制成，能同时装载两种药，见光或异常情况会分解，还能穿过大脑防护墙，精准到达\"清洁工\"聚集的地方。它通过激活\"清洁工\"的某个开关，让它们从\"发炎模式\"变回\"修复模式\"，减少脑子里的炎症和垃圾堆积。\n在老年痴呆老鼠身上实验，这种胶块有效降低了大脑里的垃圾，减少了炎症，保护了脑细胞，改善了老鼠的记忆力。这就像给大脑派了个特别能干的快递员，专门清理垃圾，恢复秩序。",
    "use": "这个思路能启发研究人员利用天然多糖材料设计更精准的大脑疾病治疗工具。",
    "conf": "这是在老鼠身上做的实验，离真正给人用还差得远，因为老鼠大脑和人的不完全一样。"
-  },
-  {
-   "pmid": "42662602",
-   "title": "Targeted blood-brain barrier penetration for traumatic brain injury therapy via RXR/PPAR-driven microglial M2 polarization.",
-   "journal": "Materials today. Bio",
-   "pubdate": "2026-10-01",
-   "doi": "10.1016/j.mtbio.2026.103552",
-   "authors": [
-    "Chen",
-    "Lin",
-    "Zhang",
-    "Zhou"
-   ],
-   "abstract": "As a leading global cause of death and disability, traumatic brain injury (TBI) triggers a complex secondary injury process leading to long-term neurological impairment. Current therapeutic efficacy is limited by the blood-brain barrier (BBB) and the absence of integrated approaches to address neuroinflammation and neuroregeneration. We designed a biomimetic nanomedicine (Ali-NPs@Mexo) by encapsulating alitretinoin(Ali)-loaded albumin nanospheres within mesenchymal stromal cell (MSC)-derived exosomal membranes. This platform exploits the natural BBB-crossing and inflammation-targeting capabilities of exosomes to enhance localized drug delivery. Mechanistic studies revealed that Ali-NPs@Mexo triggers RXR/PPAR signaling to promote M1-to-M2 microglial polarization, thereby mitigating acute inflammation. Moreover, it protects neurons by inhibiting reactive astrogliosis and supporting the growth of neural stem cells and oligodendrocytes. In vivo, Ali-NPs@Mexo significantly improved functional and cognitive outcomes in mice. This integrated strategy of targeted immune-modulation and neuro-regeneration provides a translatable framework for effective TBI intervention.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42662602/",
-   "journal_display": "Materials Today Bio",
-   "matched": [
-    "neuro",
-    "nanomedicine",
-    "drug delivery"
-   ],
-   "matched_n": 3,
-   "must_n": 1,
-   "ai": "【一句话】用仿生纳米药包治脑外伤。\n【发现了什么】造出能穿过血脑屏障的仿生纳米药，能调节脑免疫和神经再生。\n【为什么重要】解决了脑外伤药物难进大脑和炎症难控制的问题。\n【跟纳米医学的关系】用仿生纳米药递送药物，调节脑免疫和神经再生。",
-   "title_zh": "通过RXR/PPAR驱动的小胶质细胞M2极化实现创伤性脑损伤治疗靶向血脑屏障穿透",
-   "plain": "说白了：给大脑送药的新方法\nAli-NPs@Mexo像快递员，专门穿过大脑的防护墙，把药送到受伤部位。它把一种药装在像细胞膜一样的胶块里，这种胶块能自然穿过防护墙。药到达后，能安抚发炎的脑细胞，让它们变安静，同时帮助大脑长出新细胞。在活的老鼠身上做的实验显示，这种方法能让受伤后的大脑功能恢复得更好。",
-   "use": "这个思路能启发研究人员设计更聪明的药物递送系统，专门解决大脑送药难的问题。",
-   "conf": "这是在活的老鼠身上做的实验，离真正用在人身上还差得远。目前只能缓解症状，不能根治。"
-  },
-  {
-   "pmid": "42662592",
-   "title": "Hierarchical targeting biomimetic nanoparticles directing to lesion site and mitochondria promote neuroregeneration and attenuate inflammation after spinal cord injury.",
-   "journal": "Materials today. Bio",
-   "pubdate": "2026-10-01",
-   "doi": "10.1016/j.mtbio.2026.103544",
-   "authors": [
-    "Zhou",
-    "Kong",
-    "Yang",
-    "Zhang"
-   ],
-   "abstract": "Following primary spinal cord injury (SCI), mitochondrial dysfunction induces oxidative stress, which in turn exacerbates secondary injury, including neuronal loss and the formation of an inhibitory microenvironment. To intervene in this pathological cascade, we constructed a hierarchically targeted biomimetic nanomedicine (MM@DHM) designed for sequential delivery to the lesion site and subsequently to mitochondria. Macrophage membrane coating mediates first-stage targeting to the injured spinal cord, while triphenylphosphonium (TPP) modification directs second-stage accumulation within mitochondria of lesional cells, enabling precise delivery of the SIRT3 agonist dihydromyricetin (DHM) to its site of action. Mechanistically, MM@DHM activates SIRT3, promotes SOD2 deacetylation, and enhances Pink1-Parkin-mediated mitophagy, consequently alleviating oxidative stress and restoring mitochondrial homeostasis. These integrated cellular effects confer robust neuroprotection, attenuate neuroinflammation, and improve functional recovery in a mouse model of SCI. Collectively, this work demonstrates that mitochondrial targeting represents a promising therapeutic strategy for ameliorating oxidative damage and mitochondrial dysfunction in SCI, and underscores the potential of cascade-targeted nanoplatforms for central nervous system repair.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42662592/",
-   "journal_display": "Materials Today Bio",
-   "matched": [
-    "neuro",
-    "nanoparticle",
-    "nanomedicine"
-   ],
-   "matched_n": 3,
-   "must_n": 1,
-   "ai": "【一句话】这种纳米药能精准送到受伤的脊髓和线粒体，帮助恢复。  \n【发现了什么】造了一种能先到脊髓损伤处，再进入细胞线粒体的纳米药，送进去一种能激活SIRT3的物质。  \n【为什么重要】解决了脊髓损伤后氧化应激和线粒体功能紊乱的问题，能保护神经、减少炎症，让小鼠恢复得更好。  \n【跟纳米医学的关系】这种纳米药能按顺序精准递送药物到特定位置，是纳米药物递送系统的一种新应用。",
-   "title_zh": "靶向病灶位点和线粒体的分级靶向仿生纳米粒促进脊髓损伤后神经再生和减轻炎症",
-   "plain": "说白了：纳米药先去伤处再进细胞能量站，帮大脑恢复\n这种药像有双面胶的快递员，一面粘住大脑受伤的地方，一面还能钻进细胞里的能量站。它送去的药能帮细胞清理\"过氧化\"这种损伤，让细胞变健康。实验室培养皿里的实验发现，这种药能让受伤的老鼠大脑恢复得更好。",
-   "use": "这个思路能帮你设计更聪明的药，专门找对地方下药。",
-   "conf": "这是在活的老鼠身上做的实验，离真正给人用还差得远，因为老鼠大脑和人不完全一样。"
-  },
-  {
-   "pmid": "42662413",
-   "title": "From neuroinflammation to immune reprogramming: Nanozyme-Integrated nanoplatforms for neuroimmune modulation in Parkinson's disease.",
-   "journal": "Materials today. Bio",
-   "pubdate": "2026-10-01",
-   "doi": "10.1016/j.mtbio.2026.103569",
-   "authors": [
-    "Zhu",
-    "Wang",
-    "Shi",
-    "Zhong"
-   ],
-   "abstract": "Parkinson's disease (PD) is a progressive neuroimmune disorder in which dysregulated neuron-glia-immune crosstalk drives chronic neuroinflammation, α-synuclein pathology, blood-brain barrier dysfunction, and mitochondrial failure, establishing interconnected neuroimmune pathways as therapeutic targets. Aberrant neuron-immune crosstalk promotes chronic neuroinflammation, oxidative stress, mitochondrial dysfunction, blood-brain barrier (BBB) disruption, and α-synuclein pathology, thereby accelerating neurodegeneration. Understanding these interconnected mechanisms has identified multiple neuroimmune pathways as promising therapeutic targets. This review summarizes the cellular and molecular basis of physiological and pathological neuron-immune communication in PD, highlighting the roles of microglial activation, astrocyte reactivity, adaptive immune responses, inflammatory signaling networks, and neurovascular dysfunction. We further discuss emerging neuroimmune-targeted interventions aimed at restoring immune homeostasis and slowing disease progression. Particular emphasis is placed on nanozyme-integrated nanoplatforms that function simultaneously as nanozymatic catalysts and immunomodulatory adjuvants, including enzyme-mimetic nanozymes (SOD/CAT/GPx-like), single-atom catalysts, and nanozyme-integrated nanoplatforms. These platforms not only scavenge reactive oxygen species, degrade α-synuclein aggregates, and reinforce BBB integrity through localized catalytic reactions, but also reprogram innate and adaptive immune responses by modulating microglial polarization toward neuroprotective phenotypes, suppressing pro-inflammatory cytokine cascades (TNF-α, IL-1β, IL-6), and supporting regulatory T cell (Treg) responses. We examine how these nanozyme-integrated nanoplatforms can be combined with lipid-based nanoparticles, polymeric carriers, biomimetic systems, and extracellular vesicles (EVs) to achieve synergistic targeted drug delivery, gene modulation, neuroprotection, and neural repair. Finally, we address the translational challenges and prospects for merging neuroimmunology, nanocatalysis, and adjuvant engineering in PD therapy.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42662413/",
-   "journal_display": "Materials Today Bio",
-   "matched": [
-    "neuro",
-    "nanoparticle",
-    "drug delivery"
-   ],
-   "matched_n": 3,
-   "must_n": 1,
-   "ai": "【一句话】用纳米酶帮忙调节大脑免疫，治疗帕金森病。\n【发现了什么】发现了一种能同时清除有害物质和调节免疫反应的纳米材料。\n【为什么重要】解决了帕金森病中免疫失调和炎症的问题，可能延缓病情发展。\n【跟纳米医学的关系】这种纳米材料能像酶一样催化反应，还能调节免疫，用于递送药物和修复神经。",
-   "title_zh": "从神经炎症到免疫重编程：用于帕金森病神经免疫调节的纳米酶集成纳米平台",
-   "plain": "说白了：用特殊胶块做大脑防护墙和垃圾清理工\n这种胶块能见光起效，在实验室培养皿和活的老鼠身上试过。它像快递员一样，专门找上大脑里堆积的垃圾，还能加固大脑的防护墙。比喻成清洁工，它一边用光把垃圾分解，一边让大脑里的免疫细胞变温和，减少发炎反应。",
-   "use": "这个思路能启发研究人员，用类似胶块的东西组合多种功能，比如既当清洁工又当快递员，更全面地解决大脑问题。",
-   "conf": "目前只在实验室和老鼠身上做过，离真正给人用还差得远。最大的局限是不能直接穿过人体的大脑防护墙。"
   },
   {
    "pmid": "42692233",
@@ -440,33 +356,6 @@
    "plain": "说白了：用天然材料做药物载体治病。\n这种载体像快递员，能穿过大脑防护墙，把药送到需要的地方。它用的是从身体里拿出来的材料，比人造的更安全，还能按身体信号释放药物。研究人员发现，这些天然载体有不同大小，从极小的颗粒到像果冻一样的胶块，都能帮药找到目标并发挥作用。",
    "use": "这个思路能给你启发，用身体自己的材料做药物载体，可能比现在的人造方法更厉害。",
    "conf": "这是实验室培养皿里的实验，还没在活的老鼠身上做，离真正给人用还很远，因为天然材料很难大量生产。"
-  },
-  {
-   "pmid": "42662927",
-   "title": "Spatiotemporal ultrasound-driven piezoelectric electro-NO therapy restores neuro-vascular-immune homeostasis for radiation ulcer repair.",
-   "journal": "Materials today. Bio",
-   "pubdate": "2026-10-01",
-   "doi": "10.1016/j.mtbio.2026.103581",
-   "authors": [
-    "Nie",
-    "Zhao",
-    "Li",
-    "Huang"
-   ],
-   "abstract": "Radiation ulcers (RUs) represent a devastating and intractable complication arising from radiotherapy, driven by a self-perpetuating pathological cascade featuring persistent oxidative stress, unresolved chronic inflammation, progressive neurovascular destruction, and recurrent bacterial infection, which cannot be sufficiently mitigated by conventional single-target therapeutic interventions. Both electrical stimulation (ES) and nitric oxide (NO) therapy exhibit promising regenerative potential for tissue repair; nevertheless, traditional ES relies on invasive implanted electrodes with unsatisfactory spatial controllability, whereas exogenous NO delivery suffers from insufficient spatiotemporal precision and potential off-target cytotoxicity. Herein, we developed an injectable collagen hydrogel (CKPB) integrating with potassium sodium niobate nanoparticles loaded with an ultrasound-sensitive NO donor. Upon non-invasive ultrasound triggering, this integrated platform achieves wireless generation of localized electric fields as well as spatiotemporally tunable NO release. In a murine RUs model, CKPB/US treatment efficiently facilitated nerve regeneration, M2 macrophage polarization, angiogenesis, antioxidant defense and antibacterial properties. Such multi-faceted therapeutic effects contribute to the recovery of near-physiological epidermal architecture, improved functional blood perfusion, and strengthened overall tissue integrity. Collectively, this work establishes a noninvasive, dual-modality strategy to reconstruct neuro-vascular-immune homeostasis, offering a rational framework for coordinating multimodal signals to target complex pathological microenvironments.",
-   "url": "https://pubmed.ncbi.nlm.nih.gov/42662927/",
-   "journal_display": "Materials Today Bio",
-   "matched": [
-    "neuro",
-    "nanoparticle"
-   ],
-   "matched_n": 2,
-   "must_n": 1,
-   "ai": "【一句话】用超声波激活的纳米材料同时产生电和一氧化氮来治疗放射溃疡。\n【发现了什么】发明了一种能随超声波控制的纳米凝胶，能同时产生电和一氧化氮，促进神经、血管和免疫修复。\n【为什么重要】解决了传统治疗手段效果不佳的问题，非侵入式治疗放射溃疡更有效。\n【跟纳米医学的关系】用纳米材料（纳米氧化铌和一氧化氮供体）作为药物递送系统，实现超声波控制的精准治疗。",
-   "title_zh": "时空超声驱动压电电NO疗法恢复神经血管免疫稳态促进辐射溃疡修复",
-   "plain": "说白了：超声波+特殊材料治辐射伤\n这种疗法用像果冻一样的胶块，里面藏着能感应超声波的纳米颗粒和一氧化氮。胶块注射到辐射伤处后，用超声波照射，纳米颗粒就会产生电场，同时控制一氧化氮的释放。在老鼠身上实验发现，这种方法能让神经重新生长，让负责修复的免疫细胞变好，促进血管再生，还能抵抗细菌和清除氧化损伤。就像快递员用钥匙锁和导航系统，精准地把\"修复工具\"送到辐射伤最需要的地方。",
-   "use": "这个思路能启发研究人员，把不同作用机制的材料组合起来，用无创方式更精准地调控复杂伤口的修复环境。",
-   "conf": "这是在老鼠身上做的实验，离人体应用还远，但证明了这个方法有潜力解决辐射伤的多种问题，比如神经损伤、免疫失衡和感染。"
   },
   {
    "pmid": "42721613",
@@ -739,5 +628,5 @@
    "conf": "这是在老鼠身上做的实验，离用人还差得远。锌的作用还不完全清楚，可能还有别的原因。"
   }
  ],
- "ai_tokens_used": 26883
+ "ai_tokens_used": 0
 }
