@@ -69,6 +69,22 @@ border-radius:4px var(--r2) var(--r2) 4px;padding:12px 14px}
 .ai-i{font-size:14px;line-height:1.75;color:var(--txt2)}
 .ai-i+.ai-i{margin-top:8px}
 .ai-k{color:var(--brand);font-weight:500;margin-right:6px;font-size:13px}
+.phtog{width:100%;display:flex;align-items:center;gap:9px;margin:0 0 12px;padding:11px 13px;
+background:none;border:1px dashed var(--line);border-radius:var(--r2);cursor:pointer;
+font-family:inherit;text-align:left}
+.phtog:active{background:var(--card2)}
+.phtog .phk{font-size:13.5px;font-weight:500;color:var(--brand);flex-shrink:0}
+.phtog .phd{font-size:12.5px;color:var(--sub2);flex:1;min-width:0}
+.phtog .cv{font-size:11px;color:var(--sub2);flex-shrink:0}
+.phbox{margin:0 0 12px;background:var(--brand-l);border-left:3px solid var(--brand);
+border-radius:4px var(--r2) var(--r2) 4px;padding:13px 14px}
+.ph-tldr{font-size:15px;line-height:1.7;color:var(--txt);margin-bottom:10px}
+.ph-tldr b{color:var(--brand);font-weight:500}
+.ph-p{font-size:14.5px;line-height:1.85;color:var(--txt2)}
+.ph-p+.ph-p{margin-top:7px}
+.ph-meta{margin-top:11px;padding-top:10px;border-top:1px solid var(--line);
+font-size:13px;line-height:1.75;color:var(--txt2)}
+.ph-meta b{color:var(--brand);font-weight:500;margin-right:6px}
 .cfoot{display:flex;align-items:center;gap:8px;margin-top:13px;padding-top:12px;
 border-top:1px solid var(--line2)}
 .pri{font-size:13px;font-weight:500;color:#fff;background:var(--brand);padding:7px 14px;
@@ -150,6 +166,7 @@ border-radius:10px;font:12.5px/2 ui-monospace,Menlo,Consolas,monospace;color:var
     <div class="chip" data-f="fav">收藏 <span id="fc">0</span></div>
     <div class="chip" data-f="today">今天</div>
     <div class="chip" id="srt" title="切换排序方式">⇅ 最相关</div>
+    <div class="chip" id="phall" title="所有论文都直接展开人话版">说人话模式</div>
   </div>
 </header>
 
@@ -308,6 +325,7 @@ function ghH(t,json){
   return h;
 }
 var DATES=[], CUR="", DATA=null, FILTER="all", SORT="rel";
+var PHALL=get("nm_phall",'false'), PH={};
 var TODAY=new Date().toISOString().slice(0,10);
 
 function get(k,d){try{return JSON.parse(localStorage.getItem(k)||d)}catch(e){return d}}
@@ -346,6 +364,20 @@ function parseAI(t){
     else if(out){out+='<div class="ai-i">'+esc(line)+'</div>';}
   });
   return out||'<div class="ai-i">'+esc(t)+'</div>';
+}
+
+/* 人话版排版：把「说白了：…」单独提出来当导语，其余分段 */
+function plainHTML(t){
+  var s=String(t||""), tldr="";
+  var m=s.match(/说白了[：:]\s*([^\n]*)/);
+  if(m){tldr=m[1].trim();s=s.replace(m[0],"").trim();}
+  var h="";
+  if(tldr)h+='<div class="ph-tldr"><b>说白了：</b>'+esc(tldr)+'</div>';
+  s.split(/\n+/).forEach(function(ln){
+    ln=ln.replace(/^(生活化比喻|比喻|打个比方)\s*[：:]\s*/,"").trim();
+    if(ln)h+='<div class="ph-p">'+esc(ln)+'</div>';
+  });
+  return h||'<div class="ph-p">'+esc(String(t||""))+'</div>';
 }
 
 function render(){
@@ -406,6 +438,20 @@ function render(){
     var title = p.title_zh
       ? '<h2 class="tzh">'+esc(p.title_zh)+'</h2><p class="ten">'+esc(p.title)+'</p>'
       : '<h2 class="tzh">'+esc(p.title)+'</h2>';
+    var ph='';
+    if(p.plain){
+      var open = PHALL || PH[p.pmid];
+      var meta='';
+      if(p.use)meta+='<div class="ph-meta"><b>对你可能有什么用</b>'+esc(p.use)+'</div>';
+      if(p.conf)meta+='<div class="ph-meta"><b>靠谱程度</b>'+esc(p.conf)+'</div>';
+      ph='<button class="phtog" onclick="tgPH(\''+p.pmid+'\',this)">'
+        +'<span class="phk">说人话</span>'
+        +'<span class="phd">这篇到底讲了啥（不看术语也能懂）</span>'
+        +'<span class="cv">'+(open?"▴":"▾")+'</span></button>'
+        +'<div class="phbox" id="ph'+i+'" style="display:'+(open?"block":"none")+'">'
+        +plainHTML(p.plain)
+        +meta+'</div>';
+    }
     var ai = p.ai
       ? '<div class="ai">'+parseAI(p.ai)+'</div>'
       : '<div class="notice" style="margin:0">这篇还没生成大白话摘要。进设置点一次「立刻运行」就能补上（已写好的不会重复花钱）。</div>';
@@ -413,7 +459,7 @@ function render(){
       +'<div class="ctop">'
       +'<span class="jtag">'+esc(p.journal_display||p.journal||"")+'</span>'+mch
       +'<span class="dt">'+esc(p.pubdate||"")+' 发表</span>'
-      +'</div>'+title+ai
+      +'</div>'+title+ph+ai
       +'<div class="cfoot">'
       +'<a class="pri" href="'+esc(p.url)+'" target="_blank" rel="noopener">查看原文</a>'
       +'<button class="lnk" onclick="tgAbs('+i+')">英文摘要</button>'
@@ -440,7 +486,7 @@ function tgFav(id){fav[id]=!fav[id];if(!fav[id])delete fav[id];set(LS.fav,fav);r
 function tgRead(id){read[id]=!read[id];if(!read[id])delete read[id];set(LS.read,read);render()}
 
 document.querySelectorAll(".chip").forEach(function(c){
-  if(c.id==="srt") return;
+  if(c.id==="srt"||c.id==="phall") return;
   c.onclick=function(){
     document.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});
     c.classList.add("on");FILTER=c.dataset.f;render()}});
@@ -451,6 +497,29 @@ document.getElementById("srt").onclick=function(){
   this.classList.toggle("on", SORT==="new");
   render();
 };
+
+// 说人话模式：一键把所有论文的人话版都展开
+function syncPHAll(){
+  var c=document.getElementById("phall");
+  c.classList.toggle("on",!!PHALL);
+  c.textContent = PHALL ? "说人话模式 开" : "说人话模式";
+}
+document.getElementById("phall").onclick=function(){
+  PHALL=!PHALL;
+  set("nm_phall",PHALL);
+  syncPHAll();
+  render();
+};
+syncPHAll();
+
+// 单篇的人话版展开/收起（直接改 DOM，不整页重绘，避免滚动位置跳走）
+function tgPH(id,btn){
+  var b=document.getElementById("ph"+id);
+  var open=b.style.display==="block";
+  b.style.display=open?"none":"block";
+  PH[id]=!open;
+  btn.querySelector(".cv").textContent=open?"▾":"▴";
+}
 
 /* ---------- 设置页 ---------- */
 var SHEET_OPEN=false;
