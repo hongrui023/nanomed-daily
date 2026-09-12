@@ -448,7 +448,7 @@ function render(){
         +'<span class="phk">说人话</span>'
         +'<span class="phd">这篇到底讲了啥（不看术语也能懂）</span>'
         +'<span class="cv">'+(open?"▴":"▾")+'</span></button>'
-        +'<div class="phbox" id="ph'+i+'" style="display:'+(open?"block":"none")+'">'
+        +'<div class="phbox" id="ph'+p.pmid+'" style="display:'+(open?"block":"none")+'">'
         +plainHTML(p.plain)
         +meta+'</div>';
     }
@@ -515,10 +515,13 @@ syncPHAll();
 // 单篇的人话版展开/收起（直接改 DOM，不整页重绘，避免滚动位置跳走）
 function tgPH(id,btn){
   var b=document.getElementById("ph"+id);
+  if(!b&&btn)b=btn.parentNode.querySelector(".phbox");   // 兜底：按 DOM 位置找
+  if(!b)return;
   var open=b.style.display==="block";
   b.style.display=open?"none":"block";
   PH[id]=!open;
-  btn.querySelector(".cv").textContent=open?"▾":"▴";
+  var cv=btn?btn.querySelector(".cv"):null;
+  if(cv)cv.textContent=open?"\u25BE":"\u25B4";
 }
 
 /* ---------- 设置页 ---------- */
