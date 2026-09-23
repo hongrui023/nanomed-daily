@@ -1,0 +1,487 @@
+{
+ "date": "2026-09-23",
+ "range": "2026-09-09 ~ 2026-09-23",
+ "days": 14,
+ "generated_at": "2026-09-23 12:28:15",
+ "journal_count": 46,
+ "keyword_count": 6,
+ "keywords_used": [
+  "neuro",
+  "nanoparticle",
+  "nanomedicine",
+  "tumor therapy",
+  "drug delivery",
+  "photothermal therapy"
+ ],
+ "keywords_must": [
+  "neuro"
+ ],
+ "keywords_opt": [
+  "nanoparticle",
+  "nanomedicine",
+  "tumor therapy",
+  "drug delivery",
+  "photothermal therapy"
+ ],
+ "keyword_stats": {
+  "neuro": 18,
+  "nanoparticle": 12,
+  "nanomedicine": 3,
+  "tumor therapy": 3,
+  "drug delivery": 6,
+  "photothermal therapy": 0
+ },
+ "total_found": 918,
+ "matched": 18,
+ "per_journal": {
+  "ACS Nano": 2,
+  "ACS Applied Materials & Interfaces": 196,
+  "Acta Biomaterialia": 22,
+  "Advanced Drug Delivery Reviews": 2,
+  "Advanced Healthcare Materials": 51,
+  "Advanced Materials": 157,
+  "Advanced Therapeutics": 0,
+  "Beilstein Journal of Nanotechnology": 9,
+  "Biomaterials": 27,
+  "Biomaterials Science": 11,
+  "Bioconjugate Chemistry": 0,
+  "BioNanoScience": 0,
+  "Colloids and Surfaces B: Biointerfaces": 43,
+  "Drug Delivery": 2,
+  "Drug Delivery and Translational Research": 5,
+  "European Journal of Pharmaceutics and Biopharmaceutics": 5,
+  "Expert Opinion on Drug Delivery": 1,
+  "International Journal of Nanomedicine": 47,
+  "International Journal of Pharmaceutics": 48,
+  "Journal of Biomedical Nanotechnology": 0,
+  "Journal of Controlled Release": 44,
+  "Journal of Drug Targeting": 11,
+  "Journal of Nanobiotechnology": 12,
+  "Journal of Nanoparticle Research": 0,
+  "Materials Today Bio": 64,
+  "Molecular Pharmaceutics": 0,
+  "Nano Convergence": 4,
+  "Nano Letters": 41,
+  "Nano Research": 0,
+  "Nano Today": 0,
+  "Nano-Micro Letters": 5,
+  "Nanomedicine (UK)": 9,
+  "Nanomedicine: Nanotechnology, Biology, and Medicine": 7,
+  "Nanoscale": 72,
+  "Nanoscale Advances": 23,
+  "Nanotheranostics": 0,
+  "Nanotoxicology": 0,
+  "Nanotechnology": 13,
+  "Nature Biomedical Engineering": 11,
+  "Nature Materials": 13,
+  "Nature Nanotechnology": 12,
+  "Particle and Fibre Toxicology": 1,
+  "Precision Nanomedicine": 0,
+  "Small": 203,
+  "Theranostics": 0,
+  "WIREs Nanomedicine and Nanobiotechnology": 1
+ },
+ "failed_journals": [],
+ "papers": [
+  {
+   "pmid": "42765277",
+   "title": "Neuroinflammation and peripheral targeting: formulation-based strategies for modulating the neuroimmune axis in diabetic peripheral neuropathy.",
+   "journal": "Nanomedicine (London, England)",
+   "pubdate": "2026-09-21",
+   "doi": "10.1080/17435889.2026.2734072",
+   "authors": [
+    "Bhattacharyya",
+    "Mazumder"
+   ],
+   "abstract": "Diabetic peripheral neuropathy (DPN) is a common and disabling complication of diabetes that is largely treated symptomatically. Chronic neuroinflammation in the peripheral nerve, dorsal root ganglion, and blood-nerve barrier (BNB) may contribute to disease progression, making the peripheral neuroimmune interface a potential therapeutic target. A literature search of PubMed/MEDLINE and Google Scholar was conducted for January 2005-July 2026, supplemented by reference-list hand-searching and prioritization of recent studies. This review examines neuroinflammatory mechanisms in DPN, including macrophage activation, Schwann-cell dysfunction, NOD-, LRR- and pyrin domain-containing protein 3 (NLRP3) inflammasome activation, and BNB impairment. It also evaluates peripheral-targeted nanomedicine and advanced drug delivery systems, including lipid and polymeric nanoparticles, nanoemulsions, exosomes, hydrogels, and microneedles. Preclinical evidence suggests that inadequate endoneurial drug exposure is a plausible pharmacokinetic barrier to disease modification in DPN, although its contribution to clinical treatment failure remains unconfirmed. Peripheral-targeted nanomedicine offers a rational strategy to improve drug delivery to regions of neuroinflammation. Standardized preclinical models, sex-specific analyses, biomarker-informed trials, scalable manufacturing, and rigorous clinical validation will be critical for translation.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42765277/",
+   "journal_display": "Nanomedicine (UK)",
+   "matched": [
+    "neuro",
+    "nanoparticle",
+    "nanomedicine",
+    "drug delivery"
+   ],
+   "matched_n": 4,
+   "must_n": 1
+  },
+  {
+   "pmid": "42733669",
+   "title": "In situ Gel-Nano transformable hydrogel for therapeutic intervention in refractory inflammation-related trauma.",
+   "journal": "Materials today. Bio",
+   "pubdate": "2026-10-01",
+   "doi": "10.1016/j.mtbio.2026.103605",
+   "authors": [
+    "Xu",
+    "Zhu",
+    "Fan",
+    "Li"
+   ],
+   "abstract": "In this study, we introduce a novel injectable hydrogel, termed hDAGel, which exhibits a unique gel-to-nano (Gel-Nano) configuration inversion capability in response to local pathological microenvironments. The hydrogel is formulated with a high loading density of dopamine, serving the dual function: an injectable dual-component drug-loading gel and triggering the in situ formation of drug-loaded polydopamine-based nanoparticles upon dopamine release and oxidative polymerization. This Gel-Nano transformation enables sustained and targeted drug delivery precisely at inflamed or injured sites. Moreover, hDAGel effectively scavenges excess reactive oxygen species (ROS) within inflamed tissues, alleviating oxidative stress and modulating immune responses. Upon local administration, such as intracerebral injection for cerebral ischemia or topical/intradermal application for allogeneic skin transplantation, hDAGel persists at the target site and dynamically responds to microenvironmental stimuli, releasing therapeutic nanoparticles that suppress inflammation and immune overactivation. Collectively, hDAGel integrates the advantageous features of injectable, adhesive hydrogels with the precise and controlled release of nanoparticle-delivered therapeutics via Gel-Nano transformation. This multifunctional platform holds great promise for treating complex inflammation-associated conditions, including neuroinflammation and transplant rejection, by providing localized, sustained, and responsive therapy with enhanced antioxidant and immunomodulatory effects.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42733669/",
+   "journal_display": "Materials Today Bio",
+   "matched": [
+    "neuro",
+    "nanoparticle",
+    "drug delivery"
+   ],
+   "matched_n": 3,
+   "must_n": 1
+  },
+  {
+   "pmid": "42755159",
+   "title": "Twin-Drink Endogastric-Forming Hydrogel for Multimodal Colitis-Associated Colorectal Cancer Management.",
+   "journal": "Advanced materials (Deerfield Beach, Fla.)",
+   "pubdate": "2026-09-17",
+   "doi": "10.1002/adma.75037",
+   "authors": [
+    "Feng",
+    "Meng",
+    "Luo",
+    "Xu"
+   ],
+   "abstract": "Colitis-associated colorectal cancer (CAC) arises from the vicious circle of inflammation, metabolic disorder, and gut microbiota dysbiosis, and further contributes to disease progression and systemic complications, including neurological function disruptions via the microbiota-gut-brain axis (MGBA). Current therapies fail to address multiple pathological processes. Here, an oral administration-friendly Twin-Drink therapy was designed to rapidly gel in the stomach upon sequential ingestion, protecting and delivering BNBZ-loaded nanoparticles (PHC NP) and the anthocyanin Cy3G. This system enables alkaline/ROS dual-response release in the microenvironment of colon inflammation. Released PHC NP inhibits tumor growth by blocking glycolysis and inducing apoptosis; Cy3G exerts anti-inflammatory and microbiota remodeling effects. Twin-Drink demonstrated successful endogastric gelation in a preliminary Beagle study. In the CAC mouse model, Twin-Drink significantly reduced inflammation, restored colon length, and inhibited tumor occurrence. Moreover, Twin-Drink enriched beneficial bacteria (e.g., Muribaculaceae), restored microbiota-associated metabolic homeostasis, and correlated with marked improvements in MGBA-mediated behavioral deficits. This study presents a drinkable, precision delivery platform for CAC management.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42755159/",
+   "journal_display": "Advanced Materials",
+   "matched": [
+    "neuro",
+    "nanoparticle",
+    "tumor therapy"
+   ],
+   "matched_n": 3,
+   "must_n": 1
+  },
+  {
+   "pmid": "42749136",
+   "title": "Tumor-homing peptides in precision oncology.",
+   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+   "pubdate": "2026-09-16",
+   "doi": "10.1016/j.jconrel.2026.115360",
+   "authors": [
+    "Ma",
+    "Derkaoui",
+    "Senhadji",
+    "Karoyan"
+   ],
+   "abstract": "Mechanisms of systemic administration of cytotoxic and immunomodulatory agents are hindered due to poor intratumoral retention and off-target toxicities. While Antibody-Drug Conjugates (ADCs) have achieved substantial clinical success and validated the paradigm of targeted therapy, their large size (∼150 kDa) limits their ability to cross blood vessels and interstitial spaces, especially in the dense, collagen-rich stroma of aggressive solid tumors. As a smaller alternative for drug delivery, Tumor-Homing Peptides (THPs) allow for improved tissue permeability, low immunogenicity and rapid systemic clearance. Here, we examine THPs discovery and development trajectory, from phage display strategies to current deep learning-driven design methodologies. We analyze the structural and functional biology of the predominant internalization pathways like the Neuropilin-1 (NRP-1) dependent C-end Rule (CendR) and the Sortilin (SORT1) scavenger receptor, and their use to promote deep tissue penetration. Finally, we assess the translational landscape of early 2026, including the recent FDA withdrawal of the lipophilic peptide-conjugated melphalan flufenamide (Pepaxto®) and the recent clinical success of the cyclic peptide certepetide for pancreatic adenocarcinoma and the ongoing promising studies with chemically constrained bicyclic peptides.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42749136/",
+   "journal_display": "Journal of Controlled Release",
+   "matched": [
+    "neuro",
+    "tumor therapy",
+    "drug delivery"
+   ],
+   "matched_n": 3,
+   "must_n": 1
+  },
+  {
+   "pmid": "42740640",
+   "title": "Quercetin for diabetic retinopathy: from molecular targets to targeted delivery strategies.",
+   "journal": "Expert opinion on drug delivery",
+   "pubdate": "2026-09-15",
+   "doi": "10.1080/17425247.2026.2735275",
+   "authors": [
+    "Liu",
+    "Wang",
+    "Liu",
+    "Qi"
+   ],
+   "abstract": "Diabetic retinopathy is a leading cause of preventable vision loss, driven by coupled oxidative, inflammatory, neurodegenerative, and angiogenic injury; current anti-VEGF and laser therapies act mainly on the late vascular stage and leave the upstream injury largely untreated. Quercetin, a dietary flavonol, engages several of these pathogenic nodes at once, but its poor solubility, extensive first-pass metabolism, and the blood-retinal barrier limit retinal exposure. This review synthesizes the molecular pharmacology of quercetin in diabetic retinopathy, covering Nrf2/HO-1 antioxidant activation, NLRP3/NF-κB anti-inflammation, VEGF-driven anti-angiogenesis, and neurovascular-unit preservation, alongside the nanocarrier strategies (polymeric and lipid nanoparticles, liposomes, and nanoemulsions) and ocular administration routes developed to overcome its bioavailability limits. Literature was identified by structured searches of PubMed, PubMed Central and Web of Science from database inception to August 2026, combining terms for quercetin, diabetic retinopathy, and ocular or nanoparticle drug delivery, with reference lists of retrieved articles screened for additional sources. Mechanism and delivery have advanced in isolation. We argue that translation requires an integrated 'target-to-delivery' framework that specifies molecular target, disease stage, and carrier-route design together, supported by quantitative retinal-exposure data, standardized models, and formulation-specific clinical testing.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42740640/",
+   "journal_display": "Expert Opinion on Drug Delivery",
+   "matched": [
+    "neuro",
+    "nanoparticle",
+    "drug delivery"
+   ],
+   "matched_n": 3,
+   "must_n": 1
+  },
+  {
+   "pmid": "42750834",
+   "title": "Bioelectronic interfaces for restoring vision pathways.",
+   "journal": "Materials today. Bio",
+   "pubdate": "2026-10-01",
+   "doi": "10.1016/j.mtbio.2026.103652",
+   "authors": [
+    "Wang",
+    "Zhao",
+    "Du",
+    "Wu"
+   ],
+   "abstract": "Myopia remains a major global ophthalmic challenge, as existing interventions can slow but rarely halt disease progression or reverse the underlying pathological remodeling. Recent advances in bioelectronics, nanotechnology and neuroengineering have enabled the development of self-powered bioelectronic interfaces for precision ophthalmic therapy. This Review discusses triboelectric and piezoelectric nanogenerators for restoring vision pathways and regulating ocular homeostasis. Key mechanisms underlying myopia progression, including retinal neurotransmission imbalance, scleral remodeling and aberrant visual feedback signalling, are summarized to establish a mechanistic framework for bioelectronic intervention. The therapeutic and diagnostic potential of multifunctional bioelectronic platforms for ocular modulation, targeted drug delivery, controlled release and real-time sensing is then examined. The integration of wearable and implantable ophthalmic devices with artificial intelligence and closed-loop regulation is further highlighted. To provide broad engineering and translational perspectives, representative ophthalmic bioelectronics, such as wireless contact lenses and photovoltaic retinal prostheses-are discussed as architectural reference models. Finally, major translational challenges including long-term biocompatibility, device miniaturization, energy stability and regulatory considerations, are discussed. These next-generation biointerfaces may enable adaptive neuromodulation, real-time visual decoding and seamless integration with digital therapeutics, establishing a new paradigm for precision ophthalmology and functional vision restoration.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42750834/",
+   "journal_display": "Materials Today Bio",
+   "matched": [
+    "neuro",
+    "drug delivery"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42725138",
+   "title": "Multi-functional bionic nanoparticles for precise neuronal targeting and synergistic therapy in Alzheimer's disease.",
+   "journal": "Materials today. Bio",
+   "pubdate": "2026-10-01",
+   "doi": "10.1016/j.mtbio.2026.103617",
+   "authors": [
+    "Na",
+    "Liu",
+    "Bi",
+    "Liu"
+   ],
+   "abstract": "Alzheimer's disease (AD) is characterized by core pathological mechanisms including amyloid-β plaque aggregation, cholinergic dysfunction, and neuronal apoptosis. Given the complex interplay of these pathways, combination therapies are emerging as more effective strategies than single-target approaches. The success of such therapies depends on rational target selection and optimal regimen design. Herein, we developed a multifunctional biomimetic nanocarrier, B6/Tet1-RBCm-NPs (BTRN), for precise neuron-targeted combination therapy. The nanoparticles (NPs) core was fabricated using safe, biocompatible poly (lactic-co-glycolic acid) (PLGA) to co-deliver natural product genistein and mature marketed donepezil, which act synergistically to enhance therapeutic efficacy. The core was further modified with endogenous red blood cell membranes, providing effective immune evasion and a prolonged circulation lifetime. Functionalization with the blood-brain barrier (BBB)-penetrating peptide B6 and the neuron-targeting peptide Tet1 confers excellent BBB penetration and specific accumulation in diseased neurons. Collectively, BTRN treats AD through multiple mechanisms, including reducing Aβ production, regulating cholinergic function, and inhibiting neuronal apoptosis. This biomimetic system presents a promising therapeutic strategy and offers valuable insights for the clinical translation of combination therapies in AD.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42725138/",
+   "journal_display": "Materials Today Bio",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42768773",
+   "title": "Neutrophil-Mediated Delivery of MRI-Traceable Nanocarriers Ameliorates Acute Kidney Injury and Associated Cognitive Deficits and Anxiety-Like Behaviors.",
+   "journal": "Advanced healthcare materials",
+   "pubdate": "2026-09-21",
+   "doi": "10.1002/adhm.71733",
+   "authors": [
+    "Yang",
+    "Li",
+    "Liu",
+    "Zhang"
+   ],
+   "abstract": "Acute kidney injury (AKI) frequently progresses to chronic kidney disease (CKD) and is increasingly linked to significant remote neuropsychiatric sequelae. However, current therapeutic strategies usually lack renal targeting and, critically, neglect to address these systemic comorbidities, particularly the associated cognitive deficits and anxiety-like behaviors. In this study, we developed a biomimetic platform consisting of neutrophils loaded with superparamagnetic iron oxide nanoparticles encapsulating celastrol (termed NSPIOC), as an MRI-visible theranostic system for targeted renal therapy and simultaneous mitigation of associated neuropsychiatric impairments. Systemically administered NSPIOC leverage innate neutrophil chemotaxis to home toward renal inflammatory gradients. Upon infiltration, inflammation-triggered NETosis releases the cargo into vulnerable proximal tubules, while T2-weighted MRI enables real-time monitoring of neutrophil recruitment. Our results demonstrate that NSPIOC effectively restore renal function and inhibits the AKI-to-CKD transition. Importantly, our findings provide new evidence that renal-targeted intervention can alleviate AKI-induced cognitive deficits and anxiety-like behaviors. Mechanistically, restoring renal homeostasis prevents the pathological hyperactivation of glutamatergic neurons in the medial prefrontal cortex (mPFC). This biomimetic platform offers a holistic strategy for managing AKI by simultaneously addressing primary renal injury and remote neurological dysfunction, presenting a promising approach to systemic inflammatory complications.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42768773/",
+   "journal_display": "Advanced Healthcare Materials",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42764408",
+   "title": "Neutrophil-Hitchhiking and Microenvironment-Responsive Cascade Nanoparticles for STING Inhibition and Spinal Cord Injury Repair.",
+   "journal": "Advanced healthcare materials",
+   "pubdate": "2026-09-20",
+   "doi": "10.1002/adhm.71742",
+   "authors": [
+    "Chen",
+    "Wang",
+    "Han",
+    "Han"
+   ],
+   "abstract": "Excessive acute inflammation following spinal cord injury (SCI) is a primary driver of secondary neuronal damage, with early neutrophil infiltration playing a critical, deleterious role. Clinical evidence linking high neutrophil counts to SCI severity underscores the need for precision immunomodulation. Herein, we report T-H151, a smart, bio-responsive nanoplatform designed to suppress neuroinflammation and enhance functional recovery via selective inhibition of the STING signaling pathway. T-H151 consists of a liposomal carrier encapsulating the STING inhibitor H151, surface-functionalized with a modular peptide design: a neutrophil elastase-binding peptide (NEBP) for active hitchhiking, an MMP9-responsive linker for site-specific activation, and a neuron-targeting peptide (TET) for enhanced cellular uptake. This architecture facilitates efficient neutrophil-mediated transport to the lesion site, followed by MMP9-triggered, precision release of H151 within the neuronal microenvironment. In SCI mouse models, T-H151 significantly improves motor function and preserves blood-spinal cord barrier integrity. Mechanistically, T-H151 suppresses the STING axis, inhibits microglial/macrophage activation, and reduces pro-inflammatory cytokines (IL-1β, TNF-α). Transcriptomic analysis further confirms a profound downregulation of the NF-κB and JAK-STAT inflammatory pathways. Collectively, this targeted nanoplatform offers a transformative, bio-responsive strategy for mitigating neuroinflammation and promoting therapeutic outcomes in spinal cord repair.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42764408/",
+   "journal_display": "Advanced Healthcare Materials",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42764093",
+   "title": "A design framework for skin-targeted RNA nanomedicines: spatial reprogramming of immune memory in psoriasis.",
+   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+   "pubdate": "2026-09-20",
+   "doi": "10.1016/j.jconrel.2026.115357",
+   "authors": [
+    "Gomes",
+    "Rosales",
+    "Facchini",
+    "Frank"
+   ],
+   "abstract": "Biologics targeting TNF-α, IL-23, or IL-17 clear psoriatic plaques effectively, yet lesions recur at the same anatomical sites upon treatment withdrawal. This is not a failure of potency but of target: the tissue-encoded immune memory that sustains site-specific relapse remains largely inaccessible to systemic cytokine blockade. This perspective proposes a design-first framework for skin-targeted RNA nanomedicines that translates this biological insight into concrete engineering requirements. Five immune nodes, tissue-resident memory T cells (TRM), regulatory T cells, dendritic cells, stromal-vascular niches, and cutaneous neuroimmune circuits, sustain psoriatic persistence across defined compartments of the plaque, and each is, in principle, addressable through RNA payloads delivered via dissolvable polymer microneedle arrays. The framework is organised around three design dimensions: where payloads must be deposited, what molecular instructions they must carry, and when delivery must be sequenced across a three-phase temporal model of suppression, tolerisation, and maintenance. A translational roadmap addresses regulatory classification, chemistry-manufacturing-and-controls, psoriasis-specific immunotoxicology, and adaptive within-patient trial designs anchored to mechanistic biomarkers. The framework is presented as a design hypothesis grounded in mechanistic evidence; empirical validation in human psoriatic skin is outlined as the next translational step.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42764093/",
+   "journal_display": "Journal of Controlled Release",
+   "matched": [
+    "neuro",
+    "nanomedicine"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42762842",
+   "title": "Stepwise neutrophil-to-neuron targeting nanotherapy for mitochondrial protection and blood-brain barrier preservation in ischemic stroke.",
+   "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+   "pubdate": "2026-09-19",
+   "doi": "10.1016/j.jconrel.2026.115346",
+   "authors": [
+    "Gu",
+    "Wang",
+    "Chen",
+    "Yao"
+   ],
+   "abstract": "Ischemic stroke is a leading cause of mortality and long-term disability worldwide, yet the clinical efficacy of reperfusion therapies remains severely constrained by a narrow therapeutic time window and secondary ischemia-reperfusion injury. Preserving the viability of the ischemic penumbra through early, multi-target neuroprotection represents a promising strategy to extend this window; however, effective approaches that simultaneously address neuronal mitochondrial dysfunction and blood-brain barrier (BBB) disruption are lacking. Here, we report a dual-modal, stepwise-targeting lipid nanoparticle (DM-LNP) platform that integrates mitochondrial protection with matrix metalloproteinase-12 (MMP-12) silencing to achieve coordinated neurovascular protection in ischemic stroke. DM-LNP is engineered with a sialic acid-based neutrophil-targeting outer layer and a reactive oxygen species (ROS)-responsive thioketal linker that enables ligand switching to expose a neuron-targeting Tet1 peptide within the ischemic microenvironment. This design allows sequential neutrophil-mediated BBB traversal (Modal I) and precise neuronal targeting (Modal II). Functionally, DM-LNP delivers MMP-12 siRNA to suppress downstream MMP activation and preserve BBB integrity, while a spermidine-derived gene carrier promotes Pink1-Parkin-mediated mitophagy, restores mitochondrial homeostasis, reduces oxidative stress, inhibits neuronal apoptosis, and drives microglial polarization toward an anti-inflammatory phenotype. In transient and prolonged middle cerebral artery occlusion models, DM-LNP significantly improves cerebral blood flow recovery, reduces infarct volume, alleviates neurological deficits, and extends the effective reperfusion window up to 8 h post-ischemia. Together, this work establishes a multifunctional, ROS-responsive nanotherapeutic strategy that stabilizes the neuron-microglia-BBB axis and offers a viable approach for extending reperfusion benefits in ischemic stroke.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42762842/",
+   "journal_display": "Journal of Controlled Release",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42746948",
+   "title": "Nonsurgical Platelet Membrane-Decorated Gold Yarnball Brain Antenna for In Situ Nitric Oxide Generation and Neuronal Regeneration.",
+   "journal": "ACS nano",
+   "pubdate": "2026-09-16",
+   "doi": "10.1021/acsnano.6c12030",
+   "authors": [
+    "Pan",
+    "Shie",
+    "Xu",
+    "Huynh"
+   ],
+   "abstract": "Bioelectronic implants for brain stimulation are widely used to treat neurological disorders and promote neuronal repair; however, their clinical application is limited by invasive surgical implantation. To address this challenge, here, platelet membrane-decorated gold yarnballs double as a brain antenna and a miniaturized chemo-electrical reactor for neuron electric stimulus and gas-controlled release in traumatic brain injury (TBI). The platform consists of a nitric oxide (NO) donor-functionalized platelet membrane (PMNO) conjugated onto a gold yarnball nanoparticle (GNP). Upon exposure to an external high-frequency magnetic field (HFMF), the conductive GNP generates eddy currents that electrically stimulate neural regeneration while simultaneously triggering controlled NO release from PMNO. This dual-mode stimulation enhances neurogenesis, suppresses astrocyte activation, and promotes angiogenesis at the injury site, leading to significantly improved synaptic differentiation and neurite outgrowth of neural stem cells (NSCs). In vivo studies show that combined wireless electrical stimulation and NO signaling suppress inflammation, enhance vascularization, and promote neuronal regeneration in TBI. Behavioral analyses further reveal improved motor coordination and functional recovery in treated mice. The system offers a noninvasive alternative to implanted bioelectronic devices.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42746948/",
+   "journal_display": "ACS Nano",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42731713",
+   "title": "Andrographolide-loaded PLGA nanoparticles protect retinal ganglion cells against experimental acute glaucomatous injury and attenuate mitochondrial dysfunction and retinal PANoptosis-related changes.",
+   "journal": "International journal of pharmaceutics",
+   "pubdate": "2026-09-12",
+   "doi": "10.1016/j.ijpharm.2026.127406",
+   "authors": [
+    "Fan",
+    "Ouyang",
+    "Huo",
+    "Wang"
+   ],
+   "abstract": "Acute glaucomatous injury is characterized by abrupt intraocular pressure elevation, retinal ischemia/reperfusion-like stress, and rapid retinal ganglion cell (RGC) degeneration, in which oxidative stress, mitochondrial dysfunction, and regulated cell death play important roles. Emerging evidence further implicates PANoptosis in glaucomatous retinal injury. Andrographolide (ADR) possesses antioxidant and neuroprotective activities, but its poor aqueous solubility and low bioavailability limit its therapeutic application. Here, we developed ADR-loaded poly(lactic-co-glycolic acid) nanoparticles (ADR-NPs) and evaluated their protective effects in oxygen-glucose deprivation/recovery (OGD/R)-injured R28 cells and a rat retinal ischemia/reperfusion (RIR) model. Network pharmacology implicated oxidative stress and programmed cell death pathways in the potential anti-glaucoma effects of ADR. ADR-NPs exhibited favorable physicochemical properties, sustained release, acceptable short-term stability, cytocompatibility. In OGD/R-injured R28 cells, both free ADR and ADR-NPs attenuated oxidative stress, mitochondrial membrane potential loss, and apoptosis-, pyroptosis-, and necroptosis-related alterations, with ADR-NPs providing greater overall protection at matched doses. In the RIR model, ADR-NP pretreatment preserved retinal structure, electrophysiological function, and RGC survival while reducing oxidative stress and retinal PANoptosis-related alterations. ADR-NPs also exhibited acceptable preliminary ocular and systemic tolerability. Collectively, ADR-NPs protect against experimental acute glaucomatous injury by attenuating oxidative stress, mitochondrial dysfunction, and PANoptosis-related alterations, while enhancing the cellular protective effects of ADR.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42731713/",
+   "journal_display": "International Journal of Pharmaceutics",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42767917",
+   "title": "Nanoconjugation of chalcone derivatives and carbon nitride dots for the inhibition of tau aggregation.",
+   "journal": "Colloids and surfaces. B, Biointerfaces",
+   "pubdate": "2026-09-11",
+   "doi": "10.1016/j.colsurfb.2026.116175",
+   "authors": [
+    "Zhang",
+    "Smith",
+    "Veliz",
+    "Zhao"
+   ],
+   "abstract": "Tau aggregation is a pathological hallmark of Alzheimer's disease, yet small-molecule inhibitors targeting this process often face limitations in solubility, selectivity, and bioavailability. In this study, we engineered a library of hybrid nanostructures by covalently conjugating eleven structurally diverse chalcone derivatives to carbon nitride dots (CNDs), aiming to enhance their physicochemical stability and therapeutic efficacy. The resulting CND-chalcone conjugates exhibited favorable aqueous dispersibility and minimal cytotoxicity in HEK293 and HeLa cells. In vitro aggregation assays revealed that the conjugates modulated tau fibrillization in a structure-dependent manner, with several hybrids, particularly those containing hydroxyl or selectively positioned methoxy groups, showing strong inhibitory effects. Thioflavin-T fluorescence assays confirmed that the most active conjugates disrupted both nucleation and elongation phases of fibril formation. Notably, one hybrid (CNDs-S6) outperformed its free chalcone counterpart, suggesting synergistic interactions between the nanoparticle platform and ligand. These findings highlight the potential of CND-chalcone architectures as multifunctional nanoinhibitors and offer a rational approach to designing aggregation-targeting nanotherapeutics for neurodegenerative disease intervention.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42767917/",
+   "journal_display": "Colloids and Surfaces B: Biointerfaces",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42773441",
+   "title": "cRGD-functionalized exosome-Mn₃O₄ nanoplatform enhanced ischemic lesion accumulation and ros scavenging-mediated neuroprotection in ischemic stroke.",
+   "journal": "Journal of nanobiotechnology",
+   "pubdate": "2026-08-13",
+   "doi": "10.1186/s12951-026-04922-0",
+   "authors": [
+    "Deng",
+    "Xie",
+    "Zhou",
+    "Jiang"
+   ],
+   "abstract": "The therapeutic efficacy of ischemic stroke (IS) treatment is severely limited by insufficient accumulation of therapeutic agents within ischemic lesions and persistent secondary injury after ischemia-reperfusion. Herein, we report a cRGD-functionalized exosome-based nanoplatform that enhances ischemic lesion-associated accumulation and antioxidative neuroprotection for the treatment of IS. Neural stem cell-derived exosomes were functionalized with cyclic RGD peptides (cRGD) and subsequently loaded with Mn₃O₄ nanoparticles to construct a hybrid nanosystem (cRGD-Exo@Mn₃O₄). The engineered exosomes preserve intrinsic brain tropism, while cRGD modification promotes preferential accumulation in ischemic regions, potentially through interaction with αvβ3 integrin that is upregulated in ischemic lesions. The incorporated Mn₃O₄ nanoparticles confer robust reactive oxygen species (ROS) scavenging capability, thereby mitigating oxidative stress in ischemic microenvironments. In vitro and in vivo studies demonstrate that cRGD-Exo@Mn₃O₄ exhibits enhanced accumulation in ischemic regions compared with non-modified counterparts. The nanosystem effectively attenuates oxidative stress and neuroinflammation, leading to reduced infarct volume, alleviation of cerebral edema, and improved neurological function in MCAO/R mice. Mechanistically, transcriptomic analysis suggests that the therapeutic effects are associated with modulation of inflammation-and cell death-related pathways, including suppression of the RIPK1/RIPK3/MLKL signaling cascade. Collectively, this study presents a rationally designed exosome-based nanoplatform integrating ischemic lesion-associated accumulation with ROS-scavenging capability.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42773441/",
+   "journal_display": "Journal of Nanobiotechnology",
+   "matched": [
+    "neuro",
+    "nanoparticle"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42764885",
+   "title": "Microneedle-Enabled Exosome Therapy: From Tumor Targeting to Precision Treatment of Complex Diseases.",
+   "journal": "International journal of nanomedicine",
+   "pubdate": "2026-01-01",
+   "doi": "10.2147/IJN.S631632",
+   "authors": [
+    "Fang",
+    "Song",
+    "Li",
+    "Jiang"
+   ],
+   "abstract": "Exosomes are nanoscale extracellular vesicles (EVs) that mediate intercellular communication by transporting proteins, lipids and nucleic acids. Their biocompatibility, low immunogenicity and intrinsic ability to protect labile cargo make them attractive therapeutic carriers. Yet their clinical translation remains constrained by heterogeneous isolation protocols, variable product purity, inefficient cargo loading, rapid systemic clearance and limited tissue-selective delivery. Engineering strategies, including parental-cell preconditioning, genetic modification, post-isolation cargo loading and surface functionalization, have improved the potency and targeting of exosome-based therapeutics but have not fully solved delivery-related bottlenecks. Microneedle (MN) systems provide a complementary solution by breaching the stratum corneum in a minimally invasive manner and depositing exosomes directly within defined tissue compartments. When integrated with dissolving, hydrogel, cryogenic, core-shell, Janus, threaded or stimulus-responsive MN architectures, exosomes can be retained locally, released in a programmed manner and protected from rapid degradation. This Review first summarizes the biological basis, source-dependent functions and engineering strategies of exosomes, and then outlines the design principles of MN platforms relevant to vesicle delivery. On this basis, we discuss representative studies in which MN systems have been explored to improve the local retention, controlled release and tissue-specific delivery of exosomes in cancer, wound repair, neurological injury, cardiovascular disease, immune-mediated disorders and other regenerative settings. We further summarize the translational barriers that remain for this emerging strategy, including vesicle characterization, potency assays, sterility control, scalable manufacturing, long-term safety, storage stability and batch-to-batch reproducibility.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42764885/",
+   "journal_display": "International Journal of Nanomedicine",
+   "matched": [
+    "neuro",
+    "tumor therapy"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42763743",
+   "title": "Mechanistic Insights and Therapeutic Potential of Plant-Derived Exosome-Like Nanovesicles in Skin Tissue Regeneration.",
+   "journal": "International journal of nanomedicine",
+   "pubdate": "2026-01-01",
+   "doi": "10.2147/IJN.S635952",
+   "authors": [
+    "Ma",
+    "Shi",
+    "Li",
+    "Hu"
+   ],
+   "abstract": "The integrity of the skin barrier is paramount for human physiological homeostasis. Recently, plant-derived exosome-like nanovesicles (PENs) lipid bilayer nanostructures inherently enriched with diverse natural bioactive cargos have emerged as transformative nanotherapeutic platforms. Compared to conventional mammalian and microbial-derived extracellular vesicles (EVs), PENs offer distinct clinical translation advantages. These include scalable and sustainable production, exceptional biosafety, and remarkably low immunogenicity, providing a highly biocompatible alternative for regenerative medicine. This review systematically integrates the multifactorial roles of PENs across the full continuum of skin wound healing. By mediating dynamic cross-kingdom signal transduction, PENs orchestrate a seamless regenerative cascade. Initially, they efficiently mitigate inflammation by tuning macrophage polarization, suppressing inflammasome activation, and alleviating oxidative stress to restore a permissive tissue microenvironment. Furthermore, PENs drive robust angiogenesis by upregulating essential proangiogenic markers and inhibiting local ferroptosis. Concurrently, they promote peripheral neural repair via PI3K/ERK pathway activation, facilitating vital neurovascular crosstalk that ultimately stabilizes nascent microvascular networks. Beyond early wound closure, PENs crucially support the high quality structural reconstruction and functional homeostasis of skin appendages specifically hair follicles, sebaceous glands, and sweat glands through modulating key cascades such as the Wnt/β-catenin pathway. Additionally, we summarize standard isolation and characterization technologies, highlighting PENs' unique functional attributes. By exploring advanced bioengineering prospects, this review establishes a comprehensive mechanistic framework for developing PENs as safe and precise nanomedicines for complete skin functional reconstruction.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42763743/",
+   "journal_display": "International Journal of Nanomedicine",
+   "matched": [
+    "neuro",
+    "nanomedicine"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  },
+  {
+   "pmid": "42763691",
+   "title": "Engineered Exosomal miRNAs for Post-Stroke Neural Repair: Mechanisms, Delivery Strategies, and Translational Challenges.",
+   "journal": "International journal of nanomedicine",
+   "pubdate": "2026-01-01",
+   "doi": "10.2147/IJN.S626919",
+   "authors": [
+    "Xu",
+    "Tian",
+    "Wang",
+    "Yang"
+   ],
+   "abstract": "Functional neurological recovery after ischemic stroke remains a formidable challenge in neuroscience. Exosomes serve as pivotal mediators of intercellular communication, and the microRNAs (miRNAs) they carry, in particular, offer a promising \"cell-free therapy\" strategy for promoting neurological repair. This review systematically summarizes the multi-target mechanisms by which exosomal miRNAs regulate the neurovascular unit (NVU) and outlines technical strategies to enhance exosomal therapeutic efficacy through targeted modification and engineered cargo loading, with the aim of constructing a smart drug delivery system capable of precise navigation. Following the trajectory of \"natural exosomes-engineered exosomes-clinical translation\", this review addresses the core scientific question of how to transform exosomal miRNAs from natural messenger molecules with basic reparative activity into an intelligent therapeutic system for precise targeted delivery. It further explores precision exosome treatment models based on the pathological staging of stroke progression, and integrates single-cell, spatial transcriptomic, and multi-omics technologies to decode the \"miRNA-cell source-target cell-signaling pathway\" regulatory axis, thereby identifying candidate miRNA combinations with translational potential. Finally, this review provides an in-depth analysis of the core challenges in translating such nanotherapeutic strategies from the bench to the bedside, including manufacturing standardization, quality control, and potency assessment, with the aim of providing a theoretical basis for advancing exosomal miRNA therapies from mechanistic studies to precision stroke treatment.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42763691/",
+   "journal_display": "International Journal of Nanomedicine",
+   "matched": [
+    "neuro",
+    "drug delivery"
+   ],
+   "matched_n": 2,
+   "must_n": 1
+  }
+ ]
+}
